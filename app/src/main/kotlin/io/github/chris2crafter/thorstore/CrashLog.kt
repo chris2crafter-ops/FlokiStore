@@ -1,5 +1,6 @@
 package io.github.chris2crafter.thorstore
 
+import io.github.chris2crafter.thorstore.core.t
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.ClipData
@@ -46,13 +47,13 @@ object CrashLog {
         f.delete()
         if (report.isBlank()) return
         AlertDialog.Builder(a)
-            .setTitle("Fehlerbericht")
-            .setMessage("Beim letzten Mal ist im Floki Store ein Fehler aufgetreten. Kopiere den Bericht und schick ihn weiter, dann lässt sich die Ursache genau finden.\n\n" + report.take(1800))
-            .setPositiveButton("Kopieren") { _, _ ->
+            .setTitle(t("Fehlerbericht", "Error report"))
+            .setMessage(t("Beim letzten Mal ist im Floki Store ein Fehler aufgetreten. Kopiere den Bericht und schick ihn weiter, dann lässt sich die Ursache genau finden.\n\n", "Last time, an error occurred in Floki Store. Copy the report and pass it on so the cause can be found.\n\n") + report.take(1800))
+            .setPositiveButton(t("Kopieren", "Copy")) { _, _ ->
                 a.getSystemService(ClipboardManager::class.java).setPrimaryClip(ClipData.newPlainText("Floki Store Fehlerbericht", report))
-                a.toast("Bericht kopiert")
+                a.toast(t("Bericht kopiert", "Report copied"))
             }
-            .setNegativeButton("Schließen", null)
+            .setNegativeButton(t("Schließen", "Close"), null)
             .show()
     }
 }

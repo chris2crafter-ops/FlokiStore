@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.pm.PackageInstaller
 import android.os.Build
 import io.github.chris2crafter.thorstore.core.CatalogApp
+import io.github.chris2crafter.thorstore.core.t
 import java.io.File
 import java.util.concurrent.ArrayBlockingQueue
 import java.util.concurrent.ConcurrentHashMap
@@ -47,7 +48,7 @@ object Installer {
             runCatching { pi.abandonSession(sid) }
             return Result(false, e.message)
         }
-        return q.poll(15, TimeUnit.MINUTES) ?: Result(false, "Keine Bestätigung erhalten").also { waiting.remove(sid) }
+        return q.poll(15, TimeUnit.MINUTES) ?: Result(false, t("Keine Bestätigung erhalten", "No confirmation received")).also { waiting.remove(sid) }
     }
 
     internal fun deliver(sid: Int, r: Result) {
@@ -67,37 +68,37 @@ object Installer {
         fun other(): String {
             val pkg = Regex("(?:already used by|declared by|defined by|by package) ([\\w.]+)").find(m)?.groupValues?.get(1)
             if (app != null && pkg != null) Store.blockers[app.id] = pkg
-            return pkg?.let { p -> Store.catalog.firstOrNull { it.packageName == p }?.name?.let { "$it ($p)" } ?: p } ?: "einer anderen App"
+            return pkg?.let { p -> Store.catalog.firstOrNull { it.packageName == p }?.name?.let { "$it ($p)" } ?: p } ?: t("einer anderen App", "another app")
         }
         val text = when {
             "UPDATE_INCOMPATIBLE" in m || "signatures do not match" in m.lowercase() || "INCONSISTENT_CERTIFICATES" in m -> {
                 app?.let { Store.conflicts[it.id] = Store.Conflict.SIGNATURE }
-                "Andere Signatur: Die installierte Version stammt aus einer anderen Quelle (z. B. Play Store oder ein anderer Build). Android kann sie nur ersetzen, wenn sie vorher deinstalliert wird."
+                t("Andere Signatur: Die installierte Version stammt aus einer anderen Quelle (z. B. Play Store oder ein anderer Build). Android kann sie nur ersetzen, wenn sie vorher deinstalliert wird.", "Different signature: the installed version comes from another source (e.g. Play Store or another build). Android can only replace it after uninstalling it.")
             }
             "VERSION_DOWNGRADE" in m -> {
                 app?.let { Store.conflicts[it.id] = Store.Conflict.DOWNGRADE }
-                "Installiert ist schon eine neuere Version. Für ein Downgrade muss die App erst deinstalliert werden."
+                t("Installiert ist schon eine neuere Version. Für ein Downgrade muss die App erst deinstalliert werden.", "A newer version is already installed. To downgrade, uninstall the app first.")
             }
             "CONFLICTING_PROVIDER" in m || "DUPLICATE_PERMISSION" in m -> {
                 app?.let { Store.conflicts[it.id] = Store.Conflict.PROVIDER }
-                "Kollidiert mit ${other()}: beide Apps belegen denselben Systemnamen (Provider oder Berechtigung). Eine von beiden muss weg – oder nimm eine Variante, die parallel laufen darf."
+                t("Kollidiert mit ${other()}: beide Apps belegen denselben Systemnamen (Provider oder Berechtigung). Eine von beiden muss weg – oder nimm eine Variante, die parallel laufen darf.", "Conflicts with ${other()}: both apps claim the same system name (provider or permission). One of them has to go – or pick a variant that may run alongside.")
             }
-            "NO_MATCHING_ABIS" in m -> "Dieses APK ist nicht für den 64-Bit-Prozessor des Thor gebaut."
-            "OLDER_SDK" in m || "DEPRECATED_SDK" in m -> "Die App ist für eine Android-Version gebaut, die der Thor nicht unterstützt."
-            "INSUFFICIENT_STORAGE" in m -> "Zu wenig Speicherplatz."
+            "NO_MATCHING_ABIS" in m -> t("Dieses APK ist nicht für den 64-Bit-Prozessor des Thor gebaut.", "This APK is not built for the Thor's 64-bit processor.")
+            "OLDER_SDK" in m || "DEPRECATED_SDK" in m -> t("Die App ist für eine Android-Version gebaut, die der Thor nicht unterstützt.", "The app is built for an Android version the Thor does not support.")
+            "INSUFFICIENT_STORAGE" in m -> t("Zu wenig Speicherplatz.", "Not enough storage space.")
             else -> statusText(status, null) + (msg?.takeIf { it.isNotBlank() }?.let { "\n($it)" } ?: "")
         }
         return text
     }
 
     fun statusText(status: Int, msg: String?): String = when (status) {
-        PackageInstaller.STATUS_FAILURE_ABORTED -> "Abgebrochen"
-        PackageInstaller.STATUS_FAILURE_BLOCKED -> "Blockiert"
-        PackageInstaller.STATUS_FAILURE_CONFLICT -> "Konflikt mit einer installierten App"
-        PackageInstaller.STATUS_FAILURE_INCOMPATIBLE -> "Nicht kompatibel mit diesem Gerät"
-        PackageInstaller.STATUS_FAILURE_INVALID -> "APK ungültig"
-        PackageInstaller.STATUS_FAILURE_STORAGE -> "Zu wenig Speicherplatz"
-        else -> msg ?: "Installation fehlgeschlagen"
+        PackageInstaller.STATUS_FAILURE_ABORTED -> t("Abgebrochen", "Cancelled")
+        PackageInstaller.STATUS_FAILURE_BLOCKED -> t("Blockiert", "Blocked")
+        PackageInstaller.STATUS_FAILURE_CONFLICT -> t("Konflikt mit einer installierten App", "Conflict with an installed app")
+        PackageInstaller.STATUS_FAILURE_INCOMPATIBLE -> t("Nicht kompatibel mit diesem Gerät", "Not compatible with this device")
+        PackageInstaller.STATUS_FAILURE_INVALID -> t("APK ungültig", "Invalid APK")
+        PackageInstaller.STATUS_FAILURE_STORAGE -> t("Zu wenig Speicherplatz", "Not enough storage space")
+        else -> msg ?: t("Installation fehlgeschlagen", "Installation failed")
     }
 }
 

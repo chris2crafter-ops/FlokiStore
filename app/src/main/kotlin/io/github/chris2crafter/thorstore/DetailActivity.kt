@@ -16,6 +16,7 @@ import io.github.chris2crafter.thorstore.core.CatalogApp
 import io.github.chris2crafter.thorstore.core.ReleaseAsset
 import io.github.chris2crafter.thorstore.core.Sources
 import io.github.chris2crafter.thorstore.core.Tags
+import io.github.chris2crafter.thorstore.core.t
 
 class DetailActivity : Activity() {
 
@@ -72,17 +73,17 @@ class DetailActivity : Activity() {
             addView(head, lp(0, WRAP, 1f).apply { marginStart = dp(18) })
         })
 
-        primary = button("Installieren", primary = true) { primaryAction() }
-        btnFiles = button("Andere Datei…") { chooseFile() }
-        btnOlder = button("Ältere Version…") { chooseOlder() }
-        btnUninstall = button("Deinstallieren") { uninstall(app) }
-        btnIgnore = button("Version ignorieren") { Store.ignoreCurrent(app); toast("Diese Version wird nicht mehr gemeldet") }
-        btnReplace = button("Ersetzen…") { confirmReplace() }
-        btnBlocker = button("Kollidierende App deinstallieren") {
+        primary = button(t("Installieren", "Install"), primary = true) { primaryAction() }
+        btnFiles = button(t("Andere Datei…", "Other file…")) { chooseFile() }
+        btnOlder = button(t("Ältere Version…", "Older version…")) { chooseOlder() }
+        btnUninstall = button(t("Deinstallieren", "Uninstall")) { uninstall(app) }
+        btnIgnore = button(t("Version ignorieren", "Ignore version")) { Store.ignoreCurrent(app); toast(t("Diese Version wird nicht mehr gemeldet", "This version will no longer be reported")) }
+        btnReplace = button(t("Ersetzen…", "Replace…")) { confirmReplace() }
+        btnBlocker = button(t("Kollidierende App deinstallieren", "Uninstall conflicting app")) {
             Store.blockers[app.id]?.let { pkg -> startActivity(android.content.Intent(android.content.Intent.ACTION_DELETE, android.net.Uri.parse("package:$pkg"))) }
         }
-        val web = button(if (app.repo != null) "Auf GitHub" else "Webseite") { app.sourceUrl?.let { openUrl(it) } }
-        val edit = button("Bearbeiten") { EditActivity.edit(this, app) }
+        val web = button(if (app.repo != null) t("Auf GitHub", "On GitHub") else t("Webseite", "Website")) { app.sourceUrl?.let { openUrl(it) } }
+        val edit = button(t("Bearbeiten", "Edit")) { EditActivity.edit(this, app) }
         val buttons = row(primary, btnReplace, btnBlocker, btnFiles, btnOlder, btnUninstall, btnIgnore, web, edit, spacing = 10)
         col.addView(HorizontalScrollView(this).apply { isHorizontalScrollBarEnabled = false; addView(buttons) }, lp().apply { topMargin = dp(20) })
 
@@ -92,26 +93,26 @@ class DetailActivity : Activity() {
         col.addView(status, lp().apply { topMargin = dp(6) })
 
         if (!split) app.note?.let { n ->
-            col.addView(text("Hinweis: $n", 14f, C.WARN).apply {
+            col.addView(text(t("Hinweis: $n", "Note: $n"), 14f, C.WARN).apply {
                 background = rounded(0x22F0883E, dp(10).toFloat())
                 setPadding(dp(14), dp(10), dp(14), dp(10))
             }, lp().apply { topMargin = dp(12) })
         }
 
         if (!split) {
-            col.addView(text("Beschreibung", 18f, bold = true), lp().apply { topMargin = dp(18) })
+            col.addView(text(t("Beschreibung", "Description"), 18f, bold = true), lp().apply { topMargin = dp(18) })
             col.addView(text(app.description, 15f), lp().apply { topMargin = dp(6) })
         }
 
         info = text("", 14f, C.SUB).apply { setLineSpacing(dp(3).toFloat(), 1f) }
-        col.addView(text("Version & Datei", 18f, bold = true), lp().apply { topMargin = dp(18) })
+        col.addView(text(t("Version & Datei", "Version & file"), 18f, bold = true), lp().apply { topMargin = dp(18) })
         col.addView(info, lp().apply { topMargin = dp(6) })
 
-        notes = text("Wird geladen…", 14f, C.SUB).apply { setLineSpacing(dp(2).toFloat(), 1f) }
+        notes = text(t("Wird geladen…", "Loading…"), 14f, C.SUB).apply { setLineSpacing(dp(2).toFloat(), 1f) }
         if (split) {
-            col.addView(text("Beschreibung und Release-Notes stehen auf dem unteren Bildschirm.", 13f, C.SUB), lp().apply { topMargin = dp(18) })
+            col.addView(text(t("Beschreibung und Release-Notes stehen auf dem unteren Bildschirm.", "Description and release notes are on the lower screen."), 13f, C.SUB), lp().apply { topMargin = dp(18) })
         } else if (!app.isLinkOnly) {
-            col.addView(text("Release-Notes", 18f, bold = true), lp().apply { topMargin = dp(18) })
+            col.addView(text(t("Release-Notes", "Release notes"), 18f, bold = true), lp().apply { topMargin = dp(18) })
             col.addView(notes.apply {
                 background = rounded(C.CARD, dp(10).toFloat())
                 setPadding(dp(14), dp(12), dp(14), dp(12))
@@ -160,14 +161,14 @@ class DetailActivity : Activity() {
 
     private fun confirmReplace() {
         AlertDialog.Builder(this)
-            .setTitle("${app.name} ersetzen?")
-            .setMessage("Die installierte Version stammt aus einer anderen Quelle oder ist neuer als dieses Release. Android kann sie nur ersetzen, wenn sie vorher deinstalliert wird.\n\nDabei gehen die App-Daten verloren (Einstellungen, ggf. Spielstände im App-Ordner). Sichere sie vorher, falls nötig.\n\nWeiter: erst deinstallieren, danach installiert der Store seine Version.")
-            .setPositiveButton("Deinstallieren & installieren") { _, _ ->
+            .setTitle(t("${app.name} ersetzen?", "Replace ${app.name}?"))
+            .setMessage(t("Die installierte Version stammt aus einer anderen Quelle oder ist neuer als dieses Release. Android kann sie nur ersetzen, wenn sie vorher deinstalliert wird.\n\nDabei gehen die App-Daten verloren (Einstellungen, ggf. Spielstände im App-Ordner). Sichere sie vorher, falls nötig.\n\nWeiter: erst deinstallieren, danach installiert der Store seine Version.", "The installed version comes from another source or is newer than this release. Android can only replace it after uninstalling it.\n\nThis deletes the app's data (settings, possibly saves in the app folder). Back it up first if needed.\n\nNext: uninstall first, then the store installs its version."))
+            .setPositiveButton(t("Deinstallieren & installieren", "Uninstall & install")) { _, _ ->
                 if (!ensureInstallPermission()) return@setPositiveButton
                 Store.prefs.edit().putBoolean("replace_${app.id}", true).apply()
                 uninstall(app)
             }
-            .setNegativeButton("Abbrechen", null)
+            .setNegativeButton(t("Abbrechen", "Cancel"), null)
             .show()
     }
 
@@ -205,18 +206,18 @@ class DetailActivity : Activity() {
         val conflict = Store.conflicts[app.id]
 
         primary.text = when {
-            app.isLinkOnly -> "Download-Seite öffnen"
+            app.isLinkOnly -> t("Download-Seite öffnen", "Open download page")
             p != null -> p.text
-            inst != null && update -> "Aktualisieren"
-            inst != null -> "Öffnen"
-            rel == null && Store.isFetching(app) -> "Lade Infos…"
-            rel != null && asset == null -> "Kein APK gefunden"
-            else -> "Installieren"
+            inst != null && update -> t("Aktualisieren", "Update")
+            inst != null -> t("Öffnen", "Open")
+            rel == null && Store.isFetching(app) -> t("Lade Infos…", "Loading info…")
+            rel != null && asset == null -> t("Kein APK gefunden", "No APK found")
+            else -> t("Installieren", "Install")
         }
         primary.alpha = if (p != null) 0.7f else 1f
         val github = !app.isLinkOnly
         btnFiles.visibility = if (github && rel != null) View.VISIBLE else View.GONE
-        btnFiles.text = if (inst != null) "Neu installieren / andere Datei…" else "Andere Datei…"
+        btnFiles.text = if (inst != null) t("Neu installieren / andere Datei…", "Reinstall / other file…") else t("Andere Datei…", "Other file…")
         btnOlder.visibility = if (github) View.VISIBLE else View.GONE
         btnUninstall.visibility = if (inst != null) View.VISIBLE else View.GONE
         btnIgnore.visibility = if (update) View.VISIBLE else View.GONE
@@ -229,8 +230,8 @@ class DetailActivity : Activity() {
         val err = Store.errors[app.id]
         status.text = when {
             err != null -> "⚠ $err"
-            foreign -> "Installiert aus einer anderen Quelle (andere Signatur). Updates über den Store gehen erst nach „Ersetzen“."
-            update -> "Neue Version verfügbar: ${rel?.tag}"
+            foreign -> t("Installiert aus einer anderen Quelle (andere Signatur). Updates über den Store gehen erst nach „Ersetzen“.", "Installed from another source (different signature). Updates through the store only work after “Replace”.")
+            update -> t("Neue Version verfügbar: ${rel?.tag}", "New version available: ${rel?.tag}")
             else -> ""
         }
         status.setTextColor(if (err != null) C.DANGER else if (update || foreign) C.WARN else C.SUB)
@@ -238,20 +239,20 @@ class DetailActivity : Activity() {
 
         info.text = buildString {
             if (app.isLinkOnly) {
-                append("Dieses Projekt veröffentlicht keine APKs auf GitHub. Lade es von der offiziellen Seite:\n${app.homepage}")
+                append(t("Dieses Projekt veröffentlicht keine APKs auf GitHub. Lade es von der offiziellen Seite:\n${app.homepage}", "This project does not publish APKs on GitHub. Get it from the official page:\n${app.homepage}"))
                 return@buildString
             }
-            append("Installiert: ")
+            append(t("Installiert: ", "Installed: "))
             append(inst?.let { "${it.versionName ?: "?"} (Code ${it.versionCode})" } ?: "nein")
-            append("\nNeuestes Release: ")
-            append(rel?.let { r -> r.tag + (formatDate(r.date)?.let { " · $it" } ?: "") } ?: if (Store.isFetching(app)) "wird geladen…" else "unbekannt")
-            meta?.let { append("\nVersion im APK: ${it.versionName ?: "?"} (Code ${it.versionCode})") }
+            append(t("\nNeuestes Release: ", "\nLatest release: "))
+            append(rel?.let { r -> r.tag + (formatDate(r.date)?.let { " · $it" } ?: "") } ?: if (Store.isFetching(app)) t("wird geladen…", "loading…") else "unbekannt")
+            meta?.let { append(t("\nVersion im APK: ${it.versionName ?: "?"} (Code ${it.versionCode})", "\nVersion in the APK: ${it.versionName ?: "?"} (code ${it.versionCode})")) }
             asset?.let { a ->
-                append("\nDatei: ${a.name}")
+                append(t("\nDatei: ${a.name}", "\nFile: ${a.name}"))
                 a.sizeText?.let { append(" · $it") }
-                if (a.sha256 != null) append("\nSHA-256 wird beim Download geprüft")
+                if (a.sha256 != null) append(t("\nSHA-256 wird beim Download geprüft", "\nSHA-256 is checked on download"))
             }
-            app.packageName?.let { append("\nPaket: $it") }
+            app.packageName?.let { append(t("\nPaket: $it", "\nPackage: $it")) }
         }
 
         panel?.bind()
@@ -260,7 +261,7 @@ class DetailActivity : Activity() {
             val tag = rel.tag
             Store.io.execute {
                 val n = runCatching { Sources.notes(Store.client, app, tag) }.getOrNull()
-                runOnUiThread { notes.text = n?.take(6000) ?: "Keine Release-Notes vorhanden." }
+                runOnUiThread { notes.text = n?.take(6000) ?: t("Keine Release-Notes vorhanden.", "No release notes.") }
             }
         }
     }
@@ -285,40 +286,40 @@ class DetailActivity : Activity() {
 
     private fun chooseFile() {
         val rel = Store.release(app) ?: return
-        pickAsset("Datei aus ${rel.tag}", filesOf(rel.assets))
+        pickAsset(t("Datei aus ${rel.tag}", "File from ${rel.tag}"), filesOf(rel.assets))
     }
 
     private fun pickAsset(title: String, files: List<ReleaseAsset>) {
-        if (files.isEmpty()) { toast("Dieses Release enthält kein APK"); return }
+        if (files.isEmpty()) { toast(t("Dieses Release enthält kein APK", "This release contains no APK")); return }
         // the star marks the file the store would pick by itself
         val best = Store.asset(app)?.url
         AlertDialog.Builder(this)
             .setTitle(title)
             .setItems(files.map { f -> f.name + (f.sizeText?.let { " · $it" } ?: "") + (if (f.url == best) "  ★" else "") }.toTypedArray()) { _, i -> install(files[i]) }
-            .setNegativeButton("Abbrechen", null)
+            .setNegativeButton(t("Abbrechen", "Cancel"), null)
             .show()
     }
 
     private fun chooseOlder() {
         if (app.isLinkOnly) return
-        toast("Lade Versionen…")
+        toast(t("Lade Versionen…", "Loading versions…"))
         Store.io.execute {
             val list = runCatching { Sources.list(Store.client, app, 1) + runCatching { Sources.list(Store.client, app, 2) }.getOrDefault(emptyList()) }.getOrElse {
-                runOnUiThread { toast("Konnte Versionen nicht laden") }
+                runOnUiThread { toast(t("Konnte Versionen nicht laden", "Could not load versions")) }
                 return@execute
             }
             runOnUiThread {
-                val downgrade = if (Store.installed(app) != null) "\n(Für ein Downgrade erst deinstallieren)" else ""
+                val downgrade = if (Store.installed(app) != null) t("\n(Für ein Downgrade erst deinstallieren)", "\n(Uninstall first to downgrade)") else ""
                 AlertDialog.Builder(this)
-                    .setTitle("Version wählen$downgrade")
-                    .setItems(list.map { r -> r.tag + (formatDate(r.date)?.let { " · $it" } ?: "") + (if (r.prerelease) " · Pre-Release" else "") }.toTypedArray()) { _, i ->
+                    .setTitle(t("Version wählen$downgrade", "Choose version$downgrade"))
+                    .setItems(list.map { r -> r.tag + (formatDate(r.date)?.let { " · $it" } ?: "") + (if (r.prerelease) t(" · Pre-Release", " · pre-release") else "") }.toTypedArray()) { _, i ->
                         val tag = list[i].tag
                         Store.io.execute {
                             val rel = runCatching { Sources.release(Store.client, app, tag) }.getOrNull()
-                            runOnUiThread { if (rel == null) toast("Release nicht lesbar") else pickAsset("Datei aus $tag", filesOf(rel.assets)) }
+                            runOnUiThread { if (rel == null) toast(t("Release nicht lesbar", "Release not readable")) else pickAsset(t("Datei aus $tag", "File from $tag"), filesOf(rel.assets)) }
                         }
                     }
-                    .setNegativeButton("Abbrechen", null)
+                    .setNegativeButton(t("Abbrechen", "Cancel"), null)
                     .show()
             }
         }

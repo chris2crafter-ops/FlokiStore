@@ -16,6 +16,7 @@ import io.github.chris2crafter.thorstore.core.Categories
 import io.github.chris2crafter.thorstore.core.Category
 import io.github.chris2crafter.thorstore.core.GithubClient
 import io.github.chris2crafter.thorstore.core.HttpRangeSource
+import io.github.chris2crafter.thorstore.core.I18n
 import io.github.chris2crafter.thorstore.core.Json
 import io.github.chris2crafter.thorstore.core.Release
 import io.github.chris2crafter.thorstore.core.ReleaseAsset
@@ -26,6 +27,7 @@ import io.github.chris2crafter.thorstore.core.UserData
 import io.github.chris2crafter.thorstore.core.long
 import io.github.chris2crafter.thorstore.core.objList
 import io.github.chris2crafter.thorstore.core.str
+import io.github.chris2crafter.thorstore.core.t
 import java.io.File
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.CopyOnWriteArrayList
@@ -84,17 +86,60 @@ object Store {
     fun init(context: Context) {
         ctx = context.applicationContext
         val text = ctx.assets.open("catalog.json").bufferedReader().use { it.readText() }
-        base = Catalog.parse(text).filter { it.id != SELF_ID } + CatalogApp(
-            SELF_ID, "Floki Store", Categories.TOOLS,
-            "Dieser Store selbst. Neue Versionen erscheinen als Release auf GitHub; beim Start prüft der Store, ob es eine neuere gibt.",
-            repo = SELF_REPO, packageName = ctx.packageName, tags = listOf("thor"),
-        )
+        applyLanguage()
+        base = Catalog.parse(text).filter { it.id != SELF_ID }
         catalogDate = Json.obj(text).str("generated")
         user = runCatching { UserData.parse(userFile().readText()) }.getOrElse { UserData() }
         client.token = prefs.getString("token", null)
         rebuild(notify = false)
         loadCache()
         removeTrendData()
+    }
+
+    /** The store itself as a catalog entry, in the current language. */
+    private fun selfApp() = CatalogApp(
+        SELF_ID, "Floki Store", Categories.TOOLS,
+        t("Dieser Store selbst. Neue Versionen erscheinen als Release auf GitHub; beim Start prüft der Store, ob es eine neuere gibt.", "This store itself. New versions are published as GitHub releases; at start the store checks whether there is a newer one."),
+        repo = SELF_REPO, packageName = ctx.packageName, tags = listOf("thor"),
+    )
+
+    // ---- language ----------------------------------------------------------------------
+
+    const val LANG_SYSTEM = "system"
+
+    /** "system", "de" or "en". With "system" the store speaks German on a German device, English otherwise. */
+    val language: String get() = prefs.getString("lang", LANG_SYSTEM) ?: LANG_SYSTEM
+
+    fun languageLabel(lang: String) = when (lang) {
+        "de" -> "Deutsch"
+        "en" -> "English"
+        else -> t("Systemsprache", "System language") + " (" + (if (systemIsGerman()) "Deutsch" else "English") + ")"
+    }
+
+    private fun systemIsGerman() = android.content.res.Resources.getSystem().configuration.locales[0].language == "de"
+
+    /** Sets [I18n.english] from the setting; call again when the system language changes. */
+    fun applyLanguage() {
+        I18n.english = when (language) {
+            "de" -> false
+            "en" -> true
+            else -> !systemIsGerman()
+        }
+    }
+
+    fun setLanguage(lang: String) {
+        prefs.edit().putString("lang", lang).apply()
+        applyLanguage()
+        Notifications.createChannels(ctx)
+        rebuild()
+    }
+
+    /** The system language changed while the store was running. */
+    fun systemLanguageChanged() {
+        if (language != LANG_SYSTEM) return
+        applyLanguage()
+        Notifications.createChannels(ctx)
+        rebuild()
     }
 
     /** 1.8 had a Trends tab; its data is not needed any more. */
@@ -113,9 +158,9 @@ object Store {
 
     @Synchronized
     private fun rebuild(notify: Boolean = true) {
-        categories = user.categories()
+        categories = user.categories().map(Categories::localized)
         // package names learned from installs override the catalog
-        catalog = user.apply(base).map { a -> prefs.getString("pkg_${a.id}", null)?.let { a.copy(packageName = it) } ?: a }
+        catalog = user.apply(base + selfApp()).map { a -> prefs.getString("pkg_${a.id}", null)?.let { a.copy(packageName = it) } ?: a }
         if (notify) changed()
     }
 

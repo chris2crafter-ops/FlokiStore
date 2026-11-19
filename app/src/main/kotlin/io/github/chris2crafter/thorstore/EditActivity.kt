@@ -23,6 +23,7 @@ import io.github.chris2crafter.thorstore.core.AppAdder
 import io.github.chris2crafter.thorstore.core.AppDraft
 import io.github.chris2crafter.thorstore.core.CatalogApp
 import io.github.chris2crafter.thorstore.core.Links
+import io.github.chris2crafter.thorstore.core.t
 
 /**
  * Adds an app from a GitHub link (typed, pasted or shared from the browser) or edits name,
@@ -59,7 +60,7 @@ class EditActivity : Activity() {
             orientation = LinearLayout.VERTICAL
             setPadding(dp(24), dp(20), dp(24), dp(28))
         }
-        col.addView(text(if (editing == null) "App hinzufügen" else "App bearbeiten", 26f, bold = true))
+        col.addView(text(if (editing == null) t("App hinzufügen", "Add app") else t("App bearbeiten", "Edit app"), 26f, bold = true))
 
         // ---- link (only when adding) ----
         link = field("https://github.com/owner/projekt").apply {
@@ -67,11 +68,11 @@ class EditActivity : Activity() {
             imeOptions = EditorInfo.IME_ACTION_GO
             setOnEditorActionListener { _, _, _ -> check(); true }
         }
-        checkBtn = button("Prüfen", primary = true) { check() }
-        val paste = button("Einfügen") { pasteLink() }
+        checkBtn = button(t("Prüfen", "Check"), primary = true) { check() }
+        val paste = button(t("Einfügen", "Paste")) { pasteLink() }
         status = text("", 14f, C.SUB)
         if (editing == null) {
-            col.addView(text("Link zum GitHub-Projekt. Der Store sucht das passende APK im neuesten Release, liest Name und Icon aus und schlägt eine Kategorie vor. Tipp: Im Browser auf GitHub „Teilen → Floki Store“ wählen.", 14f, C.SUB), lp().apply { topMargin = dp(8) })
+            col.addView(text(t("Link zum GitHub-Projekt. Der Store sucht das passende APK im neuesten Release, liest Name und Icon aus und schlägt eine Kategorie vor. Tipp: Im Browser auf GitHub „Teilen → Floki Store“ wählen.", "Link to the GitHub project. The store looks for the matching APK in the latest release, reads name and icon and suggests a category. Tip: in the browser on GitHub, choose “Share → Floki Store”."), 14f, C.SUB), lp().apply { topMargin = dp(8) })
             col.addView(LinearLayout(this).apply {
                 orientation = LinearLayout.HORIZONTAL
                 gravity = Gravity.CENTER_VERTICAL
@@ -87,10 +88,10 @@ class EditActivity : Activity() {
         iconView = ImageView(this)
         val iconButtons = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
-            addView(button("Bild wählen…") { pickImage() })
+            addView(button(t("Bild wählen…", "Choose image…")) { pickImage() })
             addView(row(
-                button("GitHub-Avatar") { loadAvatar() },
-                button("Standard-Icon") { dropCustomIcon = true; pendingIcon = null; showIcon() },
+                button(t("GitHub-Avatar", "GitHub avatar")) { loadAvatar() },
+                button(t("Standard-Icon", "Default icon")) { dropCustomIcon = true; pendingIcon = null; showIcon() },
                 spacing = 10,
             ), lp().apply { topMargin = dp(10) })
         }
@@ -101,32 +102,32 @@ class EditActivity : Activity() {
             addView(iconButtons, lp(0, WRAP, 1f).apply { marginStart = dp(18) })
         }, lp().apply { topMargin = dp(18) })
 
-        name = field("Name")
-        form.addView(label("Name"), lp().apply { topMargin = dp(18) })
+        name = field(t("Name", "Name"))
+        form.addView(label(t("Name", "Name")), lp().apply { topMargin = dp(18) })
         form.addView(name, lp().apply { topMargin = dp(6) })
 
         categoryBtn = button("") { chooseCategory() }.apply { gravity = Gravity.START or Gravity.CENTER_VERTICAL }
-        form.addView(label("Kategorie"), lp().apply { topMargin = dp(14) })
+        form.addView(label(t("Kategorie", "Category")), lp().apply { topMargin = dp(14) })
         form.addView(categoryBtn, lp().apply { topMargin = dp(6) })
 
-        desc = field("Beschreibung").apply {
+        desc = field(t("Beschreibung", "Description")).apply {
             isSingleLine = false
             minLines = 3
             maxLines = 8
             gravity = Gravity.TOP or Gravity.START
             inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE or InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
         }
-        form.addView(label("Beschreibung"), lp().apply { topMargin = dp(14) })
+        form.addView(label(t("Beschreibung", "Description")), lp().apply { topMargin = dp(14) })
         form.addView(desc, lp().apply { topMargin = dp(6) })
 
         info = text("", 14f, C.SUB).apply { setLineSpacing(dp(3).toFloat(), 1f) }
         form.addView(info, lp().apply { topMargin = dp(14) })
 
-        save = button(if (editing == null) "Hinzufügen" else "Speichern", primary = true) { save() }
-        val actions = mutableListOf<View>(save, button("Abbrechen") { finish() })
-        if (editing != null && editing.user) actions += button("Aus dem Store entfernen") { confirmRemove(editing) }
+        save = button(if (editing == null) t("Hinzufügen", "Add") else t("Speichern", "Save"), primary = true) { save() }
+        val actions = mutableListOf<View>(save, button(t("Abbrechen", "Cancel")) { finish() })
+        if (editing != null && editing.user) actions += button(t("Aus dem Store entfernen", "Remove from store")) { confirmRemove(editing) }
         if (editing != null && (Store.isEdited(editing) || IconLoader.hasCustomIcon(this, editing))) {
-            actions += button("Original wiederherstellen") { confirmReset(editing) }
+            actions += button(t("Original wiederherstellen", "Restore original")) { confirmReset(editing) }
         }
         form.addView(row(*actions.toTypedArray(), spacing = 10), lp().apply { topMargin = dp(20) })
         col.addView(form)
@@ -140,7 +141,7 @@ class EditActivity : Activity() {
             fill(editing)
             info.text = listOfNotNull(
                 editing.repo?.let { "GitHub: $it" },
-                if (editing.user) "Selbst hinzugefügt" else "Aus dem Katalog des Stores",
+                if (editing.user) t("Selbst hinzugefügt", "Added by you") else t("Aus dem Katalog des Stores", "From the store's catalog"),
             ).joinToString("\n")
             name.requestFocus()
         } else {
@@ -200,7 +201,7 @@ class EditActivity : Activity() {
     private fun pasteLink() {
         val clip = getSystemService(ClipboardManager::class.java).primaryClip
         val t = clip?.takeIf { it.itemCount > 0 }?.getItemAt(0)?.coerceToText(this)?.toString()
-        if (t.isNullOrBlank()) { toast("Zwischenablage ist leer"); return }
+        if (t.isNullOrBlank()) { toast(t("Zwischenablage ist leer", "Clipboard is empty")); return }
         link.setText(t.trim())
         if (Links.repo(t) != null) check()
     }
@@ -210,26 +211,26 @@ class EditActivity : Activity() {
         val input = link.text.toString().trim()
         if (Links.repo(input) == null) {
             status.setTextColor(C.DANGER)
-            status.text = "⚠ Kein GitHub-Link erkannt. Beispiel: https://github.com/azahar-emu/azahar"
+            status.text = t("⚠ Kein GitHub-Link erkannt. Beispiel: https://github.com/azahar-emu/azahar", "⚠ No GitHub link recognized. Example: https://github.com/azahar-emu/azahar")
             return
         }
         checking = true
-        checkBtn.text = "Prüfe…"
+        checkBtn.text = t("Prüfe…", "Checking…")
         status.setTextColor(C.ACCENT)
-        status.text = "Suche Release und APK, lese Name und Icon aus…"
+        status.text = t("Suche Release und APK, lese Name und Icon aus…", "Looking for release and APK, reading name and icon…")
         Store.io.execute {
             val r = runCatching { AppAdder.inspect(Store.client, input, Store.catalog, Store.categories) }
             runOnUiThread {
                 checking = false
-                checkBtn.text = "Prüfen"
+                checkBtn.text = t("Prüfen", "Check")
                 r.onSuccess(::showDraft).onFailure { e ->
                     if (e is AlreadyInStore) {
                         status.text = ""
                         AlertDialog.Builder(this)
-                            .setTitle("Schon im Store")
-                            .setMessage("${e.app.name} ist bereits unter „${Store.categoryTitle(e.app.category)}“ eingetragen.")
-                            .setPositiveButton("Öffnen") { _, _ -> openApp(e.app); finish() }
-                            .setNegativeButton("Schließen", null)
+                            .setTitle(t("Schon im Store", "Already in the store"))
+                            .setMessage(t("${e.app.name} ist bereits unter „${Store.categoryTitle(e.app.category)}“ eingetragen.", "${e.app.name} is already listed under “${Store.categoryTitle(e.app.category)}”."))
+                            .setPositiveButton(t("Öffnen", "Open")) { _, _ -> openApp(e.app); finish() }
+                            .setNegativeButton(t("Schließen", "Close"), null)
                             .show()
                     } else {
                         status.setTextColor(C.DANGER)
@@ -246,15 +247,15 @@ class EditActivity : Activity() {
         dropCustomIcon = false
         fill(d.app)
         status.setTextColor(C.OK)
-        status.text = "✓ Gefunden: ${d.app.repo}"
+        status.text = t("✓ Gefunden: ${d.app.repo}", "✓ Found: ${d.app.repo}")
         info.text = buildString {
             append("Release: ${d.tag}\n")
-            append(if (d.app.isDriver) "Dateien: ${d.file}" else "Datei: ${d.file}")
+            append(if (d.app.isDriver) t("Dateien: ${d.file}", "Files: ${d.file}") else t("Datei: ${d.file}", "File: ${d.file}"))
             d.versionName?.let { append("\nVersion: $it") }
-            d.app.packageName?.let { append("\nPaket: $it") }
-            if (d.topics.isNotEmpty()) append("\nThemen: ${d.topics.take(8).joinToString(", ")}")
+            d.app.packageName?.let { append(t("\nPaket: $it", "\nPackage: $it")) }
+            if (d.topics.isNotEmpty()) append(t("\nThemen: ${d.topics.take(8).joinToString(", ")}", "\nTopics: ${d.topics.take(8).joinToString(", ")}"))
             d.hints.forEach { append("\n• $it") }
-            append("\n\nKategorie automatisch gewählt, du kannst sie oben ändern.")
+            append(t("\n\nKategorie automatisch gewählt, du kannst sie oben ändern.", "\n\nCategory chosen automatically, you can change it above."))
         }
         form.visibility = View.VISIBLE
         save.requestFocus()
@@ -264,9 +265,9 @@ class EditActivity : Activity() {
 
     private fun chooseCategory() {
         val cats = Store.categories
-        val labels = cats.map { it.title } + "＋ Neue Kategorie…"
+        val labels = cats.map { it.title } + t("＋ Neue Kategorie…", "＋ New category…")
         AlertDialog.Builder(this)
-            .setTitle("Kategorie")
+            .setTitle(t("Kategorie", "Category"))
             .setSingleChoiceItems(labels.toTypedArray(), cats.indexOfFirst { it.id == category }) { d, i ->
                 d.dismiss()
                 if (i < cats.size) {
@@ -286,7 +287,7 @@ class EditActivity : Activity() {
             @Suppress("DEPRECATION")
             startActivityForResult(Intent(Intent.ACTION_GET_CONTENT).setType("image/*").addCategory(Intent.CATEGORY_OPENABLE), PICK_IMAGE)
         } catch (e: ActivityNotFoundException) {
-            toast("Keine App zur Bildauswahl gefunden")
+            toast(t("Keine App zur Bildauswahl gefunden", "No app found to pick an image"))
         }
     }
 
@@ -306,22 +307,22 @@ class EditActivity : Activity() {
                 }
             }.getOrNull()
             runOnUiThread {
-                if (bmp == null) { toast("Bild konnte nicht gelesen werden"); return@runOnUiThread }
+                if (bmp == null) { toast(t("Bild konnte nicht gelesen werden", "Could not read the image")); return@runOnUiThread }
                 setPending(IconLoader.square(bmp, 256))
             }
         }
     }
 
     private fun loadAvatar() {
-        val owner = (draft?.app ?: app)?.owner ?: run { toast("Kein GitHub-Projekt hinterlegt"); return }
-        toast("Lade Avatar von $owner…")
+        val owner = (draft?.app ?: app)?.owner ?: run { toast(t("Kein GitHub-Projekt hinterlegt", "No GitHub project set")); return }
+        toast(t("Lade Avatar von $owner…", "Loading avatar of $owner…"))
         Store.io.execute {
             val bmp = runCatching {
                 val r = Store.client.get("https://github.com/$owner.png?size=256", maxBytes = 4 shl 20)
                 if (r.code == 200) BitmapFactory.decodeByteArray(r.body, 0, r.body.size) else null
             }.getOrNull()
             runOnUiThread {
-                if (bmp == null) toast("Avatar konnte nicht geladen werden") else setPending(IconLoader.square(bmp, 256))
+                if (bmp == null) toast(t("Avatar konnte nicht geladen werden", "Could not load the avatar")) else setPending(IconLoader.square(bmp, 256))
             }
         }
     }
@@ -344,7 +345,7 @@ class EditActivity : Activity() {
 
     private fun save() {
         val n = name.text.toString().trim()
-        if (n.isEmpty()) { name.error = "Bitte einen Namen eingeben"; name.requestFocus(); return }
+        if (n.isEmpty()) { name.error = t("Bitte einen Namen eingeben", "Please enter a name"); name.requestFocus(); return }
         val d = desc.text.toString().trim()
         val dr = draft
         if (dr != null) {
@@ -352,7 +353,7 @@ class EditActivity : Activity() {
             dr.icon?.let { IconLoader.saveFromApk(this, a, it) }
             applyIcon(a)
             Store.addUserApp(a)
-            toast("„$n“ ist jetzt unter „${Store.categoryTitle(category)}“")
+            toast(t("„$n“ ist jetzt unter „${Store.categoryTitle(category)}“", "“$n” is now in “${Store.categoryTitle(category)}”"))
             Store.app(a.id)?.let { added ->
                 Store.fetchAsync(added, force = true)
                 openApp(added)
@@ -363,33 +364,33 @@ class EditActivity : Activity() {
         val a = app ?: return
         Store.editApp(a, n, d, category)
         applyIcon(a)
-        toast("Gespeichert")
+        toast(t("Gespeichert", "Saved"))
         finish()
     }
 
     private fun confirmRemove(a: CatalogApp) {
         AlertDialog.Builder(this)
-            .setTitle("${a.name} aus dem Store entfernen?")
-            .setMessage("Der Eintrag verschwindet aus dem Floki Store. Ist die App installiert, bleibt sie installiert, wird aber nicht mehr auf Updates geprüft.")
-            .setPositiveButton("Entfernen") { _, _ ->
+            .setTitle(t("${a.name} aus dem Store entfernen?", "Remove ${a.name} from the store?"))
+            .setMessage(t("Der Eintrag verschwindet aus dem Floki Store. Ist die App installiert, bleibt sie installiert, wird aber nicht mehr auf Updates geprüft.", "The entry disappears from Floki Store. If the app is installed, it stays installed but is no longer checked for updates."))
+            .setPositiveButton(t("Entfernen", "Remove")) { _, _ ->
                 Store.removeUserApp(a)
-                toast("Entfernt")
+                toast(t("Entfernt", "Removed"))
                 finish()
             }
-            .setNegativeButton("Abbrechen", null)
+            .setNegativeButton(t("Abbrechen", "Cancel"), null)
             .show()
     }
 
     private fun confirmReset(a: CatalogApp) {
         AlertDialog.Builder(this)
-            .setTitle("Original wiederherstellen?")
-            .setMessage("Name, Beschreibung, Kategorie und Icon von ${a.name} werden auf den Stand des Katalogs zurückgesetzt.")
-            .setPositiveButton("Zurücksetzen") { _, _ ->
+            .setTitle(t("Original wiederherstellen?", "Restore original?"))
+            .setMessage(t("Name, Beschreibung, Kategorie und Icon von ${a.name} werden auf den Stand des Katalogs zurückgesetzt.", "Name, description, category and icon of ${a.name} are reset to the catalog's values."))
+            .setPositiveButton(t("Zurücksetzen", "Reset")) { _, _ ->
                 Store.resetApp(a)
-                toast("Zurückgesetzt")
+                toast(t("Zurückgesetzt", "Reset done"))
                 finish()
             }
-            .setNegativeButton("Abbrechen", null)
+            .setNegativeButton(t("Abbrechen", "Cancel"), null)
             .show()
     }
 

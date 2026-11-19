@@ -6,6 +6,10 @@ App-Store für den AYN Thor (benannt nach Hrafna-Flóki, dem Wikinger, der mit R
 
 Das neueste APK liegt unter [Releases](https://github.com/chris2crafter-ops/FlokiStore/releases/latest). Danach hält sich der Store selbst aktuell: Beim Start fragt er GitHub nach einem neueren Release und bietet es zum Installieren an (von Hand: Einstellungen → „Nach neuer Floki-Store-Version suchen“). Er steht außerdem unter „Tools“ im Katalog, dort lassen sich auch ältere Versionen installieren.
 
+## Sprache
+
+Deutsch und Englisch, Standard ist die Systemsprache (Einstellungen → Sprache). Im Code steht jeder sichtbare Text als `t("Deutsch", "English")`; die Katalogbeschreibungen sind bisher nur auf Deutsch.
+
 ## Bauen
 
 ```bash

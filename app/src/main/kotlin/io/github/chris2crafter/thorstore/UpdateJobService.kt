@@ -50,6 +50,11 @@ class UpdateJobService : JobService() {
 }
 
 class StoreApp : Application() {
+    override fun onConfigurationChanged(newConfig: android.content.res.Configuration) {
+        super.onConfigurationChanged(newConfig)
+        Store.systemLanguageChanged()
+    }
+
     override fun onCreate() {
         super.onCreate()
         CrashLog.install(this)

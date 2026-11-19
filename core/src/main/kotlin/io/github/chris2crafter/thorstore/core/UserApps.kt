@@ -88,14 +88,14 @@ class AppDraft(
     val topics: List<String>,
 )
 
-class AlreadyInStore(val app: CatalogApp) : IOException("${app.name} ist schon im Store")
+class AlreadyInStore(val app: CatalogApp) : IOException(t("${app.name} ist schon im Store", "${app.name} is already in the store"))
 
 object AppAdder {
     private val driverWords = Regex("turnip|adreno|driver|mesa|qualcomm|vulkan", RegexOption.IGNORE_CASE)
 
     /** Blocking: resolves the newest release, reads name, package and icon out of the APK. */
     fun inspect(c: GithubClient, input: String, existing: List<CatalogApp>, categories: List<Category>): AppDraft {
-        var repo = Links.repo(input) ?: throw IOException("Kein GitHub-Link erkannt. Beispiel: https://github.com/owner/projekt")
+        var repo = Links.repo(input) ?: throw IOException(t("Kein GitHub-Link erkannt. Beispiel: https://github.com/owner/projekt", "No GitHub link recognized. Example: https://github.com/owner/project"))
         val info = try {
             c.repoInfo(repo)
         } catch (e: RepoMissing) {
@@ -122,25 +122,25 @@ object AppAdder {
                 app = app.copy(prerelease = true)
                 release = pre
                 asset = preAsset
-                hints += "Nur Pre-Releases haben ein APK, der Store folgt deshalb den Pre-Releases."
+                hints += t("Nur Pre-Releases haben ein APK, der Store folgt deshalb den Pre-Releases.", "Only pre-releases have an APK, so the store follows the pre-releases.")
             } else if (release == null) {
                 release = pre
             }
         }
-        val rel = release ?: throw IOException("$repo hat keine Releases mit Dateien.")
+        val rel = release ?: throw IOException(t("$repo hat keine Releases mit Dateien.", "$repo has no releases with files."))
 
         if (asset == null) {
             val zips = ApkPicker.files(rel.assets, app.copy(driver = true))
             val text = zips.joinToString(" ") { it.name } + " $repo ${info?.description.orEmpty()}"
             if (zips.isNotEmpty() && driverWords.containsMatchIn(text)) {
                 app = app.copy(driver = true, category = Categories.DRIVERS)
-                hints += "Erkannt als Treiber-Quelle: Die ZIP-Dateien landen in /Driver."
-                return AppDraft(app, rel.tag, "${zips.size} ZIP-Datei(en)", null, null, hints, info?.topics.orEmpty())
+                hints += t("Erkannt als Treiber-Quelle: Die ZIP-Dateien landen in /Driver.", "Recognized as a driver source: the ZIP files go to /Driver.")
+                return AppDraft(app, rel.tag, t("${zips.size} ZIP-Datei(en)", "${zips.size} ZIP file(s)"), null, null, hints, info?.topics.orEmpty())
             }
-            val names = rel.assets.joinToString(", ") { it.name }.ifEmpty { "keine" }
-            throw IOException("Im Release ${rel.tag} gibt es kein APK für Android. Dateien: ${names.take(240)}")
+            val names = rel.assets.joinToString(", ") { it.name }.ifEmpty { t("keine", "none") }
+            throw IOException(t("Im Release ${rel.tag} gibt es kein APK für Android. Dateien: ${names.take(240)}", "Release ${rel.tag} has no APK for Android. Files: ${names.take(240)}"))
         }
-        if (ApkPicker.score(asset.name) < 0) hints += "Die Datei ${asset.name} ist eventuell nicht für ARM64 gebaut."
+        if (ApkPicker.score(asset.name) < 0) hints += t("Die Datei ${asset.name} ist eventuell nicht für ARM64 gebaut.", "The file ${asset.name} may not be built for ARM64.")
 
         var label: String? = null
         var icon: IconData? = null
@@ -156,7 +156,7 @@ object AppAdder {
         }
         app.packageName?.let { pkg ->
             existing.firstOrNull { it.packageName == pkg }?.let {
-                hints += "Gleiche App ($pkg) wie „${it.name}“ im Store. Installiert sein kann nur eine davon."
+                hints += t("Gleiche App ($pkg) wie „${it.name}“ im Store. Installiert sein kann nur eine davon.", "Same app ($pkg) as “${it.name}” in the store. Only one of them can be installed.")
             }
         }
         val name = label?.trim()?.takeIf { it.isNotEmpty() && !it.startsWith("@") && it.length <= 40 } ?: app.name

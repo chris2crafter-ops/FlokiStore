@@ -2064,6 +2064,59 @@
       "icon": "icons/gbaduo.png"
     },
     {
+      "id": "borked3ds",
+      "name": "Borked3DS",
+      "category": "emulators",
+      "description": "Experimenteller 3DS-Emulator auf Citra-Basis mit zusätzlichen Hacks und Optionen. Für die meisten Spiele ist Azahar die stabilere Wahl, Borked3DS lohnt sich als Alternative bei Problemfällen.",
+      "repo": "Borked3DS/Borked3DS",
+      "tags": ["needs-rom", "beta"],
+      "packageName": "io.github.borked3ds.android",
+      "iconFg": "icons/borked3ds_fg.png",
+      "iconBg": "icons/borked3ds_bg.png"
+    },
+    {
+      "id": "mandarine-neo",
+      "name": "Mandarine Neo",
+      "category": "emulators",
+      "description": "Citra-Fork für den 3DS mit neuen, teils experimentellen Funktionen und Hacks, die es in anderen Forks nicht gibt.",
+      "repo": "ptyfyre/mandarine-neo",
+      "tags": ["needs-rom", "beta"],
+      "packageName": "io.github.ptyfyre.mandarine.neo",
+      "icon": "icons/mandarine-neo.png"
+    },
+    {
+      "id": "play-ps2",
+      "name": "Play! (PS2)",
+      "category": "emulators",
+      "description": "PlayStation-2-Emulator, der ohne BIOS auskommt. Die Kompatibilität ist geringer als bei ARMSX2, dafür ist er einfach einzurichten. Das APK gibt es auf der offiziellen Download-Seite (Ordner der neuesten Version, Datei Play-release.apk).",
+      "homepage": "https://purei.org/downloads/play/stable/",
+      "tags": ["needs-rom"],
+      "icon": "icons/play-ps2.png",
+      "iconUrl": "https://raw.githubusercontent.com/jpd002/Play-/master/build_android/src/main/res/drawable-xxxhdpi/ic_launcher.png"
+    },
+    {
+      "id": "xendroid-plus",
+      "name": "Xendroid+",
+      "category": "emulators",
+      "description": "Weiterentwickelter Fork von XenDroid für Xbox-360-Emulation auf Android, auf Basis von Xenia. Noch experimentell.",
+      "repo": "phforner0/Xendroid-Plus",
+      "tags": ["needs-rom", "beta"],
+      "packageName": "xendroid.compose.fork",
+      "icon": "icons/xendroid-plus.webp",
+      "note": "Braucht einen Custom-Turnip-Treiber für den Adreno 740 (Tab Treiber)."
+    },
+    {
+      "id": "xendroid",
+      "name": "XenDroid",
+      "category": "emulators",
+      "description": "Xbox-360-Emulator für Android auf Basis von Xenia. Noch experimentell; Xendroid+ ist der aktiver weiterentwickelte Fork.",
+      "repo": "rfandango/XenDroid",
+      "tags": ["needs-rom", "beta"],
+      "packageName": "xendroid.compose",
+      "icon": "icons/xendroid.webp",
+      "note": "Braucht einen Custom-Turnip-Treiber für den Adreno 740 (Tab Treiber)."
+    },
+    {
       "id": "loki",
       "name": "Loki (Thor Launcher)",
       "category": "frontends",

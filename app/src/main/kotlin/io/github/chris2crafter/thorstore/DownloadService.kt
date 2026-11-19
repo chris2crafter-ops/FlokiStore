@@ -10,6 +10,7 @@ import android.os.IBinder
 import io.github.chris2crafter.thorstore.core.ApkPicker
 import io.github.chris2crafter.thorstore.core.CatalogApp
 import io.github.chris2crafter.thorstore.core.ReleaseAsset
+import io.github.chris2crafter.thorstore.core.t
 import java.io.File
 import java.io.IOException
 import java.net.HttpURLConnection
@@ -33,7 +34,7 @@ class DownloadService : Service() {
     override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        val n = Notifications.progress(this, "Floki Store", "Wird vorbereitet…", -1)
+        val n = Notifications.progress(this, "Floki Store", t("Wird vorbereitet…", "Preparing…"), -1)
         startForeground(Notifications.ID_PROGRESS, n, ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC)
         val id = intent?.getStringExtra(EXTRA_APP)
         val app = Store.app(id)
@@ -42,7 +43,7 @@ class DownloadService : Service() {
             synchronized(lock) {
                 if (queue.none { it.appId == job.appId && it.url == job.url }) {
                     queue.add(job)
-                    if (job.kind == KIND_APK) Store.setProgress(app, "In der Warteschlange")
+                    if (job.kind == KIND_APK) Store.setProgress(app, t("In der Warteschlange", "Queued"))
                 }
                 if (worker == null) worker = Thread(::work, "downloads").also { it.start() }
             }
@@ -73,18 +74,18 @@ class DownloadService : Service() {
                 Store.setProgress(app, null)
                 Store.errors[app.id] = e.message ?: e.javaClass.simpleName
                 Store.changed()
-                Notifications.result(this, app, "${app.name}: Fehler", e.message)
+                Notifications.result(this, app, t("${app.name}: Fehler", "${app.name}: error"), e.message)
             }
         }
     }
 
     private fun apk(app: CatalogApp, job: Job) {
-        Store.setProgress(app, "Suche Release…")
+        Store.setProgress(app, t("Suche Release…", "Looking for release…"))
         val asset = if (job.url != null) {
             ReleaseAsset(job.name ?: job.url.substringAfterLast('/'), job.url, sha256 = job.sha)
         } else {
-            val rel = Store.fetch(app, 10 * 60 * 1000L) ?: throw IOException("Kein Release gefunden")
-            ApkPicker.best(rel.assets, app) ?: throw IOException("Kein passendes APK im Release ${rel.tag}")
+            val rel = Store.fetch(app, 10 * 60 * 1000L) ?: throw IOException(t("Kein Release gefunden", "No release found"))
+            ApkPicker.best(rel.assets, app) ?: throw IOException(t("Kein passendes APK im Release ${rel.tag}", "No matching APK in release ${rel.tag}"))
         }
         val dir = File(cacheDir, "apk").apply { mkdirs() }
         dir.listFiles()?.forEach { if (System.currentTimeMillis() - it.lastModified() > 86_400_000L) it.delete() }
@@ -101,7 +102,7 @@ class DownloadService : Service() {
             sha = download(app, asset, file)
             if (isZip) {
                 ZipFile(file).use { z ->
-                    val entry = z.entries().asSequence().firstOrNull { it.name.endsWith(".apk", true) } ?: throw IOException("Kein APK im ZIP")
+                    val entry = z.entries().asSequence().firstOrNull { it.name.endsWith(".apk", true) } ?: throw IOException(t("Kein APK im ZIP", "No APK in the ZIP"))
                     z.getInputStream(entry).use { input -> apk.outputStream().use { input.copyTo(it) } }
                 }
                 file.delete()
@@ -111,7 +112,7 @@ class DownloadService : Service() {
 
         @Suppress("DEPRECATION")
         val info = packageManager.getPackageArchiveInfo(apk.path, android.content.pm.PackageManager.GET_SIGNING_CERTIFICATES)
-            ?: throw IOException("Die Datei ist kein gültiges APK")
+            ?: throw IOException(t("Die Datei ist kein gültiges APK", "The file is not a valid APK"))
 
         // compare signing keys first: Android would refuse the update anyway, and this way we can explain it
         val installedSigners = runCatching {
@@ -122,7 +123,7 @@ class DownloadService : Service() {
             if (apkSigners.isNotEmpty() && apkSigners.none { it in installedSigners }) {
                 Store.conflicts[app.id] = Store.Conflict.SIGNATURE
                 Store.setProgress(app, null)
-                throw IOException("Andere Signatur: Die installierte Version stammt aus einer anderen Quelle (z. B. Play Store oder ein anderer Build). Mit „Ersetzen“ wird sie deinstalliert und diese Version installiert – die App-Daten gehen dabei verloren.")
+                throw IOException(t("Andere Signatur: Die installierte Version stammt aus einer anderen Quelle (z. B. Play Store oder ein anderer Build). Mit „Ersetzen“ wird sie deinstalliert und diese Version installiert – die App-Daten gehen dabei verloren.", "Different signature: the installed version comes from another source (e.g. Play Store or another build). “Replace” uninstalls it and installs this version – the app's data is lost."))
             }
         }
         info.applicationInfo?.let { ai ->
@@ -135,8 +136,8 @@ class DownloadService : Service() {
             }
         }
 
-        Store.setProgress(app, "Installiere…")
-        Notifications.showProgress(this, app.name, "Warte auf Installation…", -1)
+        Store.setProgress(app, t("Installiere…", "Installing…"))
+        Notifications.showProgress(this, app.name, t("Warte auf Installation…", "Waiting for installation…"), -1)
         val result = Installer.installBlocking(this, apk, app)
         if (result.ok || Store.conflicts[app.id] == null) {
             apk.delete()
@@ -149,27 +150,27 @@ class DownloadService : Service() {
             Store.recordInstall(app, asset.sha256 ?: sha, info.packageName)
             IconLoader.invalidate(app)
             Notifications.clearUpdate(this, app)
-            Notifications.result(this, app, "${app.name} installiert", info.versionName?.let { "Version $it" })
+            Notifications.result(this, app, t("${app.name} installiert", "${app.name} installed"), info.versionName?.let { "Version $it" })
         } else {
-            Store.errors[app.id] = result.message ?: "Installation fehlgeschlagen"
-            Notifications.result(this, app, "${app.name} nicht installiert", result.message)
+            Store.errors[app.id] = result.message ?: t("Installation fehlgeschlagen", "Installation failed")
+            Notifications.result(this, app, t("${app.name} nicht installiert", "${app.name} not installed"), result.message)
         }
         Store.changed()
     }
 
     private fun driver(app: CatalogApp, job: Job) {
-        val url = job.url ?: throw IOException("Keine Datei gewählt")
-        if (!Store.hasStorageAccess()) throw IOException("Kein Zugriff auf den Speicher – bitte in den Einstellungen „Zugriff auf alle Dateien“ erlauben")
+        val url = job.url ?: throw IOException(t("Keine Datei gewählt", "No file chosen"))
+        if (!Store.hasStorageAccess()) throw IOException(t("Kein Zugriff auf den Speicher – bitte in den Einstellungen „Zugriff auf alle Dateien“ erlauben", "No storage access – please allow “All files access” in the settings"))
         val dir = Store.driverDir.apply { mkdirs() }
         val name = Store.driverFileName(app, job.name ?: url.substringAfterLast('/'))
         val target = File(dir, name)
         val part = File(dir, "$name.part")
         download(app, ReleaseAsset(name, url, sha256 = job.sha), part)
         if (target.exists()) target.delete()
-        if (!part.renameTo(target)) throw IOException("Konnte $name nicht speichern")
+        if (!part.renameTo(target)) throw IOException(t("Konnte $name nicht speichern", "Could not save $name"))
         Store.recordDriver(app, name, job.tag)
         Store.setProgress(app, null)
-        Notifications.result(this, app, "Treiber gespeichert", "/Driver/$name")
+        Notifications.result(this, app, t("Treiber gespeichert", "Driver saved"), "/Driver/$name")
     }
 
     private fun signerSet(info: android.content.pm.PackageInfo) = Store.signerHashes(info)
@@ -182,7 +183,7 @@ class DownloadService : Service() {
         c.readTimeout = 60000
         c.setRequestProperty("User-Agent", "FlokiStore/1.1 (+AYN Thor)")
         try {
-            if (c.responseCode != 200) throw IOException("Download fehlgeschlagen (HTTP ${c.responseCode})")
+            if (c.responseCode != 200) throw IOException(t("Download fehlgeschlagen (HTTP ${c.responseCode})", "Download failed (HTTP ${c.responseCode})"))
             val total = c.contentLengthLong
             val md = MessageDigest.getInstance("SHA-256")
             var done = 0L
@@ -201,7 +202,7 @@ class DownloadService : Service() {
                             lastUpdate = now
                             val pct = if (total > 0) (done * 100 / total).toInt() else -1
                             val mb = String.format(java.util.Locale.GERMANY, "%.1f", done / 1048576.0)
-                            val text = if (total > 0) "Lade… $pct % ($mb MB)" else "Lade… $mb MB"
+                            val text = if (total > 0) t("Lade… $pct % ($mb MB)", "Downloading… $pct % ($mb MB)") else t("Lade… $mb MB", "Downloading… $mb MB")
                             Store.setProgress(app, text, pct)
                             Notifications.showProgress(this, app.name, text, pct)
                         }
@@ -211,9 +212,9 @@ class DownloadService : Service() {
             val sha = md.digest().joinToString("") { "%02x".format(it) }
             if (asset.sha256 != null && !asset.sha256.equals(sha, ignoreCase = true)) {
                 file.delete()
-                throw IOException("Prüfsumme stimmt nicht – Download verworfen")
+                throw IOException(t("Prüfsumme stimmt nicht – Download verworfen", "Checksum mismatch – download discarded"))
             }
-            Store.setProgress(app, if (asset.sha256 != null) "Prüfsumme OK" else "Geladen", 100)
+            Store.setProgress(app, if (asset.sha256 != null) t("Prüfsumme OK", "Checksum OK") else t("Geladen", "Downloaded"), 100)
             return sha
         } finally {
             c.disconnect()

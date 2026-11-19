@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.AlertDialog
 import io.github.chris2crafter.thorstore.core.CatalogApp
 import io.github.chris2crafter.thorstore.core.Sources
+import io.github.chris2crafter.thorstore.core.t
 
 /**
  * Floki Store updates itself from its own GitHub releases (Store.SELF_REPO). It is an entry in
@@ -25,7 +26,7 @@ object SelfUpdate {
     /** [quiet]: say nothing when there is no update (start); otherwise report the result. */
     fun check(a: Activity, quiet: Boolean = false) {
         val self = app() ?: return
-        if (!quiet) a.toast("Suche nach einer neuen Floki-Store-Version…")
+        if (!quiet) a.toast(t("Suche nach einer neuen Floki-Store-Version…", "Looking for a new Floki Store version…"))
         Store.io.execute {
             Store.fetch(self, maxAge = 0)
             val now = app() ?: return@execute
@@ -36,8 +37,8 @@ object SelfUpdate {
                 when {
                     update -> offer(a, now, notes)
                     quiet -> {}
-                    Store.errors[now.id] != null -> a.toast("Konnte GitHub nicht erreichen: ${Store.errors[now.id]}")
-                    else -> a.toast("Floki Store ist aktuell (${Store.installed(now)?.versionName})")
+                    Store.errors[now.id] != null -> a.toast(t("Konnte GitHub nicht erreichen: ${Store.errors[now.id]}", "Could not reach GitHub: ${Store.errors[now.id]}"))
+                    else -> a.toast(t("Floki Store ist aktuell (${Store.installed(now)?.versionName})", "Floki Store is up to date (${Store.installed(now)?.versionName})"))
                 }
             }
         }
@@ -47,15 +48,15 @@ object SelfUpdate {
         val tag = Store.release(self)?.tag ?: return
         val installed = Store.installed(self)?.versionName ?: "?"
         AlertDialog.Builder(a)
-            .setTitle("Floki Store $tag ist da")
-            .setMessage("Installiert ist $installed.\n\n" + (notes?.trim()?.take(1500) ?: "Neue Version auf GitHub."))
-            .setPositiveButton("Jetzt aktualisieren") { _, _ ->
+            .setTitle(t("Floki Store $tag ist da", "Floki Store $tag is out"))
+            .setMessage(t("Installiert ist $installed.\n\n", "Installed is $installed.\n\n") + (notes?.trim()?.take(1500) ?: t("Neue Version auf GitHub.", "New version on GitHub.")))
+            .setPositiveButton(t("Jetzt aktualisieren", "Update now")) { _, _ ->
                 if (!a.ensureInstallPermission()) return@setPositiveButton
                 DownloadService.install(a, self)
-                a.toast("Update wird geladen. Der Store startet danach neu.")
+                a.toast(t("Update wird geladen. Der Store startet danach neu.", "Downloading the update. The store restarts afterwards."))
             }
-            .setNegativeButton("Später", null)
-            .setNeutralButton("Überspringen") { _, _ -> Store.ignoreCurrent(self) }
+            .setNegativeButton(t("Später", "Later"), null)
+            .setNeutralButton(t("Überspringen", "Skip")) { _, _ -> Store.ignoreCurrent(self) }
             .show()
     }
 }

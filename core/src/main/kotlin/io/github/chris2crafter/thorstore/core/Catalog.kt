@@ -31,18 +31,31 @@ object Categories {
         Category(TOOLS, "Tools"),
         Category(DRIVERS, "Treiber"),
     )
+
+    private val english = mapOf(
+        RECOMPS to "Recomps & Decomps", PORTS to "Game Ports", FANGAMES to "Fan Games", EMULATORS to "Emulators",
+        FRONTENDS to "Launchers", COMPANIONS to "Pokémon & Companions", PC to "PC & Streaming", TOOLS to "Tools",
+        DRIVERS to "Drivers",
+    )
+
+    /** Built-in tabs that still carry their shipped name are shown in the store's language. */
+    fun localized(c: Category): Category {
+        val shipped = builtIn.firstOrNull { it.id == c.id } ?: return c
+        return if (I18n.english && c.title == shipped.title) c.copy(title = english.getValue(c.id)) else c
+    }
 }
 
 /** Human readable labels for catalog tags. */
 object Tags {
-    private val labels = mapOf(
+    // a getter, so the labels follow the language
+    private val labels get() = mapOf(
         "dual-screen" to "Dual-Screen",
-        "thor" to "Für den Thor",
-        "needs-rom" to "Eigene Spieldatei nötig",
-        "needs-bios" to "BIOS nötig",
+        "thor" to t("Für den Thor", "For the Thor"),
+        "needs-rom" to t("Eigene Spieldatei nötig", "Own game file needed"),
+        "needs-bios" to t("BIOS nötig", "BIOS needed"),
         "beta" to "Beta",
-        "shizuku" to "Nutzt Shizuku",
-        "recommended" to "Empfohlen",
+        "shizuku" to t("Nutzt Shizuku", "Uses Shizuku"),
+        "recommended" to t("Empfohlen", "Recommended"),
     )
 
     fun label(tag: String) = labels[tag] ?: tag

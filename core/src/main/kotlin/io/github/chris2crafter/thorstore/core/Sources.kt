@@ -7,8 +7,8 @@ object Sources {
 
     fun latest(c: GithubClient, app: CatalogApp): Release = when {
         app.repo != null -> withFile(c, app, c.resolve(app.repo, app.prerelease))
-        app.releaseJson != null -> c.jsonRelease(app.releaseJson, app.id) ?: throw IOException("Release-Info nicht lesbar")
-        else -> throw IOException("${app.name} hat keine Release-Quelle")
+        app.releaseJson != null -> c.jsonRelease(app.releaseJson, app.id) ?: throw IOException(t("Release-Info nicht lesbar", "Release info not readable"))
+        else -> throw IOException(t("${app.name} hat keine Release-Quelle", "${app.name} has no release source"))
     }
 
     /**

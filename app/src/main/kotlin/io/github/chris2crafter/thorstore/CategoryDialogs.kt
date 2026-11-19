@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import io.github.chris2crafter.thorstore.core.Categories
 import io.github.chris2crafter.thorstore.core.Category
+import io.github.chris2crafter.thorstore.core.t
 
 /** One-line text input in a dialog. */
 fun Activity.askText(title: String, initial: String, hint: String, ok: String, onOk: (String) -> Unit) {
@@ -24,16 +25,16 @@ fun Activity.askText(title: String, initial: String, hint: String, ok: String, o
         .setTitle(title)
         .setView(box)
         .setPositiveButton(ok) { _, _ -> input.text.toString().trim().takeIf { it.isNotEmpty() }?.let(onOk) }
-        .setNegativeButton("Abbrechen", null)
+        .setNegativeButton(t("Abbrechen", "Cancel"), null)
         .show()
     input.requestFocus()
 }
 
 fun Activity.newCategoryDialog(onCreated: (Category) -> Unit = {}) =
-    askText("Neue Kategorie", "", "z. B. Shooter oder Favoriten", "Anlegen") { title ->
+    askText(t("Neue Kategorie", "New category"), "", t("z. B. Shooter oder Favoriten", "e.g. Shooters or Favorites"), t("Anlegen", "Create")) { title ->
         val existing = Store.categories.firstOrNull { it.title.equals(title, ignoreCase = true) }
         if (existing != null) {
-            toast("„${existing.title}“ gibt es schon")
+            toast(t("„${existing.title}“ gibt es schon", "“${existing.title}” already exists"))
             onCreated(existing)
         } else {
             onCreated(Store.addCategory(title))
@@ -44,33 +45,33 @@ fun Activity.newCategoryDialog(onCreated: (Category) -> Unit = {}) =
 fun Activity.manageCategories() {
     val cats = Store.categories
     val labels = cats.map { "${it.title}  (${Store.appsIn(it.id).size})" } +
-        listOf("＋ Neue Kategorie", "Standard-Kategorien wiederherstellen")
+        listOf(t("＋ Neue Kategorie", "＋ New category"), t("Standard-Kategorien wiederherstellen", "Restore default categories"))
     AlertDialog.Builder(this)
-        .setTitle("Kategorien verwalten")
+        .setTitle(t("Kategorien verwalten", "Manage categories"))
         .setItems(labels.toTypedArray()) { _, i ->
             when {
                 i < cats.size -> categoryMenu(cats[i]) { manageCategories() }
                 i == cats.size -> newCategoryDialog { manageCategories() }
                 else -> AlertDialog.Builder(this)
-                    .setTitle("Standard-Kategorien wiederherstellen?")
-                    .setMessage("Die mitgelieferten Kategorien kommen mit ihren ursprünglichen Namen und in der ursprünglichen Reihenfolge zurück. Eigene Kategorien verschwinden, ihre Apps landen unter Tools.")
-                    .setPositiveButton("Wiederherstellen") { _, _ -> Store.resetCategories(); toast("Kategorien zurückgesetzt") }
-                    .setNegativeButton("Abbrechen", null)
+                    .setTitle(t("Standard-Kategorien wiederherstellen?", "Restore default categories?"))
+                    .setMessage(t("Die mitgelieferten Kategorien kommen mit ihren ursprünglichen Namen und in der ursprünglichen Reihenfolge zurück. Eigene Kategorien verschwinden, ihre Apps landen unter Tools.", "The built-in categories come back with their original names and order. Your own categories disappear and their apps move to Tools."))
+                    .setPositiveButton(t("Wiederherstellen", "Restore")) { _, _ -> Store.resetCategories(); toast(t("Kategorien zurückgesetzt", "Categories reset")) }
+                    .setNegativeButton(t("Abbrechen", "Cancel"), null)
                     .show()
             }
         }
-        .setNegativeButton("Schließen", null)
+        .setNegativeButton(t("Schließen", "Close"), null)
         .show()
 }
 
 /** Rename, move or delete one tab. [back] reopens the screen this came from. */
 fun Activity.categoryMenu(c: Category, back: (() -> Unit)? = null) {
-    val items = arrayOf("Umbenennen", "Nach links verschieben", "Nach rechts verschieben", "Löschen")
+    val items = arrayOf(t("Umbenennen", "Rename"), t("Nach links verschieben", "Move left"), t("Nach rechts verschieben", "Move right"), t("Löschen", "Delete"))
     AlertDialog.Builder(this)
         .setTitle(c.title)
         .setItems(items) { _, i ->
             when (i) {
-                0 -> askText("Kategorie umbenennen", c.title, "Name", "Speichern") { t ->
+                0 -> askText(t("Kategorie umbenennen", "Rename category"), c.title, t("Name", "Name"), t("Speichern", "Save")) { t ->
                     Store.renameCategory(c.id, t)
                     back?.invoke()
                 }
@@ -82,31 +83,31 @@ fun Activity.categoryMenu(c: Category, back: (() -> Unit)? = null) {
                 3 -> deleteCategory(c, back)
             }
         }
-        .setNegativeButton(if (back != null) "Zurück" else "Schließen") { _, _ -> back?.invoke() }
+        .setNegativeButton(if (back != null) t("Zurück", "Back") else t("Schließen", "Close")) { _, _ -> back?.invoke() }
         .show()
 }
 
 private fun Activity.deleteCategory(c: Category, back: (() -> Unit)?) {
     val others = Store.categories.filter { it.id != c.id }
-    if (others.isEmpty()) { toast("Die letzte Kategorie kann nicht gelöscht werden"); return }
+    if (others.isEmpty()) { toast(t("Die letzte Kategorie kann nicht gelöscht werden", "The last category cannot be deleted")); return }
     val n = Store.appsIn(c.id).size
     if (n == 0) {
         val target = others.firstOrNull { it.id == Categories.TOOLS } ?: others.first()
         AlertDialog.Builder(this)
-            .setTitle("„${c.title}“ löschen?")
-            .setMessage("Die Kategorie ist leer. Kommen mit einem Store-Update neue Apps dafür, landen sie unter „${target.title}“.")
-            .setPositiveButton("Löschen") { _, _ -> Store.deleteCategory(c.id, target.id); back?.invoke() }
-            .setNegativeButton("Abbrechen", null)
+            .setTitle(t("„${c.title}“ löschen?", "Delete “${c.title}”?"))
+            .setMessage(t("Die Kategorie ist leer. Kommen mit einem Store-Update neue Apps dafür, landen sie unter „${target.title}“.", "The category is empty. If a store update brings new apps for it, they go to “${target.title}”."))
+            .setPositiveButton(t("Löschen", "Delete")) { _, _ -> Store.deleteCategory(c.id, target.id); back?.invoke() }
+            .setNegativeButton(t("Abbrechen", "Cancel"), null)
             .show()
         return
     }
     AlertDialog.Builder(this)
-        .setTitle("Wohin mit den $n Apps aus „${c.title}“?")
+        .setTitle(t("Wohin mit den $n Apps aus „${c.title}“?", "Where should the $n apps from “${c.title}” go?"))
         .setItems(others.map { it.title }.toTypedArray()) { _, i ->
             Store.deleteCategory(c.id, others[i].id)
-            toast("„${c.title}“ gelöscht, Apps sind jetzt unter „${others[i].title}“")
+            toast(t("„${c.title}“ gelöscht, Apps sind jetzt unter „${others[i].title}“", "“${c.title}” deleted, its apps are now in “${others[i].title}”"))
             back?.invoke()
         }
-        .setNegativeButton("Abbrechen", null)
+        .setNegativeButton(t("Abbrechen", "Cancel"), null)
         .show()
 }

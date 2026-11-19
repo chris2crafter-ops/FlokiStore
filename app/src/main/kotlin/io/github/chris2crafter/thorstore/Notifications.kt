@@ -10,6 +10,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import io.github.chris2crafter.thorstore.core.CatalogApp
+import io.github.chris2crafter.thorstore.core.t
 
 object Notifications {
     const val CH_UPDATES = "updates"
@@ -23,12 +24,12 @@ object Notifications {
 
     fun createChannels(ctx: Context) {
         nm(ctx).createNotificationChannels(listOf(
-            NotificationChannel(CH_UPDATES, "App-Updates", NotificationManager.IMPORTANCE_DEFAULT).apply {
-                description = "Neue Versionen installierter Apps"
+            NotificationChannel(CH_UPDATES, t("App-Updates", "App updates"), NotificationManager.IMPORTANCE_DEFAULT).apply {
+                description = t("Neue Versionen installierter Apps", "New versions of installed apps")
             },
             NotificationChannel(CH_PROGRESS, "Downloads", NotificationManager.IMPORTANCE_LOW),
             NotificationChannel(CH_INSTALL, "Installation", NotificationManager.IMPORTANCE_HIGH).apply {
-                description = "Bestätigung und Ergebnis von Installationen"
+                description = t("Bestätigung und Ergebnis von Installationen", "Confirmation and result of installs")
             },
         ))
     }
@@ -65,10 +66,10 @@ object Notifications {
         if (!allowed(ctx) || apps.isEmpty()) return
         val nm = nm(ctx)
         for (app in apps) {
-            val install = Notification.Action.Builder(null as android.graphics.drawable.Icon?, "Installieren", DownloadService.pending(ctx, app)).build()
+            val install = Notification.Action.Builder(null as android.graphics.drawable.Icon?, t("Installieren", "Install"), DownloadService.pending(ctx, app)).build()
             val n = builder(ctx, CH_UPDATES)
-                .setContentTitle("Update für ${app.name}")
-                .setContentText(Store.release(app)?.tag?.let { "Neue Version $it" } ?: "Neue Version verfügbar")
+                .setContentTitle(t("Update für ${app.name}", "Update for ${app.name}"))
+                .setContentText(Store.release(app)?.tag?.let { t("Neue Version $it", "New version $it") } ?: t("Neue Version verfügbar", "New version available"))
                 .setLargeIcon(IconLoader.bitmap(ctx, app, ctx.dp(64)))
                 .setGroup(GROUP)
                 .setAutoCancel(true)
@@ -79,7 +80,7 @@ object Notifications {
         }
         val names = apps.joinToString(", ") { it.name }
         nm.notify(ID_SUMMARY, builder(ctx, CH_UPDATES)
-            .setContentTitle(if (apps.size == 1) "1 Update verfügbar" else "${apps.size} Updates verfügbar")
+            .setContentTitle(if (apps.size == 1) t("1 Update verfügbar", "1 update available") else t("${apps.size} Updates verfügbar", "${apps.size} updates available"))
             .setContentText(names)
             .setStyle(Notification.BigTextStyle().bigText(names))
             .setGroup(GROUP)
@@ -97,8 +98,8 @@ object Notifications {
         if (!allowed(ctx)) return
         val pi = PendingIntent.getActivity(ctx, (app?.id ?: "x").hashCode(), confirm, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
         nm(ctx).notify("confirm:${app?.id}", 0, builder(ctx, CH_INSTALL)
-            .setContentTitle("${app?.name ?: "App"} ist bereit")
-            .setContentText("Tippen, um die Installation zu bestätigen")
+            .setContentTitle(t("${app?.name ?: "App"} ist bereit", "${app?.name ?: "App"} is ready"))
+            .setContentText(t("Tippen, um die Installation zu bestätigen", "Tap to confirm the installation"))
             .setContentIntent(pi)
             .setAutoCancel(true)
             .apply { app?.let { setLargeIcon(IconLoader.bitmap(ctx, it, ctx.dp(64))) } }

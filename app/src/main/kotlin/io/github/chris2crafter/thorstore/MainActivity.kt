@@ -27,6 +27,7 @@ import io.github.chris2crafter.thorstore.core.CatalogApp
 import io.github.chris2crafter.thorstore.core.Categories
 import io.github.chris2crafter.thorstore.core.Category
 import io.github.chris2crafter.thorstore.core.Tags
+import io.github.chris2crafter.thorstore.core.t
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -80,7 +81,7 @@ class MainActivity : Activity() {
             addView(subtitle)
         }
         search = EditText(this).apply {
-            hint = "Suchen (Y)"
+            hint = t("Suchen (Y)", "Search (Y)")
             setHintTextColor(C.SUB)
             setTextColor(C.TEXT)
             textSize = 15f
@@ -100,7 +101,7 @@ class MainActivity : Activity() {
             setOnEditorActionListener { _, _, _ -> hideKeyboard(); grid.requestFocus(); true }
         }
         val add = button("＋ App") { EditActivity.add(this) }
-        val settings = button("Einstellungen") { settings() }
+        val settings = button(t("Einstellungen", "Settings")) { settings() }
         val header = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.CENTER_VERTICAL
@@ -120,15 +121,15 @@ class MainActivity : Activity() {
             addView(tabRow)
         }
         root.addView(tabScroll, lp().apply { topMargin = dp(14) })
-        root.addView(text("L1/R1 Tab wechseln · A öffnen · B zurück · X nach Updates suchen · Y suchen · Start Einstellungen · Tab lange drücken: Kategorie bearbeiten", 11f, C.SUB), lp().apply { topMargin = dp(6) })
+        root.addView(text(t("L1/R1 Tab wechseln · A öffnen · B zurück · X nach Updates suchen · Y suchen · Start Einstellungen · Tab lange drücken: Kategorie bearbeiten", "L1/R1 switch tab · A open · B back · X check for updates · Y search · Start settings · long-press a tab: edit category"), 11f, C.SUB), lp().apply { topMargin = dp(6) })
 
         // updates tab actions
         updatesStatus = text("", 13f, C.SUB)
         updatesBar = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.CENTER_VERTICAL
-            addView(button("Jetzt prüfen", primary = true) { checkNow() })
-            addView(button("Alle aktualisieren") { updateAll() }, LinearLayout.LayoutParams(WRAP, WRAP).apply { marginStart = dp(10) })
+            addView(button(t("Jetzt prüfen", "Check now"), primary = true) { checkNow() })
+            addView(button(t("Alle aktualisieren", "Update all")) { updateAll() }, LinearLayout.LayoutParams(WRAP, WRAP).apply { marginStart = dp(10) })
             addView(updatesStatus, LinearLayout.LayoutParams(WRAP, WRAP).apply { marginStart = dp(14) })
             visibility = View.GONE
         }
@@ -198,7 +199,7 @@ class MainActivity : Activity() {
         val cats = Store.categories
         shownCategories = cats
         tabs = buildList {
-            add(Tab("all", "Alle") { !it.isDriver })
+            add(Tab("all", t("Alle", "All")) { !it.isDriver })
             cats.forEach { c -> add(Tab(c.id, c.title, c) { it.category == c.id }) }
             add(Tab("updates", "Updates") { Store.hasUpdate(it) })
         }
@@ -304,7 +305,7 @@ class MainActivity : Activity() {
             // show what went wrong instead of closing the store
             CrashLog.record(this, "Liste aktualisieren (Tab ${tabs.getOrNull(tab)?.id})", e)
             banner.setTextColor(C.DANGER)
-            banner.text = "⚠ Fehler: ${e.javaClass.simpleName}: ${e.message}"
+            banner.text = t("⚠ Fehler: ${e.javaClass.simpleName}: ${e.message}", "⚠ Error: ${e.javaClass.simpleName}: ${e.message}")
             banner.visibility = View.VISIBLE
         }
     }
@@ -315,8 +316,8 @@ class MainActivity : Activity() {
             buildTabs()
             styleTabs()
         }
-        subtitle.text = "${Store.catalog.size} Einträge · Katalog vom ${formatDate(Store.catalogDate) ?: Store.catalogDate ?: "?"}" +
-            Store.catalog.count { it.user }.let { if (it > 0) " · $it eigene" else "" }
+        subtitle.text = t("${Store.catalog.size} Einträge · Katalog vom ${formatDate(Store.catalogDate) ?: Store.catalogDate ?: "?"}", "${Store.catalog.size} entries · catalog of ${formatDate(Store.catalogDate) ?: Store.catalogDate ?: "?"}") +
+            Store.catalog.count { it.user }.let { if (it > 0) t(" · $it eigene", " · $it own") else "" }
         val ups = Store.updates()
         tabViews.last().text = if (ups.isEmpty()) "Updates" else "Updates (${ups.size})"
 
@@ -340,27 +341,27 @@ class MainActivity : Activity() {
 
         empty.visibility = if (items.isEmpty()) View.VISIBLE else View.GONE
         empty.text = when {
-            q.isNotEmpty() -> "Nichts gefunden für „$q“"
-            t.id == "updates" -> "Alles aktuell. Mit „Jetzt prüfen“ suchst du sofort nach neuen Versionen."
-            t.category != null -> "Noch keine Apps in „${t.title}“. Mit „＋ App“ fügst du eine per GitHub-Link hinzu, vorhandene Apps verschiebst du in ihrer Detailansicht mit „Bearbeiten“."
-            else -> "Keine Einträge"
+            q.isNotEmpty() -> t("Nichts gefunden für „$q“", "Nothing found for “$q”")
+            t.id == "updates" -> t("Alles aktuell. Mit „Jetzt prüfen“ suchst du sofort nach neuen Versionen.", "Everything is up to date. “Check now” looks for new versions right away.")
+            t.category != null -> t("Noch keine Apps in „${t.title}“. Mit „＋ App“ fügst du eine per GitHub-Link hinzu, vorhandene Apps verschiebst du in ihrer Detailansicht mit „Bearbeiten“.", "No apps in “${t.title}” yet. “＋ App” adds one by GitHub link; move existing apps here with “Edit” on their page.")
+            else -> t("Keine Einträge", "No entries")
         }
 
         updatesBar.visibility = if (t.id == "updates") View.VISIBLE else View.GONE
         val last = Store.prefs.getLong("lastCheck", 0)
         if (t.id == "updates" && updatesStatus.tag != "busy") {
-            updatesStatus.text = if (last == 0L) "Noch nicht geprüft" else "Zuletzt geprüft: " + SimpleDateFormat("dd.MM. HH:mm", Locale.GERMANY).format(Date(last))
+            updatesStatus.text = if (last == 0L) t("Noch nicht geprüft", "Not checked yet") else t("Zuletzt geprüft: ", "Last checked: ") + SimpleDateFormat("dd.MM. HH:mm", Locale.GERMANY).format(Date(last))
         }
 
         val info = when (t.id) {
-            Categories.FANGAMES -> "Fan-Projekte und Fan-Remakes. Manche brauchen Daten aus dem Original (z. B. Sonic 3 A.I.R., AM2R, Cave Story) – das steht dann beim Eintrag."
-            Categories.COMPANIONS -> "Pokémon-Tools und Begleit-Apps, die den zweiten Bildschirm nutzen. Spiele und ROMs sind nicht enthalten."
-            Categories.RECOMPS, Categories.PORTS -> "Recomps und Ports enthalten keine Spieldaten. Du brauchst deine eigenen, legal erworbenen Dateien (ROM, Disc-Image oder PC-Installation)."
-            Categories.EMULATORS -> "Einige Emulatoren brauchen BIOS- bzw. Firmware-Dateien aus deiner eigenen Konsole. Einträge mit „Webseite“ öffnen die offizielle Download-Seite."
+            Categories.FANGAMES -> t("Fan-Projekte und Fan-Remakes. Manche brauchen Daten aus dem Original (z. B. Sonic 3 A.I.R., AM2R, Cave Story) – das steht dann beim Eintrag.", "Fan projects and fan remakes. Some need data from the original game (e.g. Sonic 3 A.I.R., AM2R, Cave Story) – the entry says so.")
+            Categories.COMPANIONS -> t("Pokémon-Tools und Begleit-Apps, die den zweiten Bildschirm nutzen. Spiele und ROMs sind nicht enthalten.", "Pokémon tools and companion apps that use the second screen. Games and ROMs are not included.")
+            Categories.RECOMPS, Categories.PORTS -> t("Recomps und Ports enthalten keine Spieldaten. Du brauchst deine eigenen, legal erworbenen Dateien (ROM, Disc-Image oder PC-Installation).", "Recomps and ports contain no game data. You need your own legally obtained files (ROM, disc image or PC installation).")
+            Categories.EMULATORS -> t("Einige Emulatoren brauchen BIOS- bzw. Firmware-Dateien aus deiner eigenen Konsole. Einträge mit „Webseite“ öffnen die offizielle Download-Seite.", "Some emulators need BIOS or firmware files from your own console. Entries marked “Website” open the official download page.")
             Categories.DRIVERS -> buildString {
-                append("Treiber landen als ZIP im Ordner /Driver im Hauptverzeichnis. In Eden, Citron, Winlator, GameNative & Co. wählst du sie dort aus. ")
-                append("Für den Thor (Adreno 740): aktuellen Turnip in der Standard-Variante nehmen. Wenn es Grafikfehler gibt, eine ältere Version testen, z. B. Turnip v26.0.0 R7 von K11MCH1.")
-                if (!Store.hasStorageAccess()) append("\n⚠ Speicherzugriff fehlt noch: Einstellungen → Zugriff auf /Driver erlauben.")
+                append(t("Treiber landen als ZIP im Ordner /Driver im Hauptverzeichnis. In Eden, Citron, Winlator, GameNative & Co. wählst du sie dort aus. ", "Drivers are saved as ZIPs to the /Driver folder in the storage root. Pick them there in Eden, Citron, Winlator, GameNative & co. "))
+                append(t("Für den Thor (Adreno 740): aktuellen Turnip in der Standard-Variante nehmen. Wenn es Grafikfehler gibt, eine ältere Version testen, z. B. Turnip v26.0.0 R7 von K11MCH1.", "For the Thor (Adreno 740): take the current Turnip, standard variant. If there are graphics glitches, try an older version, e.g. Turnip v26.0.0 R7 by K11MCH1."))
+                if (!Store.hasStorageAccess()) append(t("\n⚠ Speicherzugriff fehlt noch: Einstellungen → Zugriff auf /Driver erlauben.", "\n⚠ Storage access is still missing: Settings → Allow access to /Driver."))
             }
             else -> null
         }
@@ -375,67 +376,81 @@ class MainActivity : Activity() {
 
     private fun checkNow() {
         updatesStatus.tag = "busy"
-        updatesStatus.text = "Suche nach Updates…"
+        updatesStatus.text = t("Suche nach Updates…", "Checking for updates…")
         Store.checkUpdatesAsync { ups ->
             updatesStatus.tag = null
             refresh()
-            updatesStatus.text = if (ups.isEmpty()) "Alles aktuell" else "${ups.size} Update(s) gefunden"
+            updatesStatus.text = if (ups.isEmpty()) t("Alles aktuell", "Everything up to date") else t("${ups.size} Update(s) gefunden", "${ups.size} update(s) found")
         }
     }
 
     private fun updateAll() {
         val ups = Store.updates()
-        if (ups.isEmpty()) { toast("Keine Updates vorhanden"); return }
+        if (ups.isEmpty()) { toast(t("Keine Updates vorhanden", "No updates available")); return }
         if (!ensureInstallPermission()) return
         ups.forEach { DownloadService.install(this, it) }
-        toast("${ups.size} Update(s) in der Warteschlange")
+        toast(t("${ups.size} Update(s) in der Warteschlange", "${ups.size} update(s) queued"))
     }
 
     private fun settings() {
         val hours = Store.intervalHours
         val entries = listOf<Pair<String, () -> Unit>>(
-            "App über GitHub-Link hinzufügen" to { EditActivity.add(this) },
-            "Kategorien verwalten" to { manageCategories() },
-            "Zweiter Bildschirm: " + dualState() to { toggleDual() },
-            "Automatische Update-Prüfung: " + (if (hours == 0) "aus" else "alle $hours Std.") to { chooseInterval() },
-            "Jetzt nach Updates suchen" to { selectTab(tabs.lastIndex); checkNow() },
-            (if (Notifications.allowed(this)) "Benachrichtigungen: erlaubt" else "Benachrichtigungen erlauben") to {
+            t("Sprache: ", "Language: ") + Store.languageLabel(Store.language) to { chooseLanguage() },
+            t("App über GitHub-Link hinzufügen", "Add app by GitHub link") to { EditActivity.add(this) },
+            t("Kategorien verwalten", "Manage categories") to { manageCategories() },
+            t("Zweiter Bildschirm: ", "Second screen: ") + dualState() to { toggleDual() },
+            t("Update-Benachrichtigungen: ", "Update notifications: ") + (if (hours == 0) t("aus", "off") else t("alle $hours Std.", "every $hours h")) to { chooseInterval() },
+            t("Jetzt nach Updates suchen", "Check for updates now") to { selectTab(tabs.lastIndex); checkNow() },
+            (if (Notifications.allowed(this)) t("Benachrichtigungen: erlaubt", "Notifications: allowed") else t("Benachrichtigungen erlauben", "Allow notifications")) to {
                 if (Build.VERSION.SDK_INT >= 33) {
-                    if (Notifications.allowed(this)) toast("Bereits erlaubt") else requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1)
+                    if (Notifications.allowed(this)) toast(t("Bereits erlaubt", "Already allowed")) else requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1)
                 }
             },
-            (if (Store.hasStorageAccess()) "Zugriff auf /Driver: erlaubt" else "Zugriff auf /Driver erlauben") to {
-                if (Store.hasStorageAccess()) toast("Bereits erlaubt") else openStorageSettings()
+            (if (Store.hasStorageAccess()) t("Zugriff auf /Driver: erlaubt", "Access to /Driver: allowed") else t("Zugriff auf /Driver erlauben", "Allow access to /Driver")) to {
+                if (Store.hasStorageAccess()) toast(t("Bereits erlaubt", "Already allowed")) else openStorageSettings()
             },
-            "GitHub-Token (optional)" to { tokenDialog() },
-            "Cache leeren" to { Store.clearCache(); toast("Cache geleert") },
-            "Nach neuer Floki-Store-Version suchen" to { SelfUpdate.check(this) },
-            "Über Floki Store" to { about() },
+            t("GitHub-Token (optional)", "GitHub token (optional)") to { tokenDialog() },
+            t("Cache leeren", "Clear cache") to { Store.clearCache(); toast(t("Cache geleert", "Cache cleared")) },
+            t("Nach neuer Floki-Store-Version suchen", "Check for a new Floki Store version") to { SelfUpdate.check(this) },
+            t("Über Floki Store", "About Floki Store") to { about() },
         )
         AlertDialog.Builder(this)
-            .setTitle("Einstellungen")
+            .setTitle(t("Einstellungen", "Settings"))
             .setItems(entries.map { it.first }.toTypedArray()) { _, which -> entries[which].second() }
             .show()
     }
 
+    private fun chooseLanguage() {
+        val values = listOf(Store.LANG_SYSTEM, "de", "en")
+        AlertDialog.Builder(this)
+            .setTitle(t("Sprache", "Language"))
+            .setSingleChoiceItems(values.map { Store.languageLabel(it) }.toTypedArray(), values.indexOf(Store.language).coerceAtLeast(0)) { d, which ->
+                d.dismiss()
+                if (values[which] == Store.language) return@setSingleChoiceItems
+                Store.setLanguage(values[which])
+                recreate()
+            }
+            .show()
+    }
+
     private fun dualState() = when {
-        !DualScreen.enabled -> "aus"
-        dual.active -> "an (Details unten)"
-        DualScreen.broken -> "nicht nutzbar"
-        else -> "an (kein zweiter Bildschirm gefunden)"
+        !DualScreen.enabled -> t("aus", "off")
+        dual.active -> t("an (Details unten)", "on (details below)")
+        DualScreen.broken -> t("nicht nutzbar", "not usable")
+        else -> t("an (kein zweiter Bildschirm gefunden)", "on (no second screen found)")
     }
 
     private fun toggleDual() {
         DualScreen.enabled = !DualScreen.enabled
-        toast(if (DualScreen.enabled) "Details erscheinen auf dem unteren Bildschirm" else "Nur ein Bildschirm")
+        toast(if (DualScreen.enabled) t("Details erscheinen auf dem unteren Bildschirm", "Details appear on the lower screen") else t("Nur ein Bildschirm", "One screen only"))
         recreate()
     }
 
     private fun chooseInterval() {
         val values = intArrayOf(0, 3, 6, 12, 24)
-        val labels = arrayOf("Aus", "Alle 3 Stunden", "Alle 6 Stunden", "Alle 12 Stunden", "Einmal am Tag")
+        val labels = arrayOf(t("Aus", "Off"), t("Alle 3 Stunden", "Every 3 hours"), t("Alle 6 Stunden", "Every 6 hours"), t("Alle 12 Stunden", "Every 12 hours"), t("Einmal am Tag", "Once a day"))
         AlertDialog.Builder(this)
-            .setTitle("Update-Prüfung im Hintergrund")
+            .setTitle(t("Wie oft nach Updates installierter Apps suchen und benachrichtigen?", "How often to check installed apps for updates and notify?"))
             .setSingleChoiceItems(labels, values.indexOf(Store.intervalHours).coerceAtLeast(0)) { d, which ->
                 Store.intervalHours = values[which]
                 UpdateJobService.schedule(this)
@@ -453,11 +468,11 @@ class MainActivity : Activity() {
         }
         val box = LinearLayout(this).apply { setPadding(dp(20), dp(8), dp(20), 0); addView(input, lp()) }
         AlertDialog.Builder(this)
-            .setTitle("GitHub-Token")
-            .setMessage("Nur nötig, falls GitHub die Seiten mal drosselt. Der Store nutzt dann die API mit deinem Token (Leserechte reichen).")
+            .setTitle(t("GitHub-Token", "GitHub token"))
+            .setMessage(t("Nur nötig, falls GitHub die Seiten mal drosselt. Der Store nutzt dann die API mit deinem Token (Leserechte reichen).", "Only needed if GitHub throttles its pages. The store then uses the API with your token (read access is enough)."))
             .setView(box)
-            .setPositiveButton("Speichern") { _, _ -> Store.setToken(input.text.toString().trim()) }
-            .setNegativeButton("Abbrechen", null)
+            .setPositiveButton(t("Speichern", "Save")) { _, _ -> Store.setToken(input.text.toString().trim()) }
+            .setNegativeButton(t("Abbrechen", "Cancel"), null)
             .show()
     }
 
@@ -465,13 +480,13 @@ class MainActivity : Activity() {
         AlertDialog.Builder(this)
             .setTitle("Floki Store")
             .setMessage(
-                "Ein App-Store für den AYN Thor, benannt nach Hrafna-Flóki, dem Wikinger, der mit Raben den Weg nach Island fand. Apps kommen direkt aus den GitHub-Releases der jeweiligen Projekte, werden per SHA-256 geprüft und mit dem Android-Installer installiert.\n\n" +
-                    "Katalog: ${Store.catalog.size} Einträge, Stand ${formatDate(Store.catalogDate) ?: "?"}.\n\n" +
-                    "Der Store lädt keine Spiele, ROMs, BIOS- oder Firmware-Dateien. Dafür brauchst du deine eigenen, legal erworbenen Kopien.\n\n" +
+                t("Ein App-Store für den AYN Thor, benannt nach Hrafna-Flóki, dem Wikinger, der mit Raben den Weg nach Island fand. Apps kommen direkt aus den GitHub-Releases der jeweiligen Projekte, werden per SHA-256 geprüft und mit dem Android-Installer installiert.\n\n", "An app store for the AYN Thor, named after Hrafna-Flóki, the Viking who found his way to Iceland with ravens. Apps come straight from each project's GitHub releases, are checked by SHA-256 and installed with the Android installer.\n\n") +
+                    t("Katalog: ${Store.catalog.size} Einträge, Stand ${formatDate(Store.catalogDate) ?: "?"}.\n\n", "Catalog: ${Store.catalog.size} entries, as of ${formatDate(Store.catalogDate) ?: "?"}.\n\n") +
+                    t("Der Store lädt keine Spiele, ROMs, BIOS- oder Firmware-Dateien. Dafür brauchst du deine eigenen, legal erworbenen Kopien.\n\n", "The store does not download games, ROMs, BIOS or firmware files. You need your own legally obtained copies for those.\n\n") +
                     "Version ${Store.installed(SelfUpdate.app() ?: return)?.versionName ?: "?"} · github.com/${Store.SELF_REPO}",
             )
             .setPositiveButton("OK", null)
-            .setNeutralButton("Auf GitHub") { _, _ -> openUrl("https://github.com/${Store.SELF_REPO}") }
+            .setNeutralButton(t("Auf GitHub", "On GitHub")) { _, _ -> openUrl("https://github.com/${Store.SELF_REPO}") }
             .show()
     }
 
@@ -509,7 +524,7 @@ class MainActivity : Activity() {
             h.root.background = rounded(C.CARD, dp(14).toFloat(), if (grid.isInTouchMode && panel?.app?.id == app.id) dp(2) else 0, C.ACCENT)
             h.chips.removeAllViews()
             statusChip(app)?.let { h.chips.addView(it, chipLp()) }
-            if (app.user) h.chips.addView(chip("Eigene", C.PURPLE), chipLp())
+            if (app.user) h.chips.addView(chip(t("Eigene", "Own"), C.PURPLE), chipLp())
             app.tags.filter { it in setOf("thor", "dual-screen", "recommended", "beta") }.take(2)
                 .forEach { tag -> h.chips.addView(chip(Tags.label(tag), tagColor(tag)), chipLp()) }
         }
@@ -551,13 +566,13 @@ class MainActivity : Activity() {
         Store.progress[app.id]?.let { return chip(it.text, C.ACCENT) }
         if (app.isDriver) {
             val n = Store.driverFiles(app).size
-            return if (n > 0) chip("$n in /Driver", C.OK) else chip("Treiber-ZIP", C.SUB)
+            return if (n > 0) chip(t("$n in /Driver", "$n in /Driver"), C.OK) else chip(t("Treiber-ZIP", "Driver ZIP"), C.SUB)
         }
-        if (app.isLinkOnly) return chip("Webseite", C.SUB)
+        if (app.isLinkOnly) return chip(t("Webseite", "Website"), C.SUB)
         val inst = Store.installed(app) ?: return null
-        if (Store.isForeign(app)) return chip("Andere Quelle", C.WARN)
-        if (Store.hasUpdate(app)) return chip("Update verfügbar", C.WARN)
-        return chip("Installiert" + (inst.versionName?.let { " · ${it.take(14)}" } ?: ""), C.OK)
+        if (Store.isForeign(app)) return chip(t("Andere Quelle", "Other source"), C.WARN)
+        if (Store.hasUpdate(app)) return chip(t("Update verfügbar", "Update available"), C.WARN)
+        return chip(t("Installiert", "Installed") + (inst.versionName?.let { " · ${it.take(14)}" } ?: ""), C.OK)
     }
 
     companion object {

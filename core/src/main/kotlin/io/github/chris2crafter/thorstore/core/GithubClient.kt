@@ -68,7 +68,7 @@ class GithubClient(
                 c.disconnect()
             }
         }
-        throw IOException("Zu viele Weiterleitungen: $url")
+        throw IOException(t("Zu viele Weiterleitungen: $url", "Too many redirects: $url"))
     }
 
     private fun readLimited(input: java.io.InputStream, max: Int): ByteArray {
@@ -78,14 +78,14 @@ class GithubClient(
             val n = input.read(buf)
             if (n < 0) break
             out.write(buf, 0, n)
-            if (out.size() > max) throw IOException("Antwort größer als erwartet")
+            if (out.size() > max) throw IOException(t("Antwort größer als erwartet", "Response larger than expected"))
         }
         return out.toByteArray()
     }
 
     private fun page(url: String): String {
         val r = get(url)
-        if (r.code != 200) throw IOException("HTTP ${r.code} für $url")
+        if (r.code != 200) throw IOException(t("HTTP ${r.code} für $url", "HTTP ${r.code} for $url"))
         return r.text
     }
 
@@ -105,8 +105,8 @@ class GithubClient(
     /** Repository details; [RepoInfo.repo] is the current name when the repository was renamed. */
     fun repoInfo(repo: String): RepoInfo {
         val r = get("https://github.com/$repo")
-        if (r.code == 404) throw RepoMissing("Das Repository $repo gibt es nicht (oder es ist privat).")
-        if (r.code != 200) throw IOException("HTTP ${r.code} für $repo")
+        if (r.code == 404) throw RepoMissing(t("Das Repository $repo gibt es nicht (oder es ist privat).", "The repository $repo does not exist (or is private)."))
+        if (r.code != 200) throw IOException(t("HTTP ${r.code} für $repo", "HTTP ${r.code} for $repo"))
         val canonical = Links.repo(r.finalUrl) ?: repo
         return GithubHtml.repoInfo(r.text, canonical)
     }
@@ -123,7 +123,7 @@ class GithubClient(
         }
         html.getOrNull()?.takeIf { it.assets.isNotEmpty() }?.let { return it }
         val api = runCatching { apiRelease(repo, null, prerelease) }.getOrNull()
-        return api ?: html.getOrNull() ?: throw (html.exceptionOrNull() ?: IOException("Keine Releases gefunden"))
+        return api ?: html.getOrNull() ?: throw (html.exceptionOrNull() ?: IOException(t("Keine Releases gefunden", "No releases found")))
     }
 
     fun release(repo: String, tag: String): Release =
@@ -157,7 +157,7 @@ class GithubClient(
         val u = URL(repoUrl)
         val api = "${u.protocol}://${u.host}/api/v1/repos${u.path.trimEnd('/')}/releases?limit=20&page=$page"
         val r = get(api)
-        if (r.code != 200) throw IOException("HTTP ${r.code} für $api")
+        if (r.code != 200) throw IOException(t("HTTP ${r.code} für $api", "HTTP ${r.code} for $api"))
         return (Json.parse(r.text) as? List<*>).orEmpty().mapNotNull { it as? Map<String, Any?> }.mapNotNull { m ->
             val tag = m.str("tag_name") ?: return@mapNotNull null
             ReleaseSummary(tag, m.str("name")?.takeIf { it.isNotBlank() } ?: tag, m.str("published_at"), m.bool("prerelease"))
@@ -200,9 +200,9 @@ class HttpRangeSource(private val client: GithubClient, url: String) : RangeSour
     override fun tail(n: Int): ByteArray {
         // GitHub's object storage rejects suffix ranges ("bytes=-n"), so ask for the size first
         val r = client.get(url, range = "bytes=0-0", maxBytes = 1024)
-        if (r.code != 206) throw IOException("Server unterstützt keine Range-Requests (HTTP ${r.code})")
+        if (r.code != 206) throw IOException(t("Server unterstützt keine Range-Requests (HTTP ${r.code})", "Server does not support range requests (HTTP ${r.code})"))
         url = r.finalUrl
-        length = r.contentRange?.substringAfterLast('/')?.toLongOrNull() ?: throw IOException("Content-Range fehlt")
+        length = r.contentRange?.substringAfterLast('/')?.toLongOrNull() ?: throw IOException(t("Content-Range fehlt", "Content-Range missing"))
         val start = maxOf(0L, length - n)
         return read(start, (length - start).toInt())
     }
@@ -210,7 +210,7 @@ class HttpRangeSource(private val client: GithubClient, url: String) : RangeSour
     override fun read(offset: Long, size: Int): ByteArray {
         if (size <= 0) return ByteArray(0)
         val r = client.get(url, range = "bytes=$offset-${offset + size - 1}", maxBytes = size + 1024)
-        if (r.code != 206) throw IOException("Range-Request fehlgeschlagen (HTTP ${r.code})")
+        if (r.code != 206) throw IOException(t("Range-Request fehlgeschlagen (HTTP ${r.code})", "Range request failed (HTTP ${r.code})"))
         return r.body
     }
 }
