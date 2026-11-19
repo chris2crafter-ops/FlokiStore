@@ -96,6 +96,36 @@ class CoreTest {
     }
 
     @Test
+    fun englishTextsRoundTripAndShowInEnglishMode() {
+        val app = CatalogApp(
+            "soh", "Ship of Harkinian", Categories.RECOMPS, "Nativer Port", descriptionEn = "Native port",
+            repo = "a/b", note = "Braucht dein ROM.", noteEn = "Needs your ROM.",
+        )
+        val back = Catalog.parse(Catalog.write(listOf(app, CatalogApp("x", "X", Categories.TOOLS, "Nur Deutsch"))))
+        assertEquals(app, back[0])
+        val before = I18n.english
+        try {
+            I18n.english = false
+            assertEquals("Nativer Port", back[0].shownDescription)
+            assertEquals("Braucht dein ROM.", back[0].shownNote)
+            I18n.english = true
+            assertEquals("Native port", back[0].shownDescription)
+            assertEquals("Needs your ROM.", back[0].shownNote)
+            // no English text: German stays
+            assertEquals("Nur Deutsch", back[1].shownDescription)
+            assertNull(back[1].shownNote)
+            // the user's own description wins in both languages; keeping the English text is no edit
+            val u = UserData()
+            u.edit(app, app.name, "Native port", app.category)
+            assertTrue(u.edits.isEmpty())
+            u.edit(app, app.name, "Mein Text", app.category)
+            assertEquals("Mein Text", u.apply(listOf(app)).single().shownDescription)
+        } finally {
+            I18n.english = before
+        }
+    }
+
+    @Test
     fun readsSingleEntriesOutOfAZip() {
         val bytes = ByteArrayOutputStream().also { bos ->
             ZipOutputStream(bos).use { z ->

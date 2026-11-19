@@ -171,7 +171,7 @@ class EditActivity : Activity() {
 
     private fun fill(a: CatalogApp) {
         name.setText(a.name)
-        desc.setText(a.description)
+        desc.setText(a.shownDescription)
         category = a.category
         showCategory()
         showIcon()

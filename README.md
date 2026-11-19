@@ -8,7 +8,7 @@ Das neueste APK liegt unter [Releases](https://github.com/chris2crafter-ops/Flok
 
 ## Sprache
 
-Deutsch und Englisch, Standard ist die Systemsprache (Einstellungen → Sprache). Im Code steht jeder sichtbare Text als `t("Deutsch", "English")`; die Katalogbeschreibungen sind bisher nur auf Deutsch.
+Deutsch und Englisch, Standard ist die Systemsprache (Einstellungen → Sprache). Im Code steht jeder sichtbare Text als `t("Deutsch", "English")`; Katalogbeschreibungen und Hinweise stehen in `catalog-src.json` als `description`/`descriptionEn` und `note`/`noteEn` (fehlt Englisch, zeigt die App Deutsch).
 
 ## Bauen
 

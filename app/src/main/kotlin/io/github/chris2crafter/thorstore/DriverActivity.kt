@@ -64,7 +64,7 @@ class DriverActivity : Activity() {
                 addView(text(t("${app.repo} · Ziel: /Driver", "${app.repo} · target: /Driver"), 14f, C.SUB))
             }, lp(0, WRAP, 1f).apply { marginStart = dp(16) })
         })
-        if (!split) head.addView(text(app.description, 15f), lp().apply { topMargin = dp(12) })
+        if (!split) head.addView(text(app.shownDescription, 15f), lp().apply { topMargin = dp(12) })
 
         access = button(t("Speicherzugriff erlauben", "Allow storage access"), primary = true) { openStorageSettings() }
         folder = button(t("Im Ordner", "In folder")) { showFolder() }
@@ -108,7 +108,7 @@ class DriverActivity : Activity() {
     override fun onResume() {
         super.onResume()
         val now = Store.app(app.id) ?: run { finish(); return }
-        if (now.name != app.name || now.description != app.description) { recreate(); return }
+        if (now.name != app.name || now.shownDescription != app.shownDescription) { recreate(); return }
         IconLoader.load(icon, app, dp(72))
         dual.resume()
         Store.foreground = this

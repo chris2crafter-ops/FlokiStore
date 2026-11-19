@@ -72,6 +72,8 @@ data class CatalogApp(
     val name: String,
     val category: String,
     val description: String,
+    /** English description; null shows [description] in English too. */
+    val descriptionEn: String? = null,
     val repo: String? = null,
     val homepage: String? = null,
     val tags: List<String> = emptyList(),
@@ -86,6 +88,7 @@ data class CatalogApp(
     val iconBg: String? = null,
     val iconUrl: String? = null,
     val note: String? = null,
+    val noteEn: String? = null,
     /** GitHub-style release JSON of the newest release (for projects hosted outside GitHub). */
     val releaseJson: String? = null,
     /** Same JSON for one tag, "{tag}" is replaced. */
@@ -103,14 +106,18 @@ data class CatalogApp(
     val githubUrl get() = repo?.let { "https://github.com/$it" }
     /** Where the project lives, for the "open source" button. */
     val sourceUrl get() = githubUrl ?: forgejo ?: homepage
+    /** Description in the store's language, German when there is no English text. */
+    val shownDescription get() = if (I18n.english) descriptionEn ?: description else description
+    /** Note in the store's language, German when there is no English text. */
+    val shownNote get() = if (I18n.english) noteEn ?: note else note
 
     fun toMap(): Map<String, Any?> = linkedMapOf<String, Any?>(
         "id" to id, "name" to name, "category" to category, "description" to description,
-        "repo" to repo, "homepage" to homepage, "tags" to tags.ifEmpty { null },
+        "descriptionEn" to descriptionEn, "repo" to repo, "homepage" to homepage, "tags" to tags.ifEmpty { null },
         "apkRegex" to apkRegex, "excludeRegex" to excludeRegex, "assetRegex" to assetRegex,
         "apkInZip" to apkInZip.takeIf { it }, "prerelease" to prerelease.takeIf { it },
         "packageName" to packageName, "icon" to icon, "iconFg" to iconFg, "iconBg" to iconBg,
-        "iconUrl" to iconUrl, "note" to note,
+        "iconUrl" to iconUrl, "note" to note, "noteEn" to noteEn,
         "releaseJson" to releaseJson, "releaseJsonTag" to releaseJsonTag, "forgejo" to forgejo,
         "driver" to driver.takeIf { it != (category == Categories.DRIVERS) }, "user" to user.takeIf { it },
     ).filterValues { it != null }
@@ -121,6 +128,7 @@ data class CatalogApp(
             name = m.str("name")!!,
             category = m.str("category") ?: Categories.TOOLS,
             description = m.str("description") ?: "",
+            descriptionEn = m.str("descriptionEn"),
             repo = m.str("repo"),
             homepage = m.str("homepage"),
             tags = m.strList("tags"),
@@ -135,6 +143,7 @@ data class CatalogApp(
             iconBg = m.str("iconBg"),
             iconUrl = m.str("iconUrl"),
             note = m.str("note"),
+            noteEn = m.str("noteEn"),
             releaseJson = m.str("releaseJson"),
             releaseJsonTag = m.str("releaseJsonTag"),
             forgejo = m.str("forgejo"),

@@ -5,12 +5,14 @@
       "name": "Ship of Harkinian",
       "category": "recomps",
       "description": "Ocarina of Time als nativer Port auf Basis der Decompilation – mit Widescreen, hohen Bildraten, Mods und Randomizer. Android-Build von linkzenic.",
+      "descriptionEn": "Ocarina of Time as a native port based on the decompilation – with widescreen, high frame rates, mods and a randomizer. Android build by linkzenic.",
       "repo": "linkzenic/Shipwright-Ports",
       "tags": [
         "needs-rom",
         "recommended"
       ],
       "note": "Braucht dein eigenes Ocarina-of-Time-ROM.",
+      "noteEn": "Needs your own Ocarina of Time ROM.",
       "apkRegex": "android"
     },
     {
@@ -18,18 +20,21 @@
       "name": "2 Ship 2 Harkinian",
       "category": "recomps",
       "description": "Majora's Mask als nativer Port der Harbour Masters. Der Android-Build passt den Texturen-Cache an den RAM des Geräts an.",
+      "descriptionEn": "Majora's Mask as a native port by the Harbour Masters. The Android build adjusts the texture cache to the device's RAM.",
       "repo": "linkzenic/2ship2harkinian-Android",
       "tags": [
         "needs-rom",
         "recommended"
       ],
-      "note": "Braucht dein eigenes Majora's-Mask-ROM."
+      "note": "Braucht dein eigenes Majora's-Mask-ROM.",
+      "noteEn": "Needs your own Majora's Mask ROM."
     },
     {
       "id": "zelda64recomp",
       "name": "Zelda 64: Recompiled",
       "category": "recomps",
       "description": "Majora's Mask über N64: Recompiled mit dem RT64-Renderer – Android-App.",
+      "descriptionEn": "Majora's Mask via N64: Recompiled with the RT64 renderer – Android app.",
       "repo": "linkzenic/Zelda64Recomp-Android",
       "tags": [
         "needs-rom"
@@ -40,6 +45,7 @@
       "name": "Wind Waker HD Recomp",
       "category": "recomps",
       "description": "The Wind Waker HD (Wii U) als Recompilation für Android.",
+      "descriptionEn": "The Wind Waker HD (Wii U) as a recompilation for Android.",
       "repo": "GreenNaugahyde/ZeldaWWHDRecompAndroid",
       "tags": [
         "needs-rom",
@@ -51,6 +57,7 @@
       "name": "Dusklight",
       "category": "recomps",
       "description": "Twilight Princess (GameCube) als nativer Port mit zahlreichen Fixes und Verbesserungen.",
+      "descriptionEn": "Twilight Princess (GameCube) as a native port with numerous fixes and improvements.",
       "repo": "TwilitRealm/dusklight",
       "tags": [
         "needs-rom",
@@ -63,6 +70,7 @@
       "name": "SpaghettiKart",
       "category": "recomps",
       "description": "Mario Kart 64 als nativer Port (Harbour Masters) – Android-Build von izzy2lost.",
+      "descriptionEn": "Mario Kart 64 as a native port (Harbour Masters) – Android build by izzy2lost.",
       "repo": "izzy2lost/SpaghettiKart",
       "tags": [
         "needs-rom"
@@ -73,6 +81,7 @@
       "name": "Ghostship",
       "category": "recomps",
       "description": "Super Mario 64 als nativer Port (Harbour Masters) – Android-Build von izzy2lost.",
+      "descriptionEn": "Super Mario 64 as a native port (Harbour Masters) – Android build by izzy2lost.",
       "repo": "izzy2lost/Ghostship",
       "tags": [
         "needs-rom"
@@ -83,6 +92,7 @@
       "name": "sm64coopdx",
       "category": "recomps",
       "description": "Super Mario 64 mit Online-Koop und Mod-Support – Android-Port.",
+      "descriptionEn": "Super Mario 64 with online co-op and mod support – Android port.",
       "repo": "ManIsCat2/sm64coopdx",
       "tags": [
         "needs-rom"
@@ -93,6 +103,7 @@
       "name": "Perfect Dark",
       "category": "recomps",
       "description": "Perfect Dark (N64) als nativer Port auf Basis der Decompilation – Android-Build.",
+      "descriptionEn": "Perfect Dark (N64) as a native port based on the decompilation – Android build.",
       "repo": "izzy2lost/perfect_dark",
       "tags": [
         "needs-rom"
@@ -103,6 +114,7 @@
       "name": "Lighthouse",
       "category": "recomps",
       "description": "Banjo-Kazooie als nativer Port – Android-Build von izzy2lost.",
+      "descriptionEn": "Banjo-Kazooie as a native port – Android build by izzy2lost.",
       "repo": "izzy2lost/Lighthouse",
       "tags": [
         "needs-rom"
@@ -113,6 +125,7 @@
       "name": "Banjo Recompiled",
       "category": "recomps",
       "description": "Banjo-Kazooie über N64: Recompiled – Android-Port.",
+      "descriptionEn": "Banjo-Kazooie via N64: Recompiled – Android port.",
       "repo": "AurelioB/BanjoRecomp-Android",
       "tags": [
         "needs-rom",
@@ -124,6 +137,7 @@
       "name": "DK64 Recompiled",
       "category": "recomps",
       "description": "Donkey Kong 64 über N64: Recompiled mit RT64/Vulkan – Android-Port (NTSC-U 1.0 ROM).",
+      "descriptionEn": "Donkey Kong 64 via N64: Recompiled with RT64/Vulkan – Android port (NTSC-U 1.0 ROM).",
       "repo": "deivid22srk/dk64-recomp-android",
       "tags": [
         "needs-rom"
@@ -134,6 +148,7 @@
       "name": "Goemon 64 Recompiled",
       "category": "recomps",
       "description": "Mystical Ninja Starring Goemon über N64: Recompiled – Android-Port.",
+      "descriptionEn": "Mystical Ninja Starring Goemon via N64: Recompiled – Android port.",
       "repo": "ogdanimal/Goemon64Recomp-Android",
       "tags": [
         "needs-rom"
@@ -144,6 +159,7 @@
       "name": "Castlevania LoD Recomp",
       "category": "recomps",
       "description": "Castlevania: Legacy of Darkness (N64) über N64Recomp als native App.",
+      "descriptionEn": "Castlevania: Legacy of Darkness (N64) as a native app via N64Recomp.",
       "repo": "sergiomanzur/cvlod_recomp",
       "tags": [
         "needs-rom",
@@ -156,6 +172,7 @@
       "name": "Symphony Recomp",
       "category": "recomps",
       "description": "Castlevania: Symphony of the Night (PS1) als Recompilation – Android-Beta.",
+      "descriptionEn": "Castlevania: Symphony of the Night (PS1) as a recompilation – Android beta.",
       "repo": "sergiomanzur/SymphonyRecomp",
       "tags": [
         "needs-rom",
@@ -169,6 +186,7 @@
       "name": "Harvest Moon 64 Recomp",
       "category": "recomps",
       "description": "Harvest Moon 64 über N64: Recompiled – Android-Port.",
+      "descriptionEn": "Harvest Moon 64 via N64: Recompiled – Android port.",
       "repo": "igawa6/HarvestMoon64Recomp",
       "tags": [
         "needs-rom",
@@ -180,6 +198,7 @@
       "name": "Rocket-R",
       "category": "recomps",
       "description": "Rocket: Robot on Wheels (N64) als Recompilation.",
+      "descriptionEn": "Rocket: Robot on Wheels (N64) as a recompilation.",
       "repo": "ThatGuyMcd/Rocket-R",
       "tags": [
         "needs-rom"
@@ -191,6 +210,7 @@
       "name": "BattleShip",
       "category": "recomps",
       "description": "Super Smash Bros. (N64) als nativer Port.",
+      "descriptionEn": "Super Smash Bros. (N64) as a native port.",
       "repo": "JRickey/BattleShip",
       "tags": [
         "needs-rom"
@@ -202,6 +222,7 @@
       "name": "Melee PC",
       "category": "recomps",
       "description": "Super Smash Bros. Melee (NTSC-U 1.02) als nativer Port auf Basis der Decompilation.",
+      "descriptionEn": "Super Smash Bros. Melee (NTSC-U 1.02) as a native port based on the decompilation.",
       "repo": "999sian/melee-pc",
       "tags": [
         "needs-rom",
@@ -214,6 +235,7 @@
       "name": "Animal Crossing (ACGC)",
       "category": "recomps",
       "description": "Animal Crossing (GameCube) als nativer Port – HD-Texturen und Übersetzungen holt die App selbst.",
+      "descriptionEn": "Animal Crossing (GameCube) as a native port – the app fetches HD textures and translations itself.",
       "repo": "zwaetschge/ACGC-Android-Port",
       "tags": [
         "needs-rom",
@@ -225,6 +247,7 @@
       "name": "DriftDroid",
       "category": "recomps",
       "description": "Mario Kart Wii inklusive Retro Rewind als nativer Android-Port.",
+      "descriptionEn": "Mario Kart Wii including Retro Rewind as a native Android port.",
       "repo": "dorPXP/driftdroid",
       "tags": [
         "needs-rom"
@@ -235,6 +258,7 @@
       "name": "Zelda 3 (Dual-Screen)",
       "category": "recomps",
       "description": "A Link to the Past als nativer Port – mit Dual-Screen-Variante für zwei Displays.",
+      "descriptionEn": "A Link to the Past as a native port – with a dual-screen variant for two displays.",
       "repo": "samyost1/zelda3-android",
       "tags": [
         "needs-rom",
@@ -246,6 +270,7 @@
       "name": "Project Picori",
       "category": "recomps",
       "description": "The Minish Cap (GBA) als nativer Port auf Basis der Decompilation.",
+      "descriptionEn": "The Minish Cap (GBA) as a native port based on the decompilation.",
       "repo": "999sian/tmc",
       "tags": [
         "needs-rom"
@@ -257,6 +282,7 @@
       "name": "Mother 3 Recomp",
       "category": "recomps",
       "description": "MOTHER 3 (GBA) als native App, unterstützt den Fan-Übersetzungspatch.",
+      "descriptionEn": "MOTHER 3 (GBA) as a native app, supports the fan translation patch.",
       "repo": "josiahg2502-glitch/Mother3Recomp",
       "tags": [
         "needs-rom"
@@ -268,6 +294,7 @@
       "name": "Gen1Recomp",
       "category": "recomps",
       "description": "Pokémon der Generationen 1–3 als native Neuumsetzung in Lua/LÖVE.",
+      "descriptionEn": "Pokémon generations 1–3 as a native reimplementation in Lua/LÖVE.",
       "repo": "bryanthaboi/gen1recomp",
       "tags": [
         "needs-rom",
@@ -280,6 +307,7 @@
       "name": "RE Gaiden Recomp",
       "category": "recomps",
       "description": "Resident Evil Gaiden (GBC) als Recompilation.",
+      "descriptionEn": "Resident Evil Gaiden (GBC) as a recompilation.",
       "repo": "sergiomanzur/regaiden-recomp",
       "tags": [
         "needs-rom"
@@ -291,6 +319,7 @@
       "name": "Star Fox Enhanced",
       "category": "recomps",
       "description": "Star Fox (SNES) als erweiterte native Version.",
+      "descriptionEn": "Star Fox (SNES) as an enhanced native version.",
       "repo": "kandowontu2/starfox-enhanced",
       "tags": [
         "needs-rom",
@@ -303,6 +332,7 @@
       "name": "Feuerrot Dual-Screen",
       "category": "recomps",
       "description": "Experimenteller nativer Port von Pokémon Feuerrot für den Thor: Touch-Kampfmenüs, Team-Details mit KP/EP-Anzeige und eigenes Feuerrot-UI auf dem zweiten Bildschirm.",
+      "descriptionEn": "Experimental native port of Pokémon FireRed for the Thor: touch battle menus, party details with HP/EXP display and a dedicated FireRed UI on the second screen.",
       "repo": "venom13/pokefirered-dualscreen",
       "tags": [
         "needs-rom",
@@ -315,6 +345,7 @@
       "name": "Kingdom Hearts 358/2 Days",
       "category": "recomps",
       "description": "Nativer Android-Port von Kingdom Hearts 358/2 Days (DS) für zwei Bildschirme, gebaut für den Thor.",
+      "descriptionEn": "Native Android port of Kingdom Hearts 358/2 Days (DS) for two screens, built for the Thor.",
       "repo": "sonofskywalker3/khdays-358-android",
       "tags": [
         "needs-rom",
@@ -329,19 +360,22 @@
       "name": "Sonic CD (RSDKv3)",
       "category": "recomps",
       "description": "Vollständige Decompilation von Sonic CD (2011) und der Retro Engine v3 – nativ auf Android.",
+      "descriptionEn": "Complete decompilation of Sonic CD (2011) and the Retro Engine v3 – native on Android.",
       "repo": "RSDKModding/RSDKv3-Decompilation",
       "tags": [
         "needs-rom"
       ],
       "apkInZip": true,
       "assetRegex": "^v3-android\\.zip$",
-      "note": "Braucht die Data.rsdk aus deiner Kopie von Sonic CD (Steam oder Mobile)."
+      "note": "Braucht die Data.rsdk aus deiner Kopie von Sonic CD (Steam oder Mobile).",
+      "noteEn": "Needs the Data.rsdk from your copy of Sonic CD (Steam or mobile)."
     },
     {
       "id": "rsdkv4",
       "name": "Sonic 1 & 2 (RSDKv4)",
       "category": "recomps",
       "description": "Vollständige Decompilation von Sonic 1 und Sonic 2 (2013) und der Retro Engine v4 – Basis für Mods wie Sonic 2 Absolute.",
+      "descriptionEn": "Complete decompilation of Sonic 1 and Sonic 2 (2013) and the Retro Engine v4 – the base for mods like Sonic 2 Absolute.",
       "repo": "RSDKModding/RSDKv4-Decompilation",
       "tags": [
         "needs-rom",
@@ -349,26 +383,30 @@
       ],
       "apkInZip": true,
       "assetRegex": "^v4-android\\.zip$",
-      "note": "Braucht die Data.rsdk aus deiner Kopie von Sonic 1/2 (Steam oder Mobile)."
+      "note": "Braucht die Data.rsdk aus deiner Kopie von Sonic 1/2 (Steam oder Mobile).",
+      "noteEn": "Needs the Data.rsdk from your copy of Sonic 1/2 (Steam or mobile)."
     },
     {
       "id": "rsdkv5",
       "name": "Sonic Mania (RSDKv5)",
       "category": "recomps",
       "description": "Decompilation der Retro Engine v5, auf der Sonic Mania läuft – nativ auf Android.",
+      "descriptionEn": "Decompilation of the Retro Engine v5 that Sonic Mania runs on – native on Android.",
       "repo": "RSDKModding/RSDKv5-Decompilation",
       "tags": [
         "needs-rom"
       ],
       "apkInZip": true,
       "assetRegex": "^v5-android\\.zip$",
-      "note": "Braucht die Data.rsdk aus deiner Kopie von Sonic Mania (Steam)."
+      "note": "Braucht die Data.rsdk aus deiner Kopie von Sonic Mania (Steam).",
+      "noteEn": "Needs the Data.rsdk from your copy of Sonic Mania (Steam)."
     },
     {
       "id": "black",
       "name": "Black",
       "category": "recomps",
       "description": "Nativer Port mit Touch-Steuerung, Gyroskop und Controller. Benötigt deine Xbox-Kopie.",
+      "descriptionEn": "Native port with touch controls, gyroscope and controller support. Requires your Xbox copy.",
       "repo": "RanggaCasper/Black-Android",
       "tags": [
         "needs-rom",
@@ -380,6 +418,7 @@
       "name": "Super Metroid",
       "category": "recomps",
       "description": "Port auf Basis der Dekompilierung von Super Metroid. Benötigt dein SNES-ROM.",
+      "descriptionEn": "Port based on the decompilation of Super Metroid. Requires your SNES ROM.",
       "repo": "Raekwon1603/super_metroid-android",
       "tags": [
         "needs-rom",
@@ -391,6 +430,7 @@
       "name": "Mortal Kombat: Shaolin Monks",
       "category": "recomps",
       "description": "Inoffizieller Port über XboxXBERecomp mit Vulkan. Benötigt deine Xbox-Kopie.",
+      "descriptionEn": "Unofficial port via XboxXBERecomp with Vulkan. Requires your Xbox copy.",
       "repo": "RanggaCasper/ShaolinMonks-Android",
       "tags": [
         "needs-rom"
@@ -401,6 +441,7 @@
       "name": "LibertyRecomp (GTA IV)",
       "category": "recomps",
       "description": "Rekompilierung von Grand Theft Auto IV (Xbox 360). Benötigt deine Kopie des Spiels.",
+      "descriptionEn": "Recompilation of Grand Theft Auto IV (Xbox 360). Requires your copy of the game.",
       "repo": "vaduur/LibertyRecompAndroid",
       "tags": [
         "needs-rom",
@@ -412,6 +453,7 @@
       "name": "Unleashed Recompiled",
       "category": "recomps",
       "description": "Inoffizieller Port von Unleashed Recompiled. Benötigt deine Xbox-360-Kopie.",
+      "descriptionEn": "Unofficial port of Unleashed Recompiled. Requires your Xbox 360 copy.",
       "repo": "SansNope/UnleashedRecomp-Android",
       "tags": [
         "needs-rom",
@@ -423,6 +465,7 @@
       "name": "Halo CE Android",
       "category": "recomps",
       "description": "Ports von Halo: Combat Evolved auf Basis seiner Dekompilierung, mit Controller- und Touch-Steuerung. Benötigt deine Kopie des Spiels.",
+      "descriptionEn": "Ports of Halo: Combat Evolved based on its decompilation, with controller and touch controls. Requires your copy of the game.",
       "repo": "FulGerNet/halo-ce-android",
       "tags": [
         "needs-rom"
@@ -433,6 +476,7 @@
       "name": "Naruto Storm 3 Full Burst",
       "category": "recomps",
       "description": "Statische Rekompilierung für Android. Benötigt deine Kopie des Spiels.",
+      "descriptionEn": "Static recompilation for Android. Requires your copy of the game.",
       "repo": "Masterllgod/naruto-storm-3-full-burst-port-nativo",
       "tags": [
         "needs-rom",
@@ -444,6 +488,7 @@
       "name": "Skate 3 Mobile",
       "category": "recomps",
       "description": "Native Rekompilierung mit Vulkan: APK installieren und deine ISO auswählen.",
+      "descriptionEn": "Native recompilation with Vulkan: install the APK and pick your ISO.",
       "repo": "Buku313/Skate3-Mobile",
       "tags": [
         "needs-rom",
@@ -456,6 +501,7 @@
       "name": "CubeEvil4 (Resident Evil 4)",
       "category": "recomps",
       "description": "Port von Resident Evil 4 (GameCube) auf Basis seiner Dekompilierung. Benötigt deine Disc.",
+      "descriptionEn": "Port of Resident Evil 4 (GameCube) based on its decompilation. Requires your disc.",
       "repo": "Andiweli/CubeEvil4-Android",
       "tags": [
         "needs-rom"
@@ -466,6 +512,7 @@
       "name": "Def Jam: Fight for NY",
       "category": "recomps",
       "description": "Nativer Port des Xbox-Kampfspiels. Benötigt deine Kopie des Spiels.",
+      "descriptionEn": "Native port of the Xbox fighting game. Requires your copy of the game.",
       "repo": "contatg/Def-Jam-Android-Native-Port",
       "tags": [
         "needs-rom"
@@ -476,6 +523,7 @@
       "name": "Link's Awakening Recomp",
       "category": "recomps",
       "description": "Rekompilierung von Link's Awakening (Switch) mit Touch-Steuerung und 60 fps. Benötigt deine Kopie des Spiels.",
+      "descriptionEn": "Recompilation of Link's Awakening (Switch) with touch controls and 60 fps. Requires your copy of the game.",
       "repo": "Nycolazs/LASRecomp-Android-Plus",
       "tags": [
         "needs-rom",
@@ -487,6 +535,7 @@
       "name": "NSMBW Recompiled",
       "category": "recomps",
       "description": "Statische Rekompilierung auf Basis von WiiCompiled. Benötigt deine Wii-Disc.",
+      "descriptionEn": "Static recompilation based on WiiCompiled. Requires your Wii disc.",
       "repo": "WitherBlitz/NSMB-Wii-Multiplayer-Recompilation",
       "tags": [
         "needs-rom",
@@ -498,6 +547,7 @@
       "name": "Yakumo (MH Portable 3rd)",
       "category": "recomps",
       "description": "Statische Rekompilierung von Monster Hunter Portable 3rd HD auf einer Neuimplementierung des PSP-Systems. Benötigt deine Kopie.",
+      "descriptionEn": "Static recompilation of Monster Hunter Portable 3rd HD on a reimplementation of the PSP system. Requires your copy.",
       "repo": "TeamGDB/Yakumo",
       "tags": [
         "needs-rom"
@@ -508,6 +558,7 @@
       "name": "Super Mario Strikers",
       "category": "recomps",
       "description": "Port auf Basis der Dekompilierung von Super Mario Strikers. Benötigt deine GameCube-Disc.",
+      "descriptionEn": "Port based on the decompilation of Super Mario Strikers. Requires your GameCube disc.",
       "repo": "luisxl15/Strikers-Android-Port",
       "tags": [
         "needs-rom"
@@ -518,6 +569,7 @@
       "name": "Dragon Burst",
       "category": "recomps",
       "description": "Experimenteller nativer Port der ReXGlue-Rekompilierung. Benötigt deine Xbox-360-Kopie.",
+      "descriptionEn": "Experimental native port of the ReXGlue recompilation. Requires your Xbox 360 copy.",
       "repo": "dfdx047/Dragon-Burst",
       "tags": [
         "needs-rom",
@@ -529,6 +581,7 @@
       "name": "Gears of War 2 Recomp",
       "category": "recomps",
       "description": "Rekompilierung von Gears of War 2. Benötigt deine Xbox-360-Kopie.",
+      "descriptionEn": "Recompilation of Gears of War 2. Requires your Xbox 360 copy.",
       "repo": "santiquiroz/gears-of-war-2-pc-port",
       "tags": [
         "needs-rom",
@@ -540,6 +593,7 @@
       "name": "Persona 4 Golden",
       "category": "recomps",
       "description": "Native Rekompilierung von Persona 4 Golden mit Vulkan – läuft laut Community-Berichten gut auf dem Thor.",
+      "descriptionEn": "Native recompilation of Persona 4 Golden with Vulkan – runs well on the Thor according to community reports.",
       "repo": "nxdevxz/p4g-android",
       "tags": [
         "needs-rom",
@@ -551,6 +605,7 @@
       "name": "Galar Native",
       "category": "recomps",
       "description": "Native Rekompilierung von Pokémon Schwert/Schild (Switch) mit Vulkan – läuft laut Community-Berichten gut auf dem Thor.",
+      "descriptionEn": "Native recompilation of Pokémon Sword/Shield (Switch) with Vulkan – runs well on the Thor according to community reports.",
       "repo": "simipoB/Galar-Native-Android",
       "tags": [
         "needs-rom",
@@ -562,6 +617,7 @@
       "name": "Second Hunt (Metroid Prime Hunters)",
       "category": "recomps",
       "description": "Rekompilierung von Metroid Prime: Hunters (DS) für Android – läuft laut Community-Berichten gut auf dem Thor.",
+      "descriptionEn": "Recompilation of Metroid Prime: Hunters (DS) for Android – runs well on the Thor according to community reports.",
       "repo": "BountyHunterKanden/SecondHunt",
       "tags": [
         "needs-rom",
@@ -573,6 +629,7 @@
       "name": "Golden Sun Recompiled",
       "category": "recomps",
       "description": "Rekompilierung von Golden Sun. Benötigt dein GBA-ROM.",
+      "descriptionEn": "Recompilation of Golden Sun. Requires your GBA ROM.",
       "repo": "wootbeer/gsrandroid",
       "tags": [
         "needs-rom"
@@ -583,6 +640,7 @@
       "name": "Snowboard Kids 2 Recomp",
       "category": "recomps",
       "description": "Rekompilierung von Snowboard Kids 2. Benötigt dein N64-ROM.",
+      "descriptionEn": "Recompilation of Snowboard Kids 2. Requires your N64 ROM.",
       "repo": "kardeiro/snowboardkids2-recomp-Android",
       "tags": [
         "needs-rom",
@@ -594,6 +652,7 @@
       "name": "Automobili Lamborghini Recomp",
       "category": "recomps",
       "description": "Nativer Port der nordamerikanischen Version in Entwicklung. Benötigt dein N64-ROM.",
+      "descriptionEn": "Native port of the North American version, in development. Requires your N64 ROM.",
       "repo": "alondero/automobililamborghini-recomp",
       "tags": [
         "needs-rom",
@@ -605,6 +664,7 @@
       "name": "Need for Speed: Carbon",
       "category": "recomps",
       "description": "Experimentelle Rekompilierung der Xbox-360-Version von Need for Speed: Carbon.",
+      "descriptionEn": "Experimental recompilation of the Xbox 360 version of Need for Speed: Carbon.",
       "repo": "codepdbh/NFS-CARBON-360-ANDROID-RECOMP",
       "tags": [
         "needs-rom",
@@ -616,6 +676,7 @@
       "name": "Sonic R",
       "category": "recomps",
       "description": "Port von Sonic R auf Basis der Decompilation.",
+      "descriptionEn": "Port of Sonic R based on the decompilation.",
       "repo": "ZinexDa/sonic-r-android",
       "tags": [
         "needs-rom"
@@ -626,6 +687,7 @@
       "name": "Birdman64 (Pilotwings 64)",
       "category": "recomps",
       "description": "Pilotwings 64 als native Rekompilierung: Widescreen, hohe Bildraten und Gamepad-Support.",
+      "descriptionEn": "Pilotwings 64 as a native recompilation: widescreen, high frame rates and gamepad support.",
       "repo": "NoahVl/Birdman64",
       "tags": [
         "needs-rom",
@@ -638,6 +700,7 @@
       "name": "Snap64Recomp (Pokémon Snap)",
       "category": "recomps",
       "description": "Pokémon Snap (N64) als statische Rekompilierung – spielt sich standardmäßig wie das Modul, Verbesserungen sind optional.",
+      "descriptionEn": "Pokémon Snap (N64) as a static recompilation – plays like the original by default, enhancements are optional.",
       "repo": "JackandBeans/Snap64Recomp",
       "tags": [
         "needs-rom"
@@ -648,6 +711,7 @@
       "name": "Freedom Unite Recomp",
       "category": "recomps",
       "description": "Monster Hunter Freedom Unite als nativer Port für Android.",
+      "descriptionEn": "Monster Hunter Freedom Unite as a native port for Android.",
       "repo": "PateeerQ/FreedomUniteRecomp",
       "tags": [
         "needs-rom",
@@ -659,6 +723,7 @@
       "name": "Open Nectar (Pikmin)",
       "category": "recomps",
       "description": "Pikmin als nativer Port auf Basis der Decompilation.",
+      "descriptionEn": "Pikmin as a native port based on the decompilation.",
       "repo": "SSunnKing/Open-Nectar---Pikmin-Native-PC-Mobile-Port",
       "tags": [
         "needs-rom"
@@ -669,6 +734,7 @@
       "name": "Silent Hill (Decomp)",
       "category": "recomps",
       "description": "Port von Silent Hill (PS1) auf Basis der Decompilation, plattformübergreifend und mit vielen Extras.",
+      "descriptionEn": "Port of Silent Hill (PS1) based on the decompilation, cross-platform and with lots of extras.",
       "repo": "SlickAmogus/silent-hill-decomp",
       "tags": [
         "needs-rom",
@@ -682,6 +748,7 @@
       "name": "Silent Hill Dual-Screen",
       "category": "recomps",
       "description": "Dual-Screen-Mod für den Silent-Hill-Android-Port – läuft auf dem Thor mit Karte und Infos auf dem zweiten Display.",
+      "descriptionEn": "Dual-screen mod for the Silent Hill Android port – runs on the Thor with the map and info on the second display.",
       "repo": "TheYellowBee/silent-hill-dualscreen",
       "tags": [
         "needs-rom",
@@ -694,6 +761,7 @@
       "name": "Mareshine (Super Mario Sunshine)",
       "category": "recomps",
       "description": "Android-Port von Super Mario Sunshine auf Basis der Decompilation. Keine Spieldaten enthalten – deine eigene Disc nötig.",
+      "descriptionEn": "Android port of Super Mario Sunshine based on the decompilation. No game data included – your own disc is required.",
       "repo": "TheM3dium/mareshine",
       "tags": [
         "needs-rom",
@@ -705,6 +773,7 @@
       "name": "Wind Waker HD Recomp (Hauptprojekt)",
       "category": "recomps",
       "description": "The Wind Waker HD als Rekompilierung – Android-Build direkt aus dem Hauptprojekt.",
+      "descriptionEn": "The Wind Waker HD as a recompilation – Android build straight from the main project.",
       "repo": "ZeldaWWHDRecomp/ZeldaWWHDRecomp",
       "tags": [
         "needs-rom",
@@ -717,6 +786,7 @@
       "name": "G-Diffuser (F-Zero X)",
       "category": "recomps",
       "description": "Inoffizieller Port von F-Zero X auf Basis der Decompilation.",
+      "descriptionEn": "Unofficial port of F-Zero X based on the decompilation.",
       "repo": "Zorkats/G-Diffuser",
       "tags": [
         "needs-rom"
@@ -728,6 +798,7 @@
       "name": "AeroGauge Recomp",
       "category": "recomps",
       "description": "Statische Rekompilierung des N64-Rennspiels AeroGauge.",
+      "descriptionEn": "Static recompilation of the N64 racing game AeroGauge.",
       "repo": "alondero/aerogauge-recomp",
       "tags": [
         "needs-rom",
@@ -740,6 +811,7 @@
       "name": "Nocturne Recomp (Symphony of the Night)",
       "category": "recomps",
       "description": "Statische Rekompilierung von Castlevania: Symphony of the Night (XBLA-Version) auf Basis des ReXGlue-SDK.",
+      "descriptionEn": "Static recompilation of Castlevania: Symphony of the Night (XBLA version) based on the ReXGlue SDK.",
       "repo": "birabittoh/NocturneRecomp",
       "tags": [
         "needs-rom"
@@ -751,6 +823,7 @@
       "name": "KartPad (Mario Kart Wii)",
       "category": "recomps",
       "description": "Mario Kart Wii inklusive Retro Rewind als native App.",
+      "descriptionEn": "Mario Kart Wii including Retro Rewind as a native app.",
       "repo": "chrissotraidis/kartpad",
       "tags": [
         "needs-rom"
@@ -762,6 +835,7 @@
       "name": "Burnout 3: Takedown",
       "category": "recomps",
       "description": "Burnout 3: Takedown als nativer Port über eine PS2-Decompilation.",
+      "descriptionEn": "Burnout 3: Takedown as a native port via a PS2 decompilation.",
       "repo": "danielgomesvieira2000/burnout3-pc",
       "tags": [
         "needs-rom",
@@ -775,6 +849,7 @@
       "name": "Nookery (Animal Crossing)",
       "category": "recomps",
       "description": "Inoffizieller nativer Port von Animal Crossing.",
+      "descriptionEn": "Unofficial native port of Animal Crossing.",
       "repo": "flyngmt/Nookery",
       "tags": [
         "needs-rom",
@@ -787,6 +862,7 @@
       "name": "Lost Odyssey Recomp",
       "category": "recomps",
       "description": "Experimentelle native Version von Lost Odyssey per statischer Rekompilierung. Keine Spieldaten enthalten.",
+      "descriptionEn": "Experimental native version of Lost Odyssey via static recompilation. No game data included.",
       "repo": "freefrank/LostOdysseyRecomp",
       "tags": [
         "needs-rom",
@@ -799,6 +875,7 @@
       "name": "Starship (Star Fox 64)",
       "category": "recomps",
       "description": "Star Fox 64 als nativer Port (Harbour Masters) – Android-Build von izzy2lost.",
+      "descriptionEn": "Star Fox 64 as a native port (Harbour Masters) – Android build by izzy2lost.",
       "repo": "izzy2lost/Starship",
       "tags": [
         "needs-rom"
@@ -809,6 +886,7 @@
       "name": "Dragon Age: Origins Duo",
       "category": "recomps",
       "description": "Dragon Age: Origins (Xbox 360) auf Android, gebaut für den Thor auf Basis von DAORecomp.",
+      "descriptionEn": "Dragon Age: Origins (Xbox 360) on Android, built for the Thor on top of DAORecomp.",
       "repo": "mabencs/Dragon-Age-Origins-Recomp-Android-Duo",
       "tags": [
         "needs-rom",
@@ -823,6 +901,7 @@
       "name": "Emerald Recomp",
       "category": "recomps",
       "description": "Pokémon Smaragd als statische Rekompilierung (gbarecomp).",
+      "descriptionEn": "Pokémon Emerald as a static recompilation (gbarecomp).",
       "repo": "mstan/EmeraldRecomp",
       "tags": [
         "needs-rom",
@@ -835,19 +914,22 @@
       "name": "Minish Cap Dual-Screen",
       "category": "recomps",
       "description": "Dual-Screen-Mod von The Minish Cap für den Thor: Karte, Quest-Status und Touch-Inventar auf dem unteren Bildschirm.",
+      "descriptionEn": "Dual-screen mod of The Minish Cap for the Thor: map, quest status and touch inventory on the lower screen.",
       "repo": "samyost1/tmc-android",
       "tags": [
         "needs-rom",
         "dual-screen",
         "thor"
       ],
-      "note": "Nutzt denselben Paketnamen wie Project Picori – es geht nur eines von beiden. Zum Wechseln „Ersetzen“ verwenden."
+      "note": "Nutzt denselben Paketnamen wie Project Picori – es geht nur eines von beiden. Zum Wechseln „Ersetzen“ verwenden.",
+      "noteEn": "Uses the same package name as Project Picori – only one of the two can be installed. Use “Replace” to switch."
     },
     {
       "id": "oracles",
       "name": "The Oracles Project",
       "category": "recomps",
       "description": "Originalgetreuer, moddbarer Port von Oracle of Ages und Oracle of Seasons.",
+      "descriptionEn": "Faithful, moddable port of Oracle of Ages and Oracle of Seasons.",
       "repo": "thibautbus/top",
       "tags": [
         "needs-rom"
@@ -859,6 +941,7 @@
       "name": "Zelda II (z2rs)",
       "category": "recomps",
       "description": "Clean-Room-Nachbau von Zelda II: The Adventure of Link (NES) in Rust.",
+      "descriptionEn": "Clean-room recreation of Zelda II: The Adventure of Link (NES) in Rust.",
       "repo": "troyedwardsjr/z2rs",
       "tags": [
         "needs-rom",
@@ -871,6 +954,7 @@
       "name": "PartyBoard (Mario Party 4)",
       "category": "recomps",
       "description": "Mario Party 4 als nativer Port.",
+      "descriptionEn": "Mario Party 4 as a native port.",
       "repo": "zeranemesis/Marioparty4",
       "tags": [
         "needs-rom",
@@ -884,6 +968,7 @@
       "name": "NFS Most Wanted Recompiled Mobile",
       "category": "recomps",
       "description": "Statische Rekompilierung von Need For Speed Most Wanted (2005) für Xbox 360. Benötigt deine Xbox-360-ISO.",
+      "descriptionEn": "Static recompilation of Need For Speed Most Wanted (2005) for Xbox 360. Requires your Xbox 360 ISO.",
       "repo": "victorgbd/NFSMW-Recompiled-Mobile",
       "tags": [
         "needs-rom",
@@ -895,6 +980,7 @@
       "name": "TOTKDroid (Tears of the Kingdom)",
       "category": "recomps",
       "description": "Statische Rekompilierung von The Legend of Zelda Tears of the Kingdom für Switch. Benötigt deine Switch-ROM.",
+      "descriptionEn": "Static recompilation of The Legend of Zelda Tears of the Kingdom for Switch. Requires your Switch ROM.",
       "repo": "mamcjr/TOTKDroid",
       "tags": [
         "needs-rom",
@@ -906,6 +992,7 @@
       "name": "Peanuts Native",
       "category": "recomps",
       "description": "Macht aus deinem eigenen Switch-Spiel eine native Android-App – kein Emulator: Der ARM64-Code des Spiels läuft direkt auf dem Prozessor, die Grafik über Vulkan. Spieldatei wählen, „Build“ tippen, spielen. Auf dem Thor läuft das Spiel oben, unten der Begleiter aus Eden Duo. Unterstützt u. a. Zelda (Link's Awakening, Echoes of Wisdom, BotW, Skyward Sword HD), Mario Kart 8 Deluxe, Super Mario Odyssey, Metroid Dread, Pokémon und Persona 5 Royal, meist mit 60 fps.",
+      "descriptionEn": "Turns your own Switch game into a native Android app – no emulator: the game's ARM64 code runs directly on the processor, graphics go through Vulkan. Pick the game file, tap “Build”, play. On the Thor the game runs on top and the Eden Duo companion below. Supports Zelda (Link's Awakening, Echoes of Wisdom, BotW, Skyward Sword HD), Mario Kart 8 Deluxe, Super Mario Odyssey, Metroid Dread, Pokémon and Persona 5 Royal among others, mostly at 60 fps.",
       "repo": "igawa6/peanuts-native",
       "tags": [
         "dual-screen",
@@ -913,13 +1000,15 @@
         "needs-rom",
         "beta"
       ],
-      "note": "Braucht einen Dump deines eigenen Switch-Spiels in der unterstützten Update-Version; die App zeigt an, welche passt. Noch in Entwicklung."
+      "note": "Braucht einen Dump deines eigenen Switch-Spiels in der unterstützten Update-Version; die App zeigt an, welche passt. Noch in Entwicklung.",
+      "noteEn": "Needs a dump of your own Switch game in the supported update version; the app shows which one fits. Still in development."
     },
     {
       "id": "mhgu",
       "name": "MHGU Native",
       "category": "recomps",
       "description": "Statische Rekompilierung von Monster Hunter Generation Ultimate für Switch. Benötigt deine Kopie des Spiels.",
+      "descriptionEn": "Static recompilation of Monster Hunter Generations Ultimate for Switch. Requires your copy of the game.",
       "repo": "khorne-hub/gu-native",
       "tags": [
         "needs-rom"
@@ -930,6 +1019,7 @@
       "name": "Arceus Native",
       "category": "recomps",
       "description": "Statische Rekompilierung von Pokémon-Legenden: Arceus (Switch) – läuft laut Community-Berichten gut auf dem Thor.",
+      "descriptionEn": "Static recompilation of Pokémon Legends: Arceus (Switch) – runs well on the Thor according to community reports.",
       "repo": "simipoB/Arceus-Native-Android",
       "tags": [
         "needs-rom",
@@ -941,6 +1031,7 @@
       "name": "Doom (2016)",
       "category": "recomps",
       "description": "Statische Rekompilierung von Doom (2016) von switch. Benötigt deine switch-Dateien.",
+      "descriptionEn": "Static recompilation of Doom (2016) for Switch. Requires your Switch files.",
       "repo": "Desm0nt/doom-port",
       "tags": [
         "needs-rom",
@@ -952,6 +1043,7 @@
       "name": "The Last of Us Remastered",
       "category": "recomps",
       "description": "Statische Rekompilierung von The Last of Us Remastered für PS4. Benötigt deine PS4-Dateien.",
+      "descriptionEn": "Static recompilation of The Last of Us Remastered for PS4. Requires your PS4 files.",
       "repo": "erickmendes22/tlou-remastered-android",
       "tags": [
         "needs-rom",
@@ -963,6 +1055,7 @@
       "name": "Downhill Revived",
       "category": "recomps",
       "description": "Statische Rekompilierung von Downhill Domination von ps2. Benötigt deine ps2-Dateien.",
+      "descriptionEn": "Static recompilation of Downhill Domination for PS2. Requires your PS2 files.",
       "repo": "skuza-oss/downhill-revived",
       "tags": [
         "needs-rom",
@@ -974,6 +1067,7 @@
       "name": "Super Mario World Remastered Plus",
       "category": "recomps",
       "description": "Statische Rekompilierung von Super Mario World für SNES. Benötigt deine SNES-ROM.",
+      "descriptionEn": "Static recompilation of Super Mario World for SNES. Requires your SNES ROM.",
       "repo": "BTFighter/Super-Mario-World-Remastered-Plus",
       "tags": [
         "needs-rom"
@@ -984,6 +1078,7 @@
       "name": "Super Mario All-Stars",
       "category": "recomps",
       "description": "Statische Rekompilierung von Super Mario All-Stars für SNES. Benötigt deine SNES-ROM.",
+      "descriptionEn": "Static recompilation of Super Mario All-Stars for SNES. Requires your SNES ROM.",
       "repo": "Darhkfox/SuperMarioAllStars",
       "tags": [
         "needs-rom"
@@ -994,6 +1089,7 @@
       "name": "Shadow of the Colossus",
       "category": "recomps",
       "description": "Statische Rekompilierung von Shadow of the Colossus. Benötigt deine PS2-ISO.",
+      "descriptionEn": "Static recompilation of Shadow of the Colossus. Requires your PS2 ISO.",
       "repo": "GhostScitSMT/Shadow-of-the-Colossus-Android-Port",
       "tags": [
         "needs-rom",
@@ -1005,6 +1101,7 @@
       "name": "Sengoku Basara 2 Heroes",
       "category": "recomps",
       "description": "Recompilation von Sengoku Basara 2 Heroes für Wii. Benötigt deine Disc.",
+      "descriptionEn": "Recompilation of Sengoku Basara 2 Heroes for Wii. Requires your disc.",
       "repo": "PotatoRecomp/B2HWii-Android",
       "tags": [
         "needs-rom"
@@ -1015,6 +1112,7 @@
       "name": "FF7 Recomp (Final Fantasy VII)",
       "category": "recomps",
       "description": "Final Fantasy VII (PC) statisch nach ARM64 rekompiliert, mit FFNx-Renderer, 16:9, Speicherständen und Mod-Launcher für die 7th-Heaven-Kataloge. Auf dem Thor oben das Spiel, unten Party, Ort, Spielzeit und ein Touch-Deck.",
+      "descriptionEn": "Final Fantasy VII (PC) statically recompiled to ARM64, with the FFNx renderer, 16:9, save states and a mod launcher for the 7th Heaven catalogs. On the Thor the game runs on top, with party, location, play time and a touch deck below.",
       "repo": "bhuiyah/ff7-recomp-android",
       "tags": [
         "dual-screen",
@@ -1022,13 +1120,15 @@
         "needs-rom",
         "beta"
       ],
-      "note": "Braucht deine Steam-Version von Final Fantasy VII; die App rekompiliert deine ff7_en.exe einmalig auf dem Gerät."
+      "note": "Braucht deine Steam-Version von Final Fantasy VII; die App rekompiliert deine ff7_en.exe einmalig auf dem Gerät.",
+      "noteEn": "Needs your Steam version of Final Fantasy VII; the app recompiles your ff7_en.exe once on the device."
     },
     {
       "id": "bloodborne",
       "name": "Bloodborne Android",
       "category": "ports",
       "description": "Experimenteller Port von Bloodborne (PS4, v1.09) mit GSR2/FSR 3.1, LSFG und On-Screen-Controller. Getestet auf Snapdragon 8 Gen 2 – also genau dem Chip im Thor.",
+      "descriptionEn": "Experimental port of Bloodborne (PS4, v1.09) with GSR2/FSR 3.1, LSFG and an on-screen controller. Tested on the Snapdragon 8 Gen 2 – exactly the chip in the Thor.",
       "repo": "ducvd89/Bloodborne-Android",
       "tags": [
         "needs-rom",
@@ -1036,25 +1136,29 @@
         "recommended"
       ],
       "prerelease": true,
-      "note": "Braucht deine eigenen Spieldaten (v1.09). Nur Adreno-GPUs."
+      "note": "Braucht deine eigenen Spieldaten (v1.09). Nur Adreno-GPUs.",
+      "noteEn": "Needs your own game data (v1.09). Adreno GPUs only."
     },
     {
       "id": "devilutionx",
       "name": "DevilutionX",
       "category": "ports",
       "description": "Diablo und Hellfire als Source-Port – flüssig, mit Controller-Support und Multiplayer.",
+      "descriptionEn": "Diablo and Hellfire as a source port – smooth, with controller support and multiplayer.",
       "repo": "diasurgical/devilutionX",
       "tags": [
         "needs-rom",
         "recommended"
       ],
-      "note": "Braucht die DIABDAT.MPQ aus deiner Diablo-Kopie."
+      "note": "Braucht die DIABDAT.MPQ aus deiner Diablo-Kopie.",
+      "noteEn": "Needs the DIABDAT.MPQ from your copy of Diablo."
     },
     {
       "id": "openmw",
       "name": "OpenMW",
       "category": "ports",
       "description": "Morrowind-Engine als Nachbau – Android-Build. Kopier deine PC-Installation aufs Gerät, Mods funktionieren.",
+      "descriptionEn": "Recreation of the Morrowind engine – Android build. Copy your PC installation to the device; mods work.",
       "repo": "xyzz/openmw-android",
       "tags": [
         "needs-rom"
@@ -1065,6 +1169,7 @@
       "name": "Fallout CE",
       "category": "ports",
       "description": "Fallout 1 Community Edition: vollständig neu umgesetzte Engine mit Verbesserungen.",
+      "descriptionEn": "Fallout 1 Community Edition: a fully reimplemented engine with improvements.",
       "repo": "alexbatalov/fallout1-ce",
       "tags": [
         "needs-rom"
@@ -1075,6 +1180,7 @@
       "name": "Fallout 2 CE",
       "category": "ports",
       "description": "Fallout 2 Community Edition: vollständig neu umgesetzte Engine mit Verbesserungen.",
+      "descriptionEn": "Fallout 2 Community Edition: a fully reimplemented engine with improvements.",
       "repo": "alexbatalov/fallout2-ce",
       "tags": [
         "needs-rom"
@@ -1085,6 +1191,7 @@
       "name": "Xash3D FWGS",
       "category": "ports",
       "description": "Half-Life-Engine (GoldSrc-kompatibel) – spielt Half-Life, Opposing Force, Blue Shift und Mods.",
+      "descriptionEn": "Half-Life engine (GoldSrc-compatible) – plays Half-Life, Opposing Force, Blue Shift and mods.",
       "repo": "FWGS/xash3d-fwgs",
       "tags": [
         "needs-rom"
@@ -1097,6 +1204,7 @@
       "name": "OpenRCT2",
       "category": "ports",
       "description": "RollerCoaster Tycoon 2 als Open-Source-Nachbau mit vielen Verbesserungen.",
+      "descriptionEn": "Open-source recreation of RollerCoaster Tycoon 2 with lots of improvements.",
       "repo": "OpenRCT2/OpenRCT2",
       "tags": [
         "needs-rom"
@@ -1108,6 +1216,7 @@
       "name": "OpenTTD",
       "category": "ports",
       "description": "Transport Tycoon Deluxe als Open-Source-Nachbau – Android-Port von pelya (älterer Stand).",
+      "descriptionEn": "Open-source recreation of Transport Tycoon Deluxe – Android port by pelya (older version).",
       "repo": "pelya/openttd-android"
     },
     {
@@ -1115,6 +1224,7 @@
       "name": "Augustus",
       "category": "ports",
       "description": "Caesar III als erweiterter Engine-Nachbau.",
+      "descriptionEn": "Enhanced engine recreation of Caesar III.",
       "repo": "Keriew/augustus",
       "tags": [
         "needs-rom"
@@ -1126,6 +1236,7 @@
       "name": "fheroes2",
       "category": "ports",
       "description": "Heroes of Might and Magic II als Engine-Nachbau.",
+      "descriptionEn": "Engine recreation of Heroes of Might and Magic II.",
       "repo": "ihhub/fheroes2",
       "tags": [
         "needs-rom"
@@ -1138,6 +1249,7 @@
       "name": "OpenLara",
       "category": "ports",
       "description": "Tomb Raider (1–3) als Engine-Nachbau.",
+      "descriptionEn": "Engine recreation of Tomb Raider (1–3).",
       "repo": "XProger/OpenLara",
       "tags": [
         "needs-rom"
@@ -1150,6 +1262,7 @@
       "name": "System Shock",
       "category": "ports",
       "description": "System Shock als Android-Port.",
+      "descriptionEn": "System Shock as an Android port.",
       "repo": "raposomiguel50/system-shock-android",
       "tags": [
         "needs-rom"
@@ -1160,6 +1273,7 @@
       "name": "CTR Native",
       "category": "ports",
       "description": "Crash Team Racing auf Basis der Decompilation – Android-Port.",
+      "descriptionEn": "Crash Team Racing based on the decompilation – Android port.",
       "repo": "Simon358/ctr-native-android",
       "tags": [
         "needs-rom"
@@ -1170,6 +1284,7 @@
       "name": "Crash Bandicoot",
       "category": "ports",
       "description": "Crash Bandicoot als nativer Port.",
+      "descriptionEn": "Crash Bandicoot as a native port.",
       "repo": "Matteo842/CrashBandicoot-Launcher",
       "tags": [
         "needs-rom",
@@ -1181,6 +1296,7 @@
       "name": "NFS III Recompiled",
       "category": "ports",
       "description": "Need for Speed III: Hot Pursuit als recompilierter PC-Port für Android.",
+      "descriptionEn": "Need for Speed III: Hot Pursuit as a recompiled PC port for Android.",
       "repo": "ZloiKILLER/nfs3recompiled-android",
       "tags": [
         "needs-rom"
@@ -1191,6 +1307,7 @@
       "name": "NFS Most Wanted Evolved",
       "category": "ports",
       "description": "Need for Speed: Most Wanted als Android-Port.",
+      "descriptionEn": "Need for Speed: Most Wanted as an Android port.",
       "repo": "codepdbh/nfsmw-android",
       "tags": [
         "needs-rom",
@@ -1202,6 +1319,7 @@
       "name": "JSRF Unleashed",
       "category": "ports",
       "description": "Jet Set Radio Future (Xbox) als nativer Port.",
+      "descriptionEn": "Jet Set Radio Future (Xbox) as a native port.",
       "repo": "JuMatt/JetSetRadioFuture-Unleashed",
       "tags": [
         "needs-rom"
@@ -1213,6 +1331,7 @@
       "name": "Eternal Sonata Reprise",
       "category": "ports",
       "description": "Eternal Sonata (Xbox 360) als Recompilation.",
+      "descriptionEn": "Eternal Sonata (Xbox 360) as a recompilation.",
       "repo": "birabittoh/EternalSonataReprise",
       "tags": [
         "needs-rom"
@@ -1224,6 +1343,7 @@
       "name": "DishSoap",
       "category": "ports",
       "description": "The Dishwasher: Dead Samurai (Xbox 360) als Android-Port.",
+      "descriptionEn": "The Dishwasher: Dead Samurai (Xbox 360) as an Android port.",
       "repo": "Hdmaniak/DishSoap",
       "tags": [
         "needs-rom"
@@ -1234,6 +1354,7 @@
       "name": "ICO PC",
       "category": "ports",
       "description": "ICO (PS2) als nativer Port.",
+      "descriptionEn": "ICO (PS2) as a native port.",
       "repo": "nathanialf/ico-pc",
       "tags": [
         "needs-rom",
@@ -1246,6 +1367,7 @@
       "name": "Unciv",
       "category": "ports",
       "description": "Open-Source-Nachbau von Civilization V – komplett spielbar ohne Originaldaten.",
+      "descriptionEn": "Open-source recreation of Civilization V – fully playable without original data.",
       "repo": "yairm210/Unciv"
     },
     {
@@ -1253,6 +1375,7 @@
       "name": "Starboard",
       "category": "ports",
       "description": "Experimentelles Projekt, das unveränderte PortMaster-Spiele auf Android-Handhelds startet.",
+      "descriptionEn": "Experimental project that launches unmodified PortMaster games on Android handhelds.",
       "repo": "get-starboard/starboard",
       "tags": [
         "beta",
@@ -1264,6 +1387,7 @@
       "name": "idTech4A++",
       "category": "ports",
       "description": "Port von idTech 4 (DOOM 3, Quake 4, Prey) und weiteren klassischen Engines wie Quake 1-3 und RTCW. Benötigt die Dateien deiner Spiele.",
+      "descriptionEn": "Port of idTech 4 (DOOM 3, Quake 4, Prey) and other classic engines such as Quake 1-3 and RTCW. Requires your games' files.",
       "repo": "glKarin/com.n0n3m4.diii4a",
       "tags": [
         "needs-rom",
@@ -1275,6 +1399,7 @@
       "name": "Zomdroid (Project Zomboid)",
       "category": "ports",
       "description": "Nativer Port von Project Zomboid. Benötigt die Dateien deiner PC-Kopie.",
+      "descriptionEn": "Native port of Project Zomboid. Requires the files from your PC copy.",
       "repo": "udarmolota/zomdroid",
       "tags": [
         "needs-rom",
@@ -1286,6 +1411,7 @@
       "name": "VCMI (Heroes III)",
       "category": "ports",
       "description": "Freie Engine für Heroes III. Benötigt die Dateien deiner PC-Kopie.",
+      "descriptionEn": "Free engine for Heroes III. Requires the files from your PC copy.",
       "repo": "vcmi/vcmi",
       "tags": [
         "needs-rom"
@@ -1296,6 +1422,7 @@
       "name": "NFS Underground 2 Recompiled",
       "category": "ports",
       "description": "Statische Rekompilierung von SPEED2.EXE. Benötigt deine PC-Kopie.",
+      "descriptionEn": "Static recompilation of SPEED2.EXE. Requires your PC copy.",
       "repo": "codepdbh/nfsu2-recompiled",
       "tags": [
         "needs-rom",
@@ -1307,6 +1434,7 @@
       "name": "NFS Underground Recompiled",
       "category": "ports",
       "description": "Statische Rekompilierung der PC-Version. Benötigt deine Kopie.",
+      "descriptionEn": "Static recompilation of the PC version. Requires your copy.",
       "repo": "codepdbh/nfsu1-recompiled",
       "tags": [
         "needs-rom"
@@ -1317,6 +1445,7 @@
       "name": "The Simpsons: Hit & Run",
       "category": "ports",
       "description": "Port auf Basis der Dekompilierung von The Simpsons: Hit & Run. Benötigt die Dateien deiner PC-Kopie.",
+      "descriptionEn": "Port based on the decompilation of The Simpsons: Hit & Run. Requires the files from your PC copy.",
       "repo": "Carlox33/The-Simpsons-Hit-and-Run-Android",
       "tags": [
         "needs-rom"
@@ -1328,6 +1457,7 @@
       "name": "Cinderbox (Stardew Valley)",
       "category": "ports",
       "description": "Nativer Launcher, der die Desktop-Version von Stardew Valley ausführt. Benötigt deine PC-Kopie.",
+      "descriptionEn": "Native launcher that runs the desktop version of Stardew Valley. Requires your PC copy.",
       "repo": "Ekyso/Cinderbox",
       "tags": [
         "needs-rom"
@@ -1338,6 +1468,7 @@
       "name": "PvZ Portable",
       "category": "ports",
       "description": "Neuimplementierung der GOTY-Edition. Benötigt die Daten deiner Kopie.",
+      "descriptionEn": "Reimplementation of the GOTY Edition. Requires the data from your copy.",
       "repo": "wszqkzqk/PvZ-Portable",
       "tags": [
         "needs-rom"
@@ -1348,6 +1479,7 @@
       "name": "Daggerfall Unity",
       "category": "ports",
       "description": "Daggerfall Unity, die Nachbildung der Daggerfall-Engine. Benötigt die Dateien deiner PC-Kopie.",
+      "descriptionEn": "Daggerfall Unity, the recreation of the Daggerfall engine. Requires the files from your PC copy.",
       "repo": "Vwing/daggerfall-unity-android",
       "tags": [
         "needs-rom"
@@ -1359,6 +1491,7 @@
       "name": "Silksong Android",
       "category": "ports",
       "description": "Port für zwei Bildschirme mit optionaler Steam-Anbindung für Dateien und Cloud-Spielstände. Benötigt deine Kopie.",
+      "descriptionEn": "Port for two screens with optional Steam integration for files and cloud saves. Requires your copy.",
       "repo": "jakobkhansen/SilksongAndroid",
       "tags": [
         "needs-rom",
@@ -1370,6 +1503,7 @@
       "name": "DualSouls (Hollow Knight)",
       "category": "ports",
       "description": "Nativer Port von Hollow Knight für die zwei Bildschirme des AYN Thor, erstellt aus deiner Kopie.",
+      "descriptionEn": "Native port of Hollow Knight for the AYN Thor's two screens, built from your copy.",
       "repo": "igawa6/dualsouls",
       "tags": [
         "needs-rom",
@@ -1383,6 +1517,7 @@
       "name": "ValDroid (Valheim)",
       "category": "ports",
       "description": "Nativer Port von Valheim. Benötigt die Dateien deiner PC-Kopie.",
+      "descriptionEn": "Native port of Valheim. Requires the files from your PC copy.",
       "repo": "udarmolota/ValDroid",
       "tags": [
         "needs-rom",
@@ -1394,6 +1529,7 @@
       "name": "Slay the Spire 2 Launcher",
       "category": "ports",
       "description": "Experimenteller Launcher, der deine PC-Dateien importiert, mit Mods und Touch-Steuerung.",
+      "descriptionEn": "Experimental launcher that imports your PC files, with mods and touch controls.",
       "repo": "ModinMobileSTS/Sts2MobileLauncher",
       "tags": [
         "needs-rom",
@@ -1405,6 +1541,7 @@
       "name": "Prototype Recomp",
       "category": "ports",
       "description": "Rekompilierung der PC-Version von Prototype. Benötigt deine Kopie.",
+      "descriptionEn": "Recompilation of the PC version of Prototype. Requires your copy.",
       "repo": "VinTeRuS/proto-re",
       "tags": [
         "needs-rom",
@@ -1416,6 +1553,7 @@
       "name": "Black Ops 1 Zombies",
       "category": "ports",
       "description": "Call of Duty: Black Ops 1 Zombies als nativer Port mit Vulkan und Turnip-Unterstützung, mit Dual-Screen-Steuerung für den Thor.",
+      "descriptionEn": "Call of Duty: Black Ops 1 Zombies as a native port with Vulkan and Turnip support, with dual-screen controls for the Thor.",
       "repo": "SevyW/bo1-zombies-android",
       "tags": [
         "needs-rom",
@@ -1429,6 +1567,7 @@
       "name": "Thor RTS (Generals: Zero Hour)",
       "category": "ports",
       "description": "Nativer Port von Command & Conquer: Generals – Zero Hour für den Thor, mit Controller-Steuerung und Befehlsleiste auf dem zweiten Bildschirm.",
+      "descriptionEn": "Native port of Command & Conquer: Generals – Zero Hour for the Thor, with controller support and the command bar on the second screen.",
       "repo": "ROM-HackZ/generals-zero-hour-ayn-thor",
       "tags": [
         "needs-rom",
@@ -1443,6 +1582,7 @@
       "name": "UZDoom Dual-Screen",
       "category": "ports",
       "description": "Android-Port von UZDoom (Doom-Engine) mit Unterstützung für den zweiten Bildschirm.",
+      "descriptionEn": "Android port of UZDoom (Doom engine) with support for the second screen.",
       "repo": "andreyvelsk/com.mobilerpgpack.phone",
       "tags": [
         "needs-rom",
@@ -1454,6 +1594,7 @@
       "name": "Marathon (Aleph One)",
       "category": "ports",
       "description": "Bungies Marathon-Trilogie über die Aleph-One-Engine. Das Release enthält Marathon, Marathon 2 und Infinity als eigene Apps – über „Andere Datei“ wählbar.",
+      "descriptionEn": "Bungie's Marathon trilogy via the Aleph One engine. The release contains Marathon, Marathon 2 and Infinity as separate apps – selectable via “Other file”.",
       "repo": "daniele-rapagnani/alephone-android",
       "tags": [
         "recommended"
@@ -1465,6 +1606,7 @@
       "name": "Thor D2 (Diablo II)",
       "category": "ports",
       "description": "Diablo II: LoD auf dem Thor – Spiel oben, Live-Deck im Look des Spiels auf dem zweiten Bildschirm.",
+      "descriptionEn": "Diablo II: LoD on the Thor – the game on top, a live deck in the game's style on the second screen.",
       "repo": "harmssi/thor-d2",
       "tags": [
         "needs-rom",
@@ -1477,6 +1619,7 @@
       "name": "Thor RA2 (Red Alert 2)",
       "category": "ports",
       "description": "Red Alert 2 / Yuri's Revenge auf dem Thor: Karte oben, Touch-Befehlsleiste auf dem zweiten Bildschirm.",
+      "descriptionEn": "Red Alert 2 / Yuri's Revenge on the Thor: map on top, touch command bar on the second screen.",
       "repo": "harmssi/thor-ra2",
       "tags": [
         "needs-rom",
@@ -1489,6 +1632,7 @@
       "name": "Fallout 1 CE Dual-Screen",
       "category": "ports",
       "description": "Fallout 1 CE für den Thor: Touch-UI im Pip-Boy-Stil, Live-Karte und Kampfpanel auf dem unteren Bildschirm.",
+      "descriptionEn": "Fallout 1 CE for the Thor: Pip-Boy-style touch UI, live map and combat panel on the lower screen.",
       "repo": "sirbilliams/Fallout1Ce-Dualscreen-Android",
       "tags": [
         "needs-rom",
@@ -1502,6 +1646,7 @@
       "name": "Fallout 2 CE Dual-Screen",
       "category": "ports",
       "description": "Fallout 2 CE für den Thor: komplette Touch-UI, Companion mit Live-Karte auf dem unteren Bildschirm, Maus- und Controller-Steuerung.",
+      "descriptionEn": "Fallout 2 CE for the Thor: full touch UI, companion with live map on the lower screen, mouse and controller support.",
       "repo": "sirbilliams/Fallout2Ce-Dualscreen-Android",
       "tags": [
         "needs-rom",
@@ -1515,6 +1660,7 @@
       "name": "Jimmy Neutron: Boy Genius",
       "category": "ports",
       "description": "Jimmy Neutron: Boy Genius (PC, 2001) für Android und den Thor neu gebaut – alle 35 Level spielbar, 60 FPS.",
+      "descriptionEn": "Jimmy Neutron: Boy Genius (PC, 2001) rebuilt for Android and the Thor – all 35 levels playable, 60 FPS.",
       "repo": "sirbilliams/neutron1-Android",
       "tags": [
         "needs-rom",
@@ -1527,6 +1673,7 @@
       "name": "Jimmy Neutron vs. Jimmy Negatron",
       "category": "ports",
       "description": "Jimmy Neutron vs. Jimmy Negatron (PC, 2002) für Android und den Thor – komplett durchspielbar.",
+      "descriptionEn": "Jimmy Neutron vs. Jimmy Negatron (PC, 2002) for Android and the Thor – fully playable to the end.",
       "repo": "sirbilliams/neutron2-Android",
       "tags": [
         "needs-rom",
@@ -1538,6 +1685,7 @@
       "name": "Noitadroid (Noita)",
       "category": "ports",
       "description": "Noita als statisch rekompilierte ARM64-App, ohne Emulation. Braucht deine GOG-Kopie.",
+      "descriptionEn": "Noita as a statically recompiled ARM64 app, without emulation. Needs your GOG copy.",
       "repo": "zhouwuqi/noitadroid",
       "tags": [
         "needs-rom",
@@ -1549,6 +1697,7 @@
       "name": "WoW Forever Android",
       "category": "ports",
       "description": "Startet Blizzards Windows-ARM64-Client von World of Warcraft: Forever mit Wine, DXVK und Turnip auf Snapdragon-Handhelds. Benötigt dein eigenes Battle.net-Konto mit Zugang zu WoW Forever.",
+      "descriptionEn": "Launches Blizzard's Windows ARM64 client of World of Warcraft: Forever with Wine, DXVK and Turnip on Snapdragon handhelds. Requires your own Battle.net account with access to WoW Forever.",
       "repo": "jaredgei/wow-forever-android",
       "tags": [
         "needs-rom",
@@ -1560,6 +1709,7 @@
       "name": "Balatro Dual Screen",
       "category": "ports",
       "description": "Recompilation von Balatro für PC. Benötigt deine Spieldateien.",
+      "descriptionEn": "Recompilation of Balatro for PC. Requires your game files.",
       "repo": "rosbean/balatro-dualscreen",
       "tags": [
         "needs-rom",
@@ -1572,6 +1722,7 @@
       "name": "T6 Requiem (Black Ops 2)",
       "category": "ports",
       "description": "Statische Rekompilierung von Call of Duty: Black Ops 2 für PC. Benötigt deine PC-Spieledateien.",
+      "descriptionEn": "Static recompilation of Call of Duty: Black Ops 2 for PC. Requires your PC game files.",
       "repo": "SoldadoGhost/T6Requiem-APK",
       "tags": [
         "needs-rom"
@@ -1582,6 +1733,7 @@
       "name": "Open OMSI",
       "category": "ports",
       "description": "Statische Rekompilierung von OMSI 2 für pc. Benötigt deine PC-Spieledateien.",
+      "descriptionEn": "Static recompilation of OMSI 2 for PC. Requires your PC game files.",
       "repo": "openOMSI-org/openOMSI",
       "tags": [
         "needs-rom",
@@ -1593,6 +1745,7 @@
       "name": "3D Pinball Space Cadet",
       "category": "ports",
       "description": "Statische Rekompilierung von 3D Pinball Space Cadet für pc. Benötigt deine PC-Spieledateien.",
+      "descriptionEn": "Static recompilation of 3D Pinball Space Cadet for PC. Requires your PC game files.",
       "repo": "fexed/Pinball-on-Android",
       "tags": [
         "needs-rom"
@@ -1603,6 +1756,7 @@
       "name": "Jagged Alliance 2 (Stracciatella)",
       "category": "ports",
       "description": "Statische Rekompilierung von Jagged Alliance 2 für PC. Benötigt deine PC-Spieldateien.",
+      "descriptionEn": "Static recompilation of Jagged Alliance 2 for PC. Requires your PC game files.",
       "repo": "ja2-stracciatella/ja2-stracciatella",
       "tags": [
         "needs-rom"
@@ -1613,6 +1767,7 @@
       "name": "D2R Mobile",
       "category": "ports",
       "description": "Statische Rekompilierung von Diablo II: Resurrected für PC. Benötigt deine Kopie des Spiels.",
+      "descriptionEn": "Static recompilation of Diablo II: Resurrected for PC. Requires your copy of the game.",
       "repo": "jhaizhou-ops/d2r-mobile",
       "tags": [
         "needs-rom",
@@ -1624,19 +1779,22 @@
       "name": "Thor Conquer (C&C + Red Alert)",
       "category": "ports",
       "description": "Command & Conquer: Tiberian Dawn und Red Alert nativ auf dem Thor (Vanilla Conquer): oben nur die Karte, pixelgenau in doppelter Auflösung, unten die Seitenleiste als Touch-Kommandodeck mit Radar, Bauleisten und Kontrollgruppen.",
+      "descriptionEn": "Command & Conquer: Tiberian Dawn and Red Alert natively on the Thor (Vanilla Conquer): only the map on top, pixel-perfect at double resolution, with the sidebar below as a touch command deck with radar, build bars and control groups.",
       "repo": "harmssi/thor-conquer",
       "tags": [
         "dual-screen",
         "thor",
         "needs-rom"
       ],
-      "note": "Braucht die Original-Dateien aus deiner eigenen C&C Remastered Collection."
+      "note": "Braucht die Original-Dateien aus deiner eigenen C&C Remastered Collection.",
+      "noteEn": "Needs the original files from your own C&C Remastered Collection."
     },
     {
       "id": "thor-aok",
       "name": "Thor AoK (Age of Empires II)",
       "category": "ports",
       "description": "Age of Empires II nativ auf dem Thor (OpenAoK): Karte oben, Kommandodeck mit Bau- und Einheitenmenüs auf dem unteren Bildschirm.",
+      "descriptionEn": "Age of Empires II natively on the Thor (OpenAoK): map on top, command deck with build and unit menus on the lower screen.",
       "repo": "harmssi/thor-aok",
       "tags": [
         "dual-screen",
@@ -1644,51 +1802,59 @@
         "needs-rom",
         "beta"
       ],
-      "note": "Braucht Age of Empires II HD (Steam). Die Spieldaten werden einmal am PC konvertiert, die Anleitung steht im GitHub-Repo."
+      "note": "Braucht Age of Empires II HD (Steam). Die Spieldaten werden einmal am PC konvertiert, die Anleitung steht im GitHub-Repo.",
+      "noteEn": "Needs Age of Empires II HD (Steam). The game data is converted once on a PC; the instructions are in the GitHub repo."
     },
     {
       "id": "thor-heroes3",
       "name": "Heroes III Thor Edition (VCMI)",
       "category": "ports",
       "description": "Heroes of Might and Magic III auf der VCMI-Engine, für den Thor umgebaut: Abenteuerkarte bildschirmfüllend oben, unten ein Deck im Spiel-Look mit Minikarte, Helden, Städten, Zauberbuch und Kampfbefehlen.",
+      "descriptionEn": "Heroes of Might and Magic III on the VCMI engine, rebuilt for the Thor: the adventure map fills the upper screen, below is a deck in the game's style with minimap, heroes, towns, spell book and combat commands.",
       "repo": "harmssi/thor-heroes3",
       "tags": [
         "dual-screen",
         "thor",
         "needs-rom"
       ],
-      "note": "Braucht die Spieldaten von Heroes III – eine Komplettedition (z. B. GOG) oder die Steam HD Edition."
+      "note": "Braucht die Spieldaten von Heroes III – eine Komplettedition (z. B. GOG) oder die Steam HD Edition.",
+      "noteEn": "Needs the game data of Heroes III – a complete edition (e.g. GOG) or the Steam HD Edition."
     },
     {
       "id": "sonic3air",
       "name": "Sonic 3 A.I.R.",
       "category": "fangames",
       "description": "Sonic 3 & Knuckles als „Angel Island Revisited“: Fan-Remaster in Widescreen mit vielen Extras, Bugfixes und Mod-Support.",
+      "descriptionEn": "Sonic 3 & Knuckles as “Angel Island Revisited”: a widescreen fan remaster with lots of extras, bug fixes and mod support.",
       "repo": "Eukaryot/sonic3air",
       "tags": [
         "needs-rom",
         "recommended"
       ],
       "apkRegex": "sonic3air",
-      "note": "Braucht die ROM von Sonic 3 & Knuckles, z. B. aus der Steam-Version."
+      "note": "Braucht die ROM von Sonic 3 & Knuckles, z. B. aus der Steam-Version.",
+      "noteEn": "Needs the Sonic 3 & Knuckles ROM, e.g. from the Steam version."
     },
     {
       "id": "srb2",
       "name": "Sonic Robo Blast 2",
       "category": "fangames",
       "description": "Das große 3D-Sonic-Fangame auf Basis der Doom-Engine – mit Kampagne, Multiplayer und riesiger Mod-Szene. Community-Android-Port mit allen Spieldaten.",
+      "descriptionEn": "The big 3D Sonic fan game based on the Doom engine – with a campaign, multiplayer and a huge mod scene. Community Android port with all game data.",
       "repo": "Lactozilla/SRB2",
       "tags": [
         "recommended"
       ],
       "prerelease": true,
-      "note": "Android-Port auf Stand 2.2.8 – für Online-Spiele mit PC-Spielern (2.2.15) nicht kompatibel."
+      "note": "Android-Port auf Stand 2.2.8 – für Online-Spiele mit PC-Spielern (2.2.15) nicht kompatibel.",
+      "noteEn": "Android port at version 2.2.8 – not compatible with online games against PC players (2.2.15)."
     },
     {
       "id": "opensurge",
       "name": "Open Surge",
       "category": "fangames",
       "description": "Retro-Plattformer im Stil der 16-Bit-Sonic-Spiele mit Surge the Rabbit – komplett frei, inklusive Level-Editor.",
+      "descriptionEn": "Retro platformer in the style of the 16-bit Sonic games starring Surge the Rabbit – completely free, including a level editor.",
       "repo": "alemart/opensurge",
       "apkRegex": "android"
     },
@@ -1697,19 +1863,22 @@
       "name": "AM2R Autopatcher",
       "category": "fangames",
       "description": "Patcht AM2R 1.1 (das Metroid-II-Fan-Remake) zu einer modernen Android-App, auch als Dual-Screen-Variante.",
+      "descriptionEn": "Patches AM2R 1.1 (the Metroid II fan remake) into a modern Android app, also as a dual-screen variant.",
       "repo": "am2r-android/AM2R-Autopatcher-Android",
       "tags": [
         "needs-rom",
         "dual-screen"
       ],
       "apkRegex": "Autopatcher.*\\.apk$",
-      "note": "Braucht die AM2R_11.zip."
+      "note": "Braucht die AM2R_11.zip.",
+      "noteEn": "Needs the AM2R_11.zip."
     },
     {
       "id": "smb1r",
       "name": "Super Mario Bros. Remastered",
       "category": "fangames",
       "description": "Super Mario Bros. Remastered – Android-Build des Fan-Remakes.",
+      "descriptionEn": "Super Mario Bros. Remastered – Android build of the fan remake.",
       "repo": "mircowuffwuff/super-mario-bros.-remastered-android",
       "tags": [
         "needs-rom"
@@ -1720,26 +1889,31 @@
       "name": "TheXTech (SMBX)",
       "category": "fangames",
       "description": "Nativer Port der Super-Mario-Bros.-X-Engine: spielt SMBX-Episoden und tausende Fan-Level, mit Controller-Unterstützung.",
+      "descriptionEn": "Native port of the Super Mario Bros. X engine: plays SMBX episodes and thousands of fan levels, with controller support.",
       "repo": "TheXTech/TheXTech",
       "apkRegex": "android",
-      "note": "Spiel-Assets (z. B. SMBX 1.3 oder „Adventures of Demo“) bringt die App nicht mit – die lädst du je nach Episode dazu."
+      "note": "Spiel-Assets (z. B. SMBX 1.3 oder „Adventures of Demo“) bringt die App nicht mit – die lädst du je nach Episode dazu.",
+      "noteEn": "The app doesn't include game assets (e.g. SMBX 1.3 or “Adventures of Demo”) – you download those depending on the episode."
     },
     {
       "id": "doukutsurs",
       "name": "Cave Story (doukutsu-rs)",
       "category": "fangames",
       "description": "Originalgetreuer Open-Source-Nachbau der Cave-Story-Engine mit Widescreen, Controller-Support und Netplay.",
+      "descriptionEn": "Faithful open-source recreation of the Cave Story engine with widescreen, controller support and netplay.",
       "repo": "doukutsu-rs/doukutsu-rs",
       "tags": [
         "recommended"
       ],
-      "note": "Braucht die Spieldaten der Freeware-Version von Cave Story (oder Cave Story+)."
+      "note": "Braucht die Spieldaten der Freeware-Version von Cave Story (oder Cave Story+).",
+      "noteEn": "Needs the game data of the freeware version of Cave Story (or Cave Story+)."
     },
     {
       "id": "spelunkyhd",
       "name": "Spelunky Classic HD",
       "category": "fangames",
       "description": "Verbesserte Fassung von Derek Yus Freeware-Klassiker Spelunky Classic – komplett spielbar, ohne Zusatzdaten.",
+      "descriptionEn": "Enhanced version of Derek Yu's freeware classic Spelunky Classic – fully playable, no extra data needed.",
       "repo": "yancharkin/SpelunkyClassicHD",
       "tags": [
         "recommended"
@@ -1751,6 +1925,7 @@
       "name": "SuperTux",
       "category": "fangames",
       "description": "Freier Jump'n'Run-Klassiker im Stil von Super Mario mit Tux als Held – komplett spielbar, mit Level-Editor.",
+      "descriptionEn": "Free classic platformer in the style of Super Mario with Tux as the hero – fully playable, with a level editor.",
       "repo": "SuperTux/supertux",
       "apkRegex": "arm64"
     },
@@ -1759,6 +1934,7 @@
       "name": "Castlevania ReVamped",
       "category": "fangames",
       "description": "Castlevania-Fangame (NES-Stil) mit Touch- und Gamepad-Steuerung.",
+      "descriptionEn": "Castlevania fan game (NES style) with touch and gamepad controls.",
       "repo": "eboody/Castlevania-ReVamped-Open-Source-Edition"
     },
     {
@@ -1766,17 +1942,20 @@
       "name": "PokeMMO",
       "category": "fangames",
       "description": "Fan-gemachtes Pokémon-MMO: spielt die Regionen der klassischen Editionen online mit anderen. Nicht auf GitHub – öffnet die offizielle Seite.",
+      "descriptionEn": "Fan-made Pokémon MMO: play the regions of the classic games online with others. Not on GitHub – opens the official website.",
       "tags": [
         "needs-rom"
       ],
       "homepage": "https://pokemmo.com/",
-      "note": "Braucht die ROMs deiner eigenen Spiele."
+      "note": "Braucht die ROMs deiner eigenen Spiele.",
+      "noteEn": "Needs the ROMs of your own games."
     },
     {
       "id": "pokerogue",
       "name": "PokeRogue",
       "category": "fangames",
       "description": "PokeRogue als App: das beliebte Pokémon-Roguelite-Fangame, mit Controller-Unterstützung.",
+      "descriptionEn": "PokeRogue as an app: the popular Pokémon roguelite fan game, with controller support.",
       "repo": "Admiral-Billy/Pokerogue-App",
       "tags": [
         "recommended"
@@ -1787,6 +1966,7 @@
       "name": "Sonic 1 Forever",
       "category": "fangames",
       "description": "Fan-Mod auf Basis der Sonic-1-Decompilation mit neuen Spielmodi, Charakteren und vielen Verbesserungen.",
+      "descriptionEn": "Fan mod based on the Sonic 1 decompilation with new game modes, characters and lots of improvements.",
       "repo": "ElspethThePict/S1Forever",
       "tags": [
         "needs-rom"
@@ -1799,6 +1979,7 @@
       "name": "Pokémon Reloaded",
       "category": "fangames",
       "description": "Android-Port des Fangames Pokémon Reloaded.",
+      "descriptionEn": "Android port of the fan game Pokémon Reloaded.",
       "repo": "Klisee/pokemon-reloaded-android",
       "tags": [
         "needs-rom"
@@ -1809,6 +1990,7 @@
       "name": "Azahar",
       "category": "emulators",
       "description": "3DS-Emulator, Nachfolger von Citra und Lime3DS, mit Layouts für zwei Bildschirme.",
+      "descriptionEn": "3DS emulator, successor to Citra and Lime3DS, with layouts for two screens.",
       "repo": "azahar-emu/azahar",
       "tags": [
         "dual-screen",
@@ -1821,6 +2003,7 @@
       "name": "AzaharPlus",
       "category": "emulators",
       "description": "Azahar-Fork mit Zusatzfunktionen. Diese Variante lässt sich parallel zu Azahar installieren.",
+      "descriptionEn": "Azahar fork with extra features. This variant can be installed alongside Azahar.",
       "repo": "AzaharPlus/AzaharPlus",
       "tags": [
         "dual-screen"
@@ -1832,6 +2015,7 @@
       "name": "AzaharDS",
       "category": "emulators",
       "description": "Azahar-Fork von SapphireRhodonite, abgestimmt auf Dual-Screen-Handhelds wie den Thor.",
+      "descriptionEn": "Azahar fork by SapphireRhodonite, tuned for dual-screen handhelds like the Thor.",
       "repo": "SapphireRhodonite/azahar",
       "tags": [
         "dual-screen",
@@ -1844,6 +2028,7 @@
       "name": "melonDS",
       "category": "emulators",
       "description": "DS-Emulator, Android-Port von melonDS.",
+      "descriptionEn": "DS emulator, Android port of melonDS.",
       "repo": "rafaelvcaetano/melonDS-android",
       "tags": [
         "dual-screen"
@@ -1854,6 +2039,7 @@
       "name": "WatermelonDS",
       "category": "emulators",
       "description": "melonDS-Fork mit echter Dual-Screen-Ausgabe: oberer und unterer DS-Bildschirm auf beiden Thor-Displays.",
+      "descriptionEn": "melonDS fork with true dual-screen output: the upper and lower DS screens on both Thor displays.",
       "repo": "SapphireRhodonite/WatermelonDS",
       "tags": [
         "dual-screen",
@@ -1866,6 +2052,7 @@
       "name": "Cemu DS",
       "category": "emulators",
       "description": "Wii-U-Emulator Cemu mit Dual-Screen-Unterstützung: das GamePad-Bild kommt aufs zweite Display.",
+      "descriptionEn": "Wii U emulator Cemu with dual-screen support: the GamePad image goes to the second display.",
       "repo": "sapphirerhodonite/cemu",
       "tags": [
         "dual-screen",
@@ -1873,21 +2060,27 @@
       ]
     },
     {
-      "id": "citron",
-      "name": "Citron Neo",
+      "id": "citron-neonex",
+      "name": "Citron NeoNex",
       "category": "emulators",
-      "description": "Switch-Emulator, Weiterentwicklung von Citron.",
-      "repo": "citron-neo/emulator",
+      "description": "Switch-Emulator: Fork von Citron Neo mit Patches für Online-Spiel über Nextendo Network (Freunde, Cloud-Spielstände). Das ursprüngliche Citron-Neo-Repo ist nach einer DMCA-Meldung nicht mehr auf GitHub.",
+      "descriptionEn": "Switch emulator: a fork of Citron Neo with patches for online play via Nextendo Network (friends, cloud saves). The original Citron Neo repo is no longer on GitHub after a DMCA notice.",
+      "repo": "LeVonikke/Citron-NeoNex",
       "tags": [
-        "needs-bios"
+        "needs-bios",
+        "beta"
       ],
-      "apkRegex": "mainline"
+      "note": "Noch in Arbeit und laut Entwickler kaum getestet. Braucht wie jeder Switch-Emulator deine eigenen Keys und Firmware.",
+      "noteEn": "Still a work in progress and, according to the developer, barely tested. Like any Switch emulator, it needs your own keys and firmware.",
+      "apkRegex": "release",
+      "iconUrl": "https://raw.githubusercontent.com/LeVonikke/Citron-NeoNex/HEAD/dist/qt_themes/default/icons/256x256/citron.png"
     },
     {
       "id": "armsx2",
       "name": "ARMSX2",
       "category": "emulators",
       "description": "PS2-Emulator auf Basis von PCSX2 für ARM. Der Store nimmt den Build für Android 13.",
+      "descriptionEn": "PS2 emulator for ARM based on PCSX2. The store uses the Android 13 build.",
       "repo": "ARMSX2/ARMSX2",
       "tags": [
         "needs-bios",
@@ -1900,6 +2093,7 @@
       "name": "ARMSX1",
       "category": "emulators",
       "description": "Neuer PS1-Emulator von den ARMSX2-Machern.",
+      "descriptionEn": "New PS1 emulator from the makers of ARMSX2.",
       "repo": "ARMSX2/ARMSX1",
       "tags": [
         "needs-bios",
@@ -1911,6 +2105,7 @@
       "name": "Vita3K",
       "category": "emulators",
       "description": "PS-Vita-Emulator, aktuelle Android-Builds.",
+      "descriptionEn": "PS Vita emulator, current Android builds.",
       "repo": "Vita3K/Vita3K-builds",
       "tags": [
         "needs-bios"
@@ -1922,6 +2117,7 @@
       "name": "aPS3e",
       "category": "emulators",
       "description": "Experimenteller PS3-Emulator für Android auf Basis von RPCS3.",
+      "descriptionEn": "Experimental PS3 emulator for Android based on RPCS3.",
       "repo": "aenu1/aps3e",
       "tags": [
         "needs-bios",
@@ -1933,6 +2129,7 @@
       "name": "RPCSX",
       "category": "emulators",
       "description": "PS3-Emulator (RPCS3-Abkömmling) für Android.",
+      "descriptionEn": "PS3 emulator (an RPCS3 offshoot) for Android.",
       "repo": "RPCSX/rpcsx-ui-android",
       "tags": [
         "needs-bios",
@@ -1944,6 +2141,7 @@
       "name": "Flycast",
       "category": "emulators",
       "description": "Dreamcast-, Naomi- und Atomiswave-Emulator.",
+      "descriptionEn": "Dreamcast, Naomi and Atomiswave emulator.",
       "repo": "flyinghead/flycast"
     },
     {
@@ -1951,6 +2149,7 @@
       "name": "Citra MMJ",
       "category": "emulators",
       "description": "Älterer 3DS-Emulator-Fork von weihuoya – manchmal schneller als Azahar.",
+      "descriptionEn": "Older 3DS emulator fork by weihuoya – sometimes faster than Azahar.",
       "repo": "weihuoya/citra",
       "apkRegex": "^Citra_MMJ_\\d+\\.apk$"
     },
@@ -1959,6 +2158,7 @@
       "name": "xemu Android",
       "category": "emulators",
       "description": "Emulator für die erste Xbox – Android-Port.",
+      "descriptionEn": "Emulator for the original Xbox – Android port.",
       "repo": "izzy2lost/xemu",
       "tags": [
         "needs-bios",
@@ -1970,6 +2170,7 @@
       "name": "X360 Mobile",
       "category": "emulators",
       "description": "Experimenteller Xbox-360-Emulator.",
+      "descriptionEn": "Experimental Xbox 360 emulator.",
       "repo": "Ashnar2602/X360-Mobile---OFFICIAL",
       "tags": [
         "beta"
@@ -1981,6 +2182,7 @@
       "name": "Gopher64",
       "category": "emulators",
       "description": "Sehr kompatibler N64-Emulator.",
+      "descriptionEn": "Highly compatible N64 emulator.",
       "repo": "gopher64/gopher64"
     },
     {
@@ -1988,6 +2190,7 @@
       "name": "Lemuroid",
       "category": "emulators",
       "description": "All-in-One-Emulator mit aufgeräumter Oberfläche für viele Retro-Systeme (Libretro-Cores).",
+      "descriptionEn": "All-in-one emulator with a clean interface for many retro systems (Libretro cores).",
       "repo": "Swordfish90/Lemuroid"
     },
     {
@@ -1995,6 +2198,7 @@
       "name": "Panda3DS",
       "category": "emulators",
       "description": "HLE-3DS-Emulator, eine Alternative zu Azahar.",
+      "descriptionEn": "HLE 3DS emulator, an alternative to Azahar.",
       "repo": "wheremyfoodat/Panda3DS",
       "tags": [
         "beta"
@@ -2007,6 +2211,7 @@
       "name": "hakuX",
       "category": "emulators",
       "description": "Xbox-Emulator für Android.",
+      "descriptionEn": "Xbox emulator for Android.",
       "repo": "rfandango/hakuX",
       "tags": [
         "needs-bios",
@@ -2018,6 +2223,7 @@
       "name": "Swiff",
       "category": "emulators",
       "description": "Flash-Spiele und -Animationen auf Android.",
+      "descriptionEn": "Flash games and animations on Android.",
       "repo": "NaviVani-dev/Swiff",
       "apkRegex": "arm64"
     },
@@ -2026,6 +2232,7 @@
       "name": "PICO-8 Android",
       "category": "emulators",
       "description": "Wrapper, mit dem PICO-8 auf Android läuft. PICO-8 selbst musst du kaufen.",
+      "descriptionEn": "Wrapper that lets PICO-8 run on Android. You have to buy PICO-8 itself.",
       "repo": "Macs75/pico8-android",
       "tags": [
         "needs-rom"
@@ -2036,6 +2243,7 @@
       "name": "RetroArch",
       "category": "emulators",
       "description": "Multi-System-Frontend mit Cores für fast alle Retro-Konsolen. Nicht auf GitHub-Releases – öffnet die offizielle Download-Seite (AArch64-Build nehmen, nicht die Play-Store-Version).",
+      "descriptionEn": "Multi-system frontend with cores for almost every retro console. Not on GitHub releases – opens the official download page (take the AArch64 build, not the Play Store version).",
       "homepage": "https://www.retroarch.com/?page=platforms",
       "tags": [
         "recommended"
@@ -2047,6 +2255,7 @@
       "name": "Dolphin",
       "category": "emulators",
       "description": "GameCube- und Wii-Emulator. Öffnet die offizielle Download-Seite.",
+      "descriptionEn": "GameCube and Wii emulator. Opens the official download page.",
       "homepage": "https://dolphin-emu.org/download/",
       "iconUrl": "https://github.com/dolphin-emu.png?size=192"
     },
@@ -2055,6 +2264,7 @@
       "name": "PPSSPP",
       "category": "emulators",
       "description": "PSP-Emulator. Öffnet die offizielle Download-Seite.",
+      "descriptionEn": "PSP emulator. Opens the official download page.",
       "homepage": "https://www.ppsspp.org/download/"
     },
     {
@@ -2062,6 +2272,7 @@
       "name": "DuckStation",
       "category": "emulators",
       "description": "PS1-Emulator. Öffnet die offizielle Seite.",
+      "descriptionEn": "PS1 emulator. Opens the official website.",
       "homepage": "https://www.duckstation.org/",
       "tags": [
         "needs-bios"
@@ -2072,6 +2283,7 @@
       "name": "Eden",
       "category": "emulators",
       "description": "Switch-Emulator, direkt von Edens eigenem Server. Standard ist der Standard-Build; über „Andere Datei“ gibt es auch Optimized und Legacy.",
+      "descriptionEn": "Switch emulator, straight from Eden's own server. The default is the standard build; Optimized and Legacy are available via “Other file”.",
       "tags": [
         "needs-bios",
         "recommended"
@@ -2087,6 +2299,7 @@
       "name": "Eden Nightly",
       "category": "emulators",
       "description": "Tägliche Builds von Eden mit den neuesten Fixes – direkt von nightly.eden-emu.dev. Die GitHub-Spiegel sind per DMCA gesperrt. Ältere Nightlys sind über „Ältere Version…“ wählbar.",
+      "descriptionEn": "Daily builds of Eden with the latest fixes – straight from nightly.eden-emu.dev. The GitHub mirrors are blocked by DMCA. Older nightlies can be picked via “Older version…”.",
       "tags": [
         "needs-bios",
         "beta"
@@ -2102,6 +2315,7 @@
       "name": "Eden Duo",
       "category": "emulators",
       "description": "Eden-Fork für Dual-Screen-Handhelds wie den AYN Thor: Das Spiel läuft oben, unten zeigt eine Touch-Begleitansicht Karte, Party, Inventar und Status live aus dem laufenden Spiel. Begleiter gibt es für über 30 Switch-Spiele, von Zelda über Pokémon bis Persona 5 Royal; sie werden als .dsmod.zip-Pakete einzeln installiert.",
+      "descriptionEn": "Eden fork for dual-screen handhelds like the AYN Thor: the game runs on top, while a touch companion view below shows map, party, inventory and status live from the running game. Companions exist for over 30 Switch games, from Zelda to Pokémon to Persona 5 Royal; each is installed as a .dsmod.zip package.",
       "repo": "igawa6/eden-duo",
       "homepage": "https://github.com/igawa6/eden-duo-companions",
       "tags": [
@@ -2109,13 +2323,15 @@
         "thor",
         "needs-bios"
       ],
-      "note": "Braucht wie Eden deine eigenen Switch-Keys und Firmware. Die Begleiter-Pakete (.dsmod.zip) lädst du bei Eden Duo Companions."
+      "note": "Braucht wie Eden deine eigenen Switch-Keys und Firmware. Die Begleiter-Pakete (.dsmod.zip) lädst du bei Eden Duo Companions.",
+      "noteEn": "Like Eden, needs your own Switch keys and firmware. You download the companion packages (.dsmod.zip) from Eden Duo Companions."
     },
     {
       "id": "scummvm",
       "name": "ScummVM",
       "category": "emulators",
       "description": "Klassische Point-and-Click-Adventures. Öffnet die offizielle Download-Seite.",
+      "descriptionEn": "Classic point-and-click adventures. Opens the official download page.",
       "homepage": "https://www.scummvm.org/downloads/",
       "iconUrl": "https://github.com/scummvm.png?size=192"
     },
@@ -2124,6 +2340,7 @@
       "name": "ARMSX3",
       "category": "emulators",
       "description": "PS3-Emulator auf Basis von RPCS3 für ARM64, von einem der ARMSX2-Gründer. Der Store nimmt den Build für Android 13.",
+      "descriptionEn": "PS3 emulator for ARM64 based on RPCS3, by one of the ARMSX2 founders. The store uses the Android 13 build.",
       "repo": "ARMSX2/ARMSX3",
       "tags": [
         "needs-bios",
@@ -2136,6 +2353,7 @@
       "name": "Hokkaido (Switch 2)",
       "category": "emulators",
       "description": "Experimenteller Nintendo-Switch-2-Emulator für Android (bis Version 0.5 „Lichii für Android“). Braucht Android 13+ und Vulkan 1.3 – der Thor erfüllt beides.",
+      "descriptionEn": "Experimental Nintendo Switch 2 emulator for Android (called “Lichii for Android” up to version 0.5). Needs Android 13+ and Vulkan 1.3 – the Thor meets both.",
       "repo": "pavelgajdo/Hokkaido",
       "tags": [
         "needs-bios",
@@ -2147,6 +2365,7 @@
       "name": "Lichii Android (Switch 2)",
       "category": "emulators",
       "description": "Sehr experimenteller Switch-2-Emulator, Fork von Lichii mit Builds pro Chip-Generation. Der Store nimmt den ARMv9-Build, der zum Snapdragon 8 Gen 2 passt.",
+      "descriptionEn": "Very experimental Switch 2 emulator, a fork of Lichii with builds per chip generation. The store uses the ARMv9 build that fits the Snapdragon 8 Gen 2.",
       "repo": "Ethiquema/Lichii-Android",
       "tags": [
         "needs-bios",
@@ -2154,13 +2373,15 @@
       ],
       "apkRegex": "armv9",
       "prerelease": true,
-      "note": "Nutzt denselben Paketnamen wie Hokkaido – es geht nur einer von beiden. Zum Wechseln „Ersetzen“ verwenden."
+      "note": "Nutzt denselben Paketnamen wie Hokkaido – es geht nur einer von beiden. Zum Wechseln „Ersetzen“ verwenden.",
+      "noteEn": "Uses the same package name as Hokkaido – only one of the two can be installed. Use “Replace” to switch."
     },
     {
       "id": "gbaduo",
       "name": "GBA Duo",
       "category": "emulators",
       "description": "GBA-, GBC- und GB-Player für Dual-Screen-Handhelds. Companions für einzelne Spiele gibt es im Repo als Erweiterung.",
+      "descriptionEn": "GBA, GBC and GB player for dual-screen handhelds. Companions for individual games are available in the repo as extensions.",
       "repo": "khumam/gba-duo",
       "tags": [
         "dual-screen",
@@ -2172,6 +2393,7 @@
       "name": "Borked3DS",
       "category": "emulators",
       "description": "Experimenteller 3DS-Emulator auf Citra-Basis mit zusätzlichen Hacks und Optionen. Für die meisten Spiele ist Azahar die stabilere Wahl, Borked3DS lohnt sich als Alternative bei Problemfällen.",
+      "descriptionEn": "Experimental Citra-based 3DS emulator with additional hacks and options. Azahar is the more stable choice for most games; Borked3DS is worth trying as an alternative when a game misbehaves.",
       "repo": "Borked3DS/Borked3DS",
       "tags": [
         "needs-rom",
@@ -2183,6 +2405,7 @@
       "name": "Mandarine Neo",
       "category": "emulators",
       "description": "Citra-Fork für den 3DS mit neuen, teils experimentellen Funktionen und Hacks, die es in anderen Forks nicht gibt.",
+      "descriptionEn": "Citra fork for the 3DS with new, partly experimental features and hacks not found in other forks.",
       "repo": "ptyfyre/mandarine-neo",
       "tags": [
         "needs-rom",
@@ -2194,6 +2417,7 @@
       "name": "Play! (PS2)",
       "category": "emulators",
       "description": "PlayStation-2-Emulator, der ohne BIOS auskommt. Die Kompatibilität ist geringer als bei ARMSX2, dafür ist er einfach einzurichten. Das APK gibt es auf der offiziellen Download-Seite (Ordner der neuesten Version, Datei Play-release.apk).",
+      "descriptionEn": "PlayStation 2 emulator that works without a BIOS. Compatibility is lower than ARMSX2, but it's easy to set up. The APK is on the official download page (folder of the newest version, file Play-release.apk).",
       "homepage": "https://purei.org/downloads/play/stable/",
       "tags": [
         "needs-rom"
@@ -2205,30 +2429,35 @@
       "name": "Xendroid+",
       "category": "emulators",
       "description": "Weiterentwickelter Fork von XenDroid für Xbox-360-Emulation auf Android, auf Basis von Xenia. Noch experimentell.",
+      "descriptionEn": "Further developed fork of XenDroid for Xbox 360 emulation on Android, based on Xenia. Still experimental.",
       "repo": "phforner0/Xendroid-Plus",
       "tags": [
         "needs-rom",
         "beta"
       ],
-      "note": "Braucht einen Custom-Turnip-Treiber für den Adreno 740 (Tab Treiber)."
+      "note": "Braucht einen Custom-Turnip-Treiber für den Adreno 740 (Tab Treiber).",
+      "noteEn": "Needs a custom Turnip driver for the Adreno 740 (Drivers tab)."
     },
     {
       "id": "xendroid",
       "name": "XenDroid",
       "category": "emulators",
       "description": "Xbox-360-Emulator für Android auf Basis von Xenia. Noch experimentell; Xendroid+ ist der aktiver weiterentwickelte Fork.",
+      "descriptionEn": "Xbox 360 emulator for Android based on Xenia. Still experimental; Xendroid+ is the more actively developed fork.",
       "repo": "rfandango/XenDroid",
       "tags": [
         "needs-rom",
         "beta"
       ],
-      "note": "Braucht einen Custom-Turnip-Treiber für den Adreno 740 (Tab Treiber)."
+      "note": "Braucht einen Custom-Turnip-Treiber für den Adreno 740 (Tab Treiber).",
+      "noteEn": "Needs a custom Turnip driver for the Adreno 740 (Drivers tab)."
     },
     {
       "id": "loki",
       "name": "Loki (Thor Launcher)",
       "category": "frontends",
       "description": "All-in-One-Launcher nur für den AYN Thor: Couch- und Desktop-Modus, Medien- und Game-Streaming.",
+      "descriptionEn": "All-in-one launcher just for the AYN Thor: couch and desktop mode, media and game streaming.",
       "repo": "Prof-Mags/Thor-Launcher",
       "tags": [
         "thor",
@@ -2241,6 +2470,7 @@
       "name": "Mjolnir",
       "category": "frontends",
       "description": "Dual-Screen-Home-Launcher: startet auf jedem Display eine eigene App und belegt die Home-Taste neu.",
+      "descriptionEn": "Dual-screen home launcher: starts a separate app on each display and remaps the Home button.",
       "repo": "blacksheepmvp/mjolnir",
       "tags": [
         "thor",
@@ -2253,6 +2483,7 @@
       "name": "Jarngreipr",
       "category": "frontends",
       "description": "Moderner, anpassbarer Launcher für den AYN Thor und andere Dual-Screen-Geräte.",
+      "descriptionEn": "Modern, customizable launcher for the AYN Thor and other dual-screen devices.",
       "repo": "BrianJr03/Jarngreipr",
       "tags": [
         "thor",
@@ -2264,6 +2495,7 @@
       "name": "Cocoon FE",
       "category": "frontends",
       "description": "Frontend im DS-Stil für zwei Bildschirme.",
+      "descriptionEn": "DS-style frontend for two screens.",
       "repo": "inssekt/CocoonFE",
       "tags": [
         "dual-screen"
@@ -2274,6 +2506,7 @@
       "name": "iiSU",
       "category": "frontends",
       "description": "Optisch aufwendiger Launcher für Handhelds mit Dual-Screen-Unterstützung (Alpha).",
+      "descriptionEn": "Visually lavish launcher for handhelds with dual-screen support (alpha).",
       "repo": "iisu-network/iiSU",
       "tags": [
         "dual-screen",
@@ -2285,6 +2518,7 @@
       "name": "ES-DE Companion",
       "category": "frontends",
       "description": "Zweitbildschirm-App für ES-DE: zeigt Spiel-Artwork und einen App-Launcher auf dem zweiten Display.",
+      "descriptionEn": "Second-screen app for ES-DE: shows game artwork and an app launcher on the second display.",
       "repo": "RobZombie9043/es-de-companion",
       "tags": [
         "dual-screen"
@@ -2296,6 +2530,7 @@
       "name": "Console Launcher",
       "category": "frontends",
       "description": "Android-Launcher und Emulations-Frontend mit Themes.",
+      "descriptionEn": "Android launcher and emulation frontend with themes.",
       "repo": "likeich/console-launcher"
     },
     {
@@ -2303,6 +2538,7 @@
       "name": "Daijishō",
       "category": "frontends",
       "description": "Beliebtes Emulations-Frontend für einen Bildschirm.",
+      "descriptionEn": "Popular emulation frontend for a single screen.",
       "repo": "TapiocaFox/Daijishou"
     },
     {
@@ -2310,6 +2546,7 @@
       "name": "Pegasus Frontend",
       "category": "frontends",
       "description": "Anpassbares, themebares Spiele-Frontend.",
+      "descriptionEn": "Customizable, themeable game frontend.",
       "repo": "mmatyas/pegasus-frontend",
       "apkRegex": "android64",
       "prerelease": true
@@ -2319,6 +2556,7 @@
       "name": "Argosy",
       "category": "frontends",
       "description": "Nativer Android-Client für RomM: Spiele synchronisieren, installieren und starten.",
+      "descriptionEn": "Native Android client for RomM: sync, install and launch games.",
       "repo": "rommapp/argosy-launcher",
       "apkRegex": "arm64"
     },
@@ -2327,6 +2565,7 @@
       "name": "NeoStation",
       "category": "frontends",
       "description": "Plattformübergreifendes Emulations-Frontend.",
+      "descriptionEn": "Cross-platform emulation frontend.",
       "repo": "misobadev/neostation-frontend",
       "apkRegex": "arm64"
     },
@@ -2335,6 +2574,7 @@
       "name": "ES-DE",
       "category": "frontends",
       "description": "EmulationStation Desktop Edition – das Frontend für viele Thor-Setups. Öffnet die offizielle Seite.",
+      "descriptionEn": "EmulationStation Desktop Edition – the frontend behind many Thor setups. Opens the official website.",
       "homepage": "https://es-de.org/",
       "tags": [
         "recommended"
@@ -2345,6 +2585,7 @@
       "name": "R-Shop",
       "category": "frontends",
       "description": "Controller-orientierter Retro-Spielemanager: RomM, lokale Ordner und Netzwerkquellen sind in wenigen Minuten verbunden.",
+      "descriptionEn": "Controller-focused retro game manager: RomM, local folders and network sources are connected in a few minutes.",
       "repo": "AverageConsumer/R-Shop"
     },
     {
@@ -2352,6 +2593,7 @@
       "name": "Cannoli",
       "category": "frontends",
       "description": "Schlankes Emulations-Frontend.",
+      "descriptionEn": "Lightweight emulation frontend.",
       "repo": "CannoliHQ/cannoli"
     },
     {
@@ -2359,6 +2601,7 @@
       "name": "PlumEmu",
       "category": "frontends",
       "description": "Ruhiger, leichter Launcher für Retro-Handhelds: benennt Spiele offline, wählt die Emulatoren, aktualisiert sich selbst und zeigt den Akkuverbrauch auf dem zweiten Bildschirm.",
+      "descriptionEn": "Calm, light launcher for retro handhelds: names games offline, picks the emulators, updates itself and shows battery usage on the second screen.",
       "repo": "joiha-steven/plumemu",
       "tags": [
         "dual-screen",
@@ -2370,6 +2613,7 @@
       "name": "ES-DE AutoHook",
       "category": "frontends",
       "description": "Öffnet ES-DE Companion automatisch auf dem zweiten Display, sobald ES-DE startet.",
+      "descriptionEn": "Automatically opens ES-DE Companion on the second display as soon as ES-DE starts.",
       "repo": "Ship-of-Agony/ES-DE-AutoHook-Companion",
       "tags": [
         "dual-screen"
@@ -2380,6 +2624,7 @@
       "name": "DroidDeck",
       "category": "frontends",
       "description": "Bringt das SteamOS-Gefühl auf Android.",
+      "descriptionEn": "Brings the SteamOS feel to Android.",
       "repo": "Droid-Deck/DroidDeck",
       "tags": [
         "beta"
@@ -2390,17 +2635,22 @@
       "id": "recompa",
       "name": "Recompa",
       "category": "frontends",
-      "description": "Launcher für über 370 native Spiele-Ports (Recomps, Decomps, Source-Ports): Port wählen, direkt vom GitHub des Autors installieren, eigene Spieldatei einrichten, spielen. Mit Kompatibilitätsberichten pro Gerät.",
-      "repo": "kalasyan/recompa",
+      "description": "Launcher für über 370 native Spiele-Ports (Recomps, Decomps, Source-Ports): Port wählen, direkt vom GitHub des Autors installieren, eigene Spieldatei einrichten, spielen. Mit Kompatibilitätsberichten pro Gerät. Nicht mehr auf GitHub – öffnet die offizielle Seite.",
+      "descriptionEn": "Launcher for over 370 native game ports (recomps, decomps, source ports): pick a port, install it straight from the author's GitHub, set up your own game file, play. With compatibility reports per device. No longer on GitHub – opens the official website.",
       "tags": [
         "recommended"
-      ]
+      ],
+      "homepage": "https://recompa.app/",
+      "note": "Das GitHub-Konto des Entwicklers ist seit Mitte November 2026 verschwunden, der Download auf der Webseite funktioniert derzeit nicht.",
+      "noteEn": "The developer's GitHub account has been gone since mid-November 2026; the download on the website currently doesn't work.",
+      "iconUrl": "https://recompa.app/icon.png"
     },
     {
       "id": "esdeapps",
       "name": "ES-DE Android Apps",
       "category": "frontends",
       "description": "Importiert installierte Android-Apps als Spiele in den ES-DE-Launcher.",
+      "descriptionEn": "Imports installed Android apps as games into the ES-DE launcher.",
       "repo": "BinaryQuantumSoul/esde_android_apps",
       "tags": []
     },
@@ -2409,6 +2659,7 @@
       "name": "Boxshelf (Beta)",
       "category": "frontends",
       "description": "TV-artiger Launcher für Emulatoren, Steam-Spiele und Medien-Apps: Die Spiele stehen auf einem 3D-Regal mit Covern. Für den AYN Thor gebaut und nutzt beide Bildschirme; die Einrichtung findet installierte Emulatoren selbst.",
+      "descriptionEn": "TV-style launcher for emulators, Steam games and media apps: the games stand on a 3D shelf with covers. Built for the AYN Thor and uses both screens; setup finds installed emulators on its own.",
       "repo": "sassiestrhihno/boxshelf-beta",
       "homepage": "https://github.com/sassiestrhihno/boxshelf-source",
       "tags": [
@@ -2423,19 +2674,22 @@
       "name": "Omarchy Pocket",
       "category": "frontends",
       "description": "Omarchys Linux-Oberfläche als App auf beiden Thor-Bildschirmen: Desktop mit Terminal, Themes und Applets oben, Tastatur- und Touchpad-Deck unten. Das Linux-System läuft per proot ohne Root.",
+      "descriptionEn": "Omarchy's Linux desktop as an app on both Thor screens: desktop with terminal, themes and applets on top, keyboard and touchpad deck below. The Linux system runs via proot without root.",
       "repo": "pocket-nexus/omarchy-pocket",
       "tags": [
         "dual-screen",
         "thor",
         "beta"
       ],
-      "note": "Braucht zusätzlich die Datei omarchy-pocket-root.tar.zst (802 MB) aus demselben GitHub-Release auf dem Thor – der Store lädt nur das APK."
+      "note": "Braucht zusätzlich die Datei omarchy-pocket-root.tar.zst (802 MB) aus demselben GitHub-Release auf dem Thor – der Store lädt nur das APK.",
+      "noteEn": "Also needs the file omarchy-pocket-root.tar.zst (802 MB) from the same GitHub release on the Thor – the store only downloads the APK."
     },
     {
       "id": "pokedaisy",
       "name": "PokeDaisy",
       "category": "companions",
       "description": "GB-, GBC- und GBA-Player für Handhelds mit einem oder zwei Bildschirmen – mit Live-Companion für Pokémon-Spiele und ROM-Hacks auf dem zweiten Display.",
+      "descriptionEn": "GB, GBC and GBA player for handhelds with one or two screens – with a live companion for Pokémon games and ROM hacks on the second display.",
       "repo": "lidor30/pokedaisy",
       "tags": [
         "dual-screen",
@@ -2448,19 +2702,22 @@
       "name": "PKForge",
       "category": "companions",
       "description": "Pokémon-Spielstand-Editor und Bank über alle Generationen, auf Basis von PKHeX.Core und abgestimmt auf Dual-Screen-Handhelds wie den Thor. Legalitätsprüfung komplett offline.",
+      "descriptionEn": "Pokémon save editor and bank across all generations, based on PKHeX.Core and tuned for dual-screen handhelds like the Thor. Legality checks fully offline.",
       "repo": "sofianeelhor/PKForge",
       "tags": [
         "thor",
         "dual-screen",
         "recommended"
       ],
-      "note": "pkforgeapp.com ist NICHT die offizielle Seite – nur die GitHub-Releases nutzen (macht der Store automatisch)."
+      "note": "pkforgeapp.com ist NICHT die offizielle Seite – nur die GitHub-Releases nutzen (macht der Store automatisch).",
+      "noteEn": "pkforgeapp.com is NOT the official site – only use the GitHub releases (the store does this automatically)."
     },
     {
       "id": "pksafe",
       "name": "PKSafe",
       "category": "companions",
       "description": "Pokémon-Spielstand-Editor für Android auf Basis von PKHeX.",
+      "descriptionEn": "Pokémon save editor for Android based on PKHeX.",
       "repo": "DeffoNotAlex/PKSafe"
     },
     {
@@ -2468,6 +2725,7 @@
       "name": "DualScreenDex",
       "category": "companions",
       "description": "Pokédex-Companion für GB/GBC/GBA-Pokémon in RetroArch: liest ROM und Spielstand lokal und zeigt Werte, Schwächen und Resistenzen auf dem zweiten Bildschirm.",
+      "descriptionEn": "Pokédex companion for GB/GBC/GBA Pokémon in RetroArch: reads the ROM and save locally and shows stats, weaknesses and resistances on the second screen.",
       "repo": "Darkaxt/DualScreenDex",
       "tags": [
         "dual-screen"
@@ -2478,6 +2736,7 @@
       "name": "Showdown DS",
       "category": "companions",
       "description": "Pokémon-Showdown!-Client für zwei Bildschirme.",
+      "descriptionEn": "Pokémon Showdown! client for two screens.",
       "repo": "castdrian/showdown-ds",
       "tags": [
         "dual-screen",
@@ -2490,6 +2749,7 @@
       "name": "PokeBonk Thor",
       "category": "companions",
       "description": "Inoffizielle Pokébonk-App für den Thor: native Controller-Eingabe, sofortiger Spielstart und offizielle Online-Accounts.",
+      "descriptionEn": "Unofficial Pokébonk app for the Thor: native controller input, instant game start and official online accounts.",
       "repo": "alfonsopuicercus/pokebonk-thor-launcher",
       "tags": [
         "thor",
@@ -2502,6 +2762,7 @@
       "name": "DigiBuddy",
       "category": "companions",
       "description": "Dual-Screen-Begleiter für Digimon World (PS1).",
+      "descriptionEn": "Dual-screen companion for Digimon World (PS1).",
       "repo": "bortisoftware/DigiBuddy",
       "tags": [
         "dual-screen",
@@ -2514,6 +2775,7 @@
       "name": "FFXII Thor Companion",
       "category": "companions",
       "description": "Live-Companion für Final Fantasy XII The Zodiac Age (über GameNative) auf dem zweiten Thor-Display.",
+      "descriptionEn": "Live companion for Final Fantasy XII The Zodiac Age (via GameNative) on the Thor's second display.",
       "repo": "Cybranfox/ffxii-thor-companion",
       "tags": [
         "thor",
@@ -2528,6 +2790,7 @@
       "name": "Knox Link",
       "category": "companions",
       "description": "Zweiter Bildschirm für Project Zomboid: Karte, Werte, Ausrüstung und Journal auf dem unteren Thor-Display.",
+      "descriptionEn": "Second screen for Project Zomboid: map, stats, gear and journal on the Thor's lower display.",
       "repo": "cadeambrose/knox-link",
       "tags": [
         "dual-screen"
@@ -2538,6 +2801,7 @@
       "name": "SkyPortal Thor",
       "category": "companions",
       "description": "Touch-Companion für Skylanders auf dem Thor. Arbeitet mit einem gepatchten Dolphin, der im selben Release liegt.",
+      "descriptionEn": "Touch companion for Skylanders on the Thor. Works with a patched Dolphin that comes in the same release.",
       "repo": "LeVraiPedro/SkyPortal-Thor",
       "tags": [
         "thor",
@@ -2550,6 +2814,7 @@
       "name": "Minecraft Second Screen",
       "category": "companions",
       "description": "Helfer für Minecraft: verschiebt HUD-Inhalte und mehr auf den unteren Bildschirm.",
+      "descriptionEn": "Helper for Minecraft: moves HUD content and more to the lower screen.",
       "repo": "exojosh/AynThorSecondScreen",
       "tags": [
         "dual-screen"
@@ -2560,6 +2825,7 @@
       "name": "EmuLnk",
       "category": "companions",
       "description": "Emulator-Companion, der den zweiten Bildschirm zu einem Dashboard mit Themes macht.",
+      "descriptionEn": "Emulator companion that turns the second screen into a themed dashboard.",
       "repo": "EmuLnk/emulnk",
       "tags": [
         "dual-screen",
@@ -2572,6 +2838,7 @@
       "name": "Skyrim Web Monitor",
       "category": "companions",
       "description": "Companion-App für Skyrim, verbindet sich mit einem WebSocket-Server im Spiel.",
+      "descriptionEn": "Companion app for Skyrim, connects to a WebSocket server in the game.",
       "repo": "andreyvelsk/SkyrimWebMonitor",
       "tags": [
         "dual-screen",
@@ -2583,6 +2850,7 @@
       "name": "DS Forever",
       "category": "companions",
       "description": "Dual-Screen-Companion mit Controller-Fokus für World of Warcraft: Forever auf dem Thor – Spiel oben, Infos und Bedienung unten.",
+      "descriptionEn": "Controller-focused dual-screen companion for World of Warcraft: Forever on the Thor – game on top, info and controls below.",
       "repo": "Jreese702/DS-Forever",
       "tags": [
         "thor",
@@ -2596,6 +2864,7 @@
       "name": "GameNative",
       "category": "pc",
       "description": "Spielt deine Steam-Bibliothek nativ auf Android (Wine/Box64), inklusive Cloud-Saves.",
+      "descriptionEn": "Plays your Steam library natively on Android (Wine/Box64), including cloud saves.",
       "repo": "utkarshdalal/GameNative",
       "tags": [
         "recommended"
@@ -2607,6 +2876,7 @@
       "name": "GameHub Lite",
       "category": "pc",
       "description": "Von der Community gepflegte, entschlackte Version von GameHub für PC-Spiele.",
+      "descriptionEn": "Community-maintained, slimmed-down version of GameHub for PC games.",
       "repo": "Producdevity/gamehub-lite",
       "apkRegex": "^GameHub-Lite-v[\\d.]+\\.apk$"
     },
@@ -2615,6 +2885,7 @@
       "name": "Winlator",
       "category": "pc",
       "description": "Windows-Programme und -Spiele mit Wine und Box64.",
+      "descriptionEn": "Windows programs and games with Wine and Box64.",
       "repo": "brunodev85/winlator"
     },
     {
@@ -2622,6 +2893,7 @@
       "name": "Winlator Ludashi",
       "category": "pc",
       "description": "Winlator-Fork mit Bionic-Unterbau.",
+      "descriptionEn": "Winlator fork with a Bionic base.",
       "repo": "StevenMXZ/Winlator-Ludashi",
       "apkRegex": "vanilla"
     },
@@ -2630,6 +2902,7 @@
       "name": "OpenNative",
       "category": "pc",
       "description": "Unabhängige Kompatibilitätsschicht für PC-Spiele auf Android, ausgelegt auf Leistung, Stabilität und Handheld-Bedienung.",
+      "descriptionEn": "Independent compatibility layer for PC games on Android, designed for performance, stability and handheld controls.",
       "repo": "RemiPelloux/OpenNative",
       "tags": [
         "beta"
@@ -2641,6 +2914,7 @@
       "name": "Artemis",
       "category": "pc",
       "description": "Moonlight-Fork für Game-Streaming vom PC, am besten zusammen mit Apollo auf dem PC.",
+      "descriptionEn": "Moonlight fork for game streaming from a PC, best paired with Apollo on the PC.",
       "repo": "ClassicOldSong/moonlight-android",
       "tags": [
         "recommended"
@@ -2651,6 +2925,7 @@
       "name": "Moonlight",
       "category": "pc",
       "description": "Game-Streaming vom PC (Sunshine/GeForce Experience).",
+      "descriptionEn": "Game streaming from a PC (Sunshine/GeForce Experience).",
       "repo": "moonlight-stream/moonlight-android",
       "apkRegex": "nonRoot"
     },
@@ -2659,6 +2934,7 @@
       "name": "Winlator Cmod",
       "category": "pc",
       "description": "Beliebter Winlator-Fork mit zusätzlichen Optionen für Windows-Spiele.",
+      "descriptionEn": "Popular Winlator fork with extra options for Windows games.",
       "repo": "coffincolors/winlator",
       "tags": []
     },
@@ -2667,19 +2943,22 @@
       "name": "Zaviya Installer (SteamOS ARM)",
       "category": "pc",
       "description": "Installiert Zaviya – ein Betriebssystem auf Basis von SteamOS für ARM mit Steam-Client, Game Mode und KDE-Desktop – direkt vom Thor aus: lädt das Image für den Snapdragon 8 Gen 2 und schreibt es auf eine microSD-Karte. Android bleibt erhalten, beim Einschalten wählt ein Bootmenü.",
+      "descriptionEn": "Installs Zaviya – an operating system based on SteamOS for ARM with the Steam client, Game Mode and KDE desktop – right from the Thor: downloads the image for the Snapdragon 8 Gen 2 and writes it to a microSD card. Android stays intact; a boot menu lets you choose at power-on.",
       "repo": "hashtagbasit/Zaviya",
       "homepage": "https://zaviyaos.github.io/",
       "tags": [
         "thor",
         "beta"
       ],
-      "note": "Achtung: Der Installer ersetzt den Bootloader des Thor durch OpenABL (er sichert den Original-Bootloader vorher). Daten sichern und die Anleitung auf zaviyaos.github.io lesen, bevor du ihn benutzt."
+      "note": "Achtung: Der Installer ersetzt den Bootloader des Thor durch OpenABL (er sichert den Original-Bootloader vorher). Daten sichern und die Anleitung auf zaviyaos.github.io lesen, bevor du ihn benutzt.",
+      "noteEn": "Caution: the installer replaces the Thor's bootloader with OpenABL (it backs up the original bootloader first). Back up your data and read the guide on zaviyaos.github.io before using it."
     },
     {
       "id": "wayfinder",
       "name": "Thor Wayfinder",
       "category": "tools",
       "description": "Zwei Bildschirme, ein Controller: verschiebt Apps zwischen den Thor-Displays, mit Steuerung pro Spiel und Schnellpanel.",
+      "descriptionEn": "Two screens, one controller: moves apps between the Thor's displays, with per-game controls and a quick panel.",
       "repo": "Thor-Wayfinder/thor-wayfinder",
       "tags": [
         "thor",
@@ -2692,6 +2971,7 @@
       "name": "Thor Pathfinder",
       "category": "tools",
       "description": "Tauscht Apps zwischen den beiden Thor-Bildschirmen und legt Shortcuts auf die Tasten. Open Source (GPL-3.0).",
+      "descriptionEn": "Swaps apps between the Thor's two screens and maps shortcuts to the buttons. Open source (GPL-3.0).",
       "repo": "KaitonGxx/thor-pathfinder",
       "tags": [
         "thor",
@@ -2703,6 +2983,7 @@
       "name": "Megingiard",
       "category": "tools",
       "description": "Companion für den Thor: spiegelt den oberen Bildschirm nach unten, dazu virtuelle Tastatur, Touchpad, Makro-Pad und Gamepad.",
+      "descriptionEn": "Companion for the Thor: mirrors the upper screen to the lower one, plus a virtual keyboard, touchpad, macro pad and gamepad.",
       "repo": "stormpanda/megingiard",
       "tags": [
         "thor",
@@ -2714,6 +2995,7 @@
       "name": "Jesty Thor Fix",
       "category": "tools",
       "description": "Schaltet das untere Display wirklich ab, repariert das Aufwachen und zeigt CPU- und Display-Werte live.",
+      "descriptionEn": "Really turns off the lower display, fixes waking up and shows CPU and display values live.",
       "repo": "JestyLabs/Jesty-Thor-Fix",
       "tags": [
         "thor",
@@ -2725,6 +3007,7 @@
       "name": "Back Button Hero",
       "category": "tools",
       "description": "Anpassbare Zurück-Taste für den Thor.",
+      "descriptionEn": "Customizable back button for the Thor.",
       "repo": "denissteinhorst/thor-back-button-hero",
       "tags": [
         "thor"
@@ -2735,6 +3018,7 @@
       "name": "Thor WiFi Recovery",
       "category": "tools",
       "description": "Behebt den sporadischen WLAN-Scan-Hänger der Thor-Firmware .377.",
+      "descriptionEn": "Fixes the occasional Wi-Fi scan hang of Thor firmware .377.",
       "repo": "JoelMomo/AYN-Thor-WiFi-Recovery",
       "tags": [
         "thor"
@@ -2745,6 +3029,7 @@
       "name": "ThorTools",
       "category": "tools",
       "description": "Root- und System-Tweaks für den Thor.",
+      "descriptionEn": "Root and system tweaks for the Thor.",
       "repo": "castdrian/thortools",
       "tags": [
         "thor",
@@ -2757,6 +3042,7 @@
       "name": "Latch",
       "category": "tools",
       "description": "Sperrt Dual-Screen-Handhelds mit einer Tastenfolge am Joystick.",
+      "descriptionEn": "Locks dual-screen handhelds with a button sequence on the joystick.",
       "repo": "yassergamedev/latch",
       "tags": [
         "dual-screen"
@@ -2767,6 +3053,7 @@
       "name": "Bifrost",
       "category": "tools",
       "description": "LED-Steuerung für den Thor: Ambient, audio-reaktiv, Atmen, Regenbogen und mehr.",
+      "descriptionEn": "LED control for the Thor: ambient, audio-reactive, breathing, rainbow and more.",
       "repo": "Pollux-MoonBench/Bifrost",
       "tags": [
         "thor"
@@ -2777,6 +3064,7 @@
       "name": "DuoFrost",
       "category": "tools",
       "description": "Open-Source-Fork von Bifrost: Umgebungsfarben, audio-reaktive Effekte, Widgets und Sleep-Timer für die AYN-Beleuchtung.",
+      "descriptionEn": "Open-source fork of Bifrost: ambient colors, audio-reactive effects, widgets and a sleep timer for the AYN lighting.",
       "repo": "Tufein/DuoFrost",
       "tags": [
         "thor"
@@ -2788,6 +3076,7 @@
       "name": "HandyTuner",
       "category": "tools",
       "description": "All-in-One-Tuner für Handhelds: In-Game-HUD und Quick-Menü, Profile pro Spiel, AutoTDP, Lüfter-, Akku- und Netzwerk-Werkzeuge. Ohne Root.",
+      "descriptionEn": "All-in-one tuner for handhelds: in-game HUD and quick menu, per-game profiles, AutoTDP, fan, battery and network tools. No root needed.",
       "repo": "ElectricBits/HandyTuner",
       "tags": [
         "beta"
@@ -2798,6 +3087,7 @@
       "name": "PULSE",
       "category": "tools",
       "description": "Stellt CPU- und GPU-Frequenzgrenzen auf Handhelds ein – ohne Magisk oder Root.",
+      "descriptionEn": "Sets CPU and GPU frequency limits on handhelds – without Magisk or root.",
       "repo": "keiretrogaming/pulse"
     },
     {
@@ -2805,6 +3095,7 @@
       "name": "ClusterTune",
       "category": "tools",
       "description": "Begrenzt CPU-Frequenzen pro Cluster und speichert Leistungsprofile mit Schnellzugriff.",
+      "descriptionEn": "Limits CPU frequencies per cluster and saves performance profiles with quick access.",
       "repo": "AurelioB/ClusterTune"
     },
     {
@@ -2812,6 +3103,7 @@
       "name": "Key Mapper",
       "category": "tools",
       "description": "Belegt Tasten frei um – auch Controller-Tasten und Kombinationen.",
+      "descriptionEn": "Remaps buttons freely – including controller buttons and combinations.",
       "repo": "keymapperorg/KeyMapper"
     },
     {
@@ -2819,6 +3111,7 @@
       "name": "LocalSend",
       "category": "tools",
       "description": "Dateien drahtlos zwischen PC, Handy und Thor austauschen – Open-Source-Alternative zu AirDrop.",
+      "descriptionEn": "Share files wirelessly between PC, phone and Thor – an open-source alternative to AirDrop.",
       "repo": "localsend/localsend",
       "tags": [
         "recommended"
@@ -2830,6 +3123,7 @@
       "name": "Thor ROM Butler",
       "category": "tools",
       "description": "Erkennt ROM-Archive, sortiert sie in ES-DE-, Batocera- oder Onion-Ordner, patcht IPS/UPS/BPS und hält die Sammlung sauber – immer mit deiner Bestätigung.",
+      "descriptionEn": "Detects ROM archives, sorts them into ES-DE, Batocera or Onion folders, applies IPS/UPS/BPS patches and keeps the collection tidy – always with your confirmation.",
       "repo": "Strugglechen1337/ThorROMButler",
       "tags": [
         "thor"
@@ -2840,6 +3134,7 @@
       "name": "RamROM Emu Manager",
       "category": "tools",
       "description": "Richtet den Handheld für Emulation ein: Emulatoren, Frontends, Ordner und BIOS-Check, komplett per Controller.",
+      "descriptionEn": "Sets up the handheld for emulation: emulators, frontends, folders and a BIOS check, all with the controller.",
       "repo": "ramizarif/ramrom-emu-manager",
       "tags": [
         "beta"
@@ -2850,6 +3145,7 @@
       "name": "RA Offline Proxy",
       "category": "tools",
       "description": "Lokaler Proxy, mit dem du RetroAchievements (Casual) auch ohne Internetverbindung sammelst.",
+      "descriptionEn": "Local proxy that lets you earn RetroAchievements (casual) even without an internet connection.",
       "repo": "misantronic/RAOfflineProxy",
       "tags": [
         "beta"
@@ -2861,6 +3157,7 @@
       "name": "PlayTranslate",
       "category": "tools",
       "description": "Übersetzt Bildschirmtext in Spielen, Visual Novels und Mangas in Echtzeit.",
+      "descriptionEn": "Translates on-screen text in games, visual novels and manga in real time.",
       "repo": "dominostars/playtranslate"
     },
     {
@@ -2868,6 +3165,7 @@
       "name": "Magni",
       "category": "tools",
       "description": "Webbrowser für die zwei Bildschirme des Thor.",
+      "descriptionEn": "Web browser for the Thor's two screens.",
       "repo": "KuriGohan-Kamehameha/magni",
       "tags": [
         "thor",
@@ -2881,6 +3179,7 @@
       "name": "Dual-Screen Wallpaper",
       "category": "tools",
       "description": "Wallpaper-Editor für Dual-Screen-Geräte: ein Bild über beide Bildschirme verteilen und vorab ansehen.",
+      "descriptionEn": "Wallpaper editor for dual-screen devices: spread one image across both screens and preview it.",
       "repo": "YesItsKira/Dual-Screen-Wallpaper-Tool",
       "tags": [
         "dual-screen"
@@ -2891,6 +3190,7 @@
       "name": "DualMusic",
       "category": "tools",
       "description": "Musik-Oberfläche für den Thor: Now-Playing oben, Touch-Steuerung unten, mit Spotify-Steuerung und synchronen Songtexten.",
+      "descriptionEn": "Music interface for the Thor: now playing on top, touch controls below, with Spotify control and synced lyrics.",
       "repo": "HEUSEC/dualmusic-thor",
       "tags": [
         "thor",
@@ -2902,6 +3202,7 @@
       "name": "DS Gallery",
       "category": "tools",
       "description": "Medien-Manager für Dual-Screen-Geräte: Galerien, Musik- und Videoplayer, Controller-Bedienung und Dateiübertragung im Netzwerk.",
+      "descriptionEn": "Media manager for dual-screen devices: galleries, music and video players, controller navigation and file transfer over the network.",
       "repo": "Syllabuss/DualScreen-Gallery",
       "tags": [
         "dual-screen",
@@ -2915,6 +3216,7 @@
       "name": "AnkiDroid Dual-Screen",
       "category": "tools",
       "description": "Inoffizieller AnkiDroid-Fork mit Dual-Screen-Unterstützung für den Thor.",
+      "descriptionEn": "Unofficial AnkiDroid fork with dual-screen support for the Thor.",
       "repo": "asa07-salihg/Anki-Android-Dualscreen",
       "tags": [
         "thor",
@@ -2926,6 +3228,7 @@
       "name": "Termux Dual-Screen",
       "category": "tools",
       "description": "Inoffizieller Termux-Fork mit Dual-Screen-Unterstützung für den Thor.",
+      "descriptionEn": "Unofficial Termux fork with dual-screen support for the Thor.",
       "repo": "asa07-salihg/Termux-Dualscreen",
       "tags": [
         "thor",
@@ -2937,6 +3240,7 @@
       "name": "SmartTube",
       "category": "tools",
       "description": "YouTube-Client für Android TV mit voller Controller-Bedienung und Werbeblocker – passt gut zum Thor.",
+      "descriptionEn": "YouTube client for Android TV with full controller navigation and an ad blocker – a good fit for the Thor.",
       "repo": "yuliskov/SmartTube",
       "apkRegex": "arm64"
     },
@@ -2945,6 +3249,7 @@
       "name": "NewPipe",
       "category": "tools",
       "description": "Schlanker, freier YouTube-Client mit Hintergrund-Wiedergabe und Downloads.",
+      "descriptionEn": "Lightweight, free YouTube client with background playback and downloads.",
       "repo": "TeamNewPipe/NewPipe"
     },
     {
@@ -2952,6 +3257,7 @@
       "name": "Canta",
       "category": "tools",
       "description": "Deinstalliert beliebige Apps ohne Root (über Shizuku) – zum Entrümpeln.",
+      "descriptionEn": "Uninstalls any app without root (via Shizuku) – for decluttering.",
       "repo": "samolego/Canta",
       "tags": [
         "shizuku"
@@ -2962,6 +3268,7 @@
       "name": "App Manager",
       "category": "tools",
       "description": "Umfangreicher App-Manager: Berechtigungen, Komponenten, Backups und mehr.",
+      "descriptionEn": "Comprehensive app manager: permissions, components, backups and more.",
       "repo": "MuntashirAkon/AppManager"
     },
     {
@@ -2969,6 +3276,7 @@
       "name": "Material Files",
       "category": "tools",
       "description": "Schlichter Dateimanager, kann auch FTP, SFTP, SMB und WebDAV.",
+      "descriptionEn": "Simple file manager that also handles FTP, SFTP, SMB and WebDAV.",
       "repo": "zhanghai/MaterialFiles",
       "apkRegex": "universal"
     },
@@ -2977,6 +3285,7 @@
       "name": "Obtainium",
       "category": "tools",
       "description": "Holt App-Updates direkt aus den Quellen – gut für Apps, die nicht im Store sind.",
+      "descriptionEn": "Gets app updates straight from the source – handy for apps that aren't in the store.",
       "repo": "ImranR98/Obtainium",
       "apkRegex": "^app-arm64-v8a-release\\.apk$"
     },
@@ -2985,6 +3294,7 @@
       "name": "Shizuku",
       "category": "tools",
       "description": "Gibt Apps erweiterte Systemrechte ohne Root (z. B. für Tools wie SleepManager).",
+      "descriptionEn": "Gives apps extended system permissions without root (e.g. for tools like SleepManager).",
       "repo": "RikkaApps/Shizuku",
       "tags": [
         "shizuku"
@@ -2995,6 +3305,7 @@
       "name": "Syncthing-Fork",
       "category": "tools",
       "description": "Synchronisiert Spielstände und ROMs zwischen Thor und PC.",
+      "descriptionEn": "Syncs saves and ROMs between the Thor and your PC.",
       "repo": "researchxxl/syncthing-android",
       "apkRegex": "_arm64-v8a\\.apk$"
     },
@@ -3003,6 +3314,7 @@
       "name": "CHDroid",
       "category": "tools",
       "description": "Wandelt Disc-Images direkt auf dem Gerät ins platzsparende CHD-Format um.",
+      "descriptionEn": "Converts disc images to the space-saving CHD format right on the device.",
       "repo": "Ottavio97/CHDroid",
       "apkRegex": "arm64"
     },
@@ -3011,6 +3323,7 @@
       "name": "SleepManager",
       "category": "tools",
       "description": "Reduziert den Akkuverbrauch im Standby: schaltet WLAN, Bluetooth, Syncthing und mehr beim Schlafen ab.",
+      "descriptionEn": "Reduces battery drain in standby: turns off Wi-Fi, Bluetooth, Syncthing and more while sleeping.",
       "repo": "Baggio94/SleepManager",
       "tags": [
         "shizuku"
@@ -3022,6 +3335,7 @@
       "name": "EmuReady Lite",
       "category": "tools",
       "description": "Community-Datenbank: welche Spiele mit welchen Einstellungen auf deinem Gerät laufen.",
+      "descriptionEn": "Community database: which games run on your device and with which settings.",
       "repo": "Producdevity/EmuReadyAppReleases"
     },
     {
@@ -3029,6 +3343,7 @@
       "name": "OdinTools",
       "category": "tools",
       "description": "Werkzeugsammlung für AYN-Handhelds, ursprünglich für den Odin 2. Nicht jede Funktion passt zum Thor.",
+      "descriptionEn": "Tool collection for AYN handhelds, originally for the Odin 2. Not every feature suits the Thor.",
       "repo": "langerhans/OdinTools",
       "tags": [
         "beta"
@@ -3039,6 +3354,7 @@
       "name": "Control Switch",
       "category": "tools",
       "description": "Spiegelt einen externen Controller auf den eingebauten Controller des Handhelds – ohne Root und ohne Magisk.",
+      "descriptionEn": "Mirrors an external controller onto the handheld's built-in controller – without root and without Magisk.",
       "repo": "CardinalBird/control-switch",
       "tags": []
     },
@@ -3047,6 +3363,7 @@
       "name": "Heimdall (Thor-Assistent)",
       "category": "tools",
       "description": "Macht den unteren Thor-Bildschirm zur Spielkonsole: Profile pro Spiel, Makros, Touch-Steuerung und virtueller Stick, Karten, Guides, Bildschirm-Übersetzung per OCR, Temperatur- und RAM-Anzeige. Erweiterte Funktionen über Shizuku.",
+      "descriptionEn": "Turns the Thor's lower screen into a game console: per-game profiles, macros, touch controls and a virtual stick, maps, guides, on-screen translation via OCR, temperature and RAM display. Advanced features via Shizuku.",
       "repo": "mastercook777/Heimdall-AYN-Thor-Assistant",
       "tags": [
         "dual-screen",
@@ -3054,13 +3371,15 @@
         "shizuku",
         "beta"
       ],
-      "note": "Alpha-Version. Grundfunktionen brauchen kein Root; Controller-Makros und virtuelle Maus brauchen Shizuku."
+      "note": "Alpha-Version. Grundfunktionen brauchen kein Root; Controller-Makros und virtuelle Maus brauchen Shizuku.",
+      "noteEn": "Alpha version. Basic features don't need root; controller macros and the virtual mouse need Shizuku."
     },
     {
       "id": "turnip-a740",
       "name": "Turnip für Adreno 740",
       "category": "drivers",
       "description": "Aktuelle Mesa-Turnip-Builds speziell für Adreno 740 (Snapdragon 8 Gen 2). Standard-Variante zuerst probieren; die OneUI-Variante nur, wenn das Bild flackert.",
+      "descriptionEn": "Current Mesa Turnip builds made specifically for the Adreno 740 (Snapdragon 8 Gen 2). Try the standard variant first; use the OneUI variant only if the image flickers.",
       "repo": "niilo/Banners-Turnip-A740",
       "tags": [
         "recommended"
@@ -3072,6 +3391,7 @@
       "name": "Balemuni Apex",
       "category": "drivers",
       "description": "Angepasster Turnip-Treiber mit eigenem Build für Snapdragon 8 Gen 2 (ULTIMATE_SD8Gen2) – also genau für den Thor. Dazu eine Universal-Variante für Adreno 6xx–8xx. Empfohlen u. a. für Eden und Winlator.",
+      "descriptionEn": "Customized Turnip driver with a dedicated build for the Snapdragon 8 Gen 2 (ULTIMATE_SD8Gen2) – exactly for the Thor. Plus a universal variant for Adreno 6xx–8xx. Recommended for Eden and Winlator, among others.",
       "repo": "Balemuni/Balemunis-Aurora",
       "tags": [
         "recommended"
@@ -3083,6 +3403,7 @@
       "name": "Banners Turnip",
       "category": "drivers",
       "description": "Automatische Turnip-Builds bei jedem Mesa-Commit für Adreno 6xx/7xx. Gezeigt werden nur die AdrenoTools-ZIPs für Standard und 8 Gen 2.",
+      "descriptionEn": "Automatic Turnip builds on every Mesa commit for Adreno 6xx/7xx. Only the AdrenoTools ZIPs for standard and 8 Gen 2 are shown.",
       "repo": "The412Banner/Banners-Turnip",
       "assetRegex": "^Turnip-v[^-]+-\\d{8}(-r\\d+)?(-8G2-OneUI)?\\.zip$"
     },
@@ -3091,6 +3412,7 @@
       "name": "AdrenoTools Drivers (K11MCH1)",
       "category": "drivers",
       "description": "Die klassische Sammlung (archiviert): Turnip-Revisionen und Qualcomm-Treiber. Turnip v26.0.0 R7 gilt bei Switch-Emulatoren auf Adreno 7xx als stabile Wahl.",
+      "descriptionEn": "The classic collection (archived): Turnip revisions and Qualcomm drivers. Turnip v26.0.0 R7 is considered a stable choice for Switch emulators on Adreno 7xx.",
       "repo": "K11MCH1/AdrenoToolsDrivers",
       "tags": [
         "recommended"
@@ -3102,6 +3424,7 @@
       "name": "Turnip CI (StevenMXZ)",
       "category": "drivers",
       "description": "Turnip-Builds von StevenMXZ, alle zwei Wochen automatisch gebaut – auch mit OneUI- und Gen8-Varianten. Die Qualcomm-Treiber von StevenMXZ stehen im Eintrag „Adrenotools Drivers (StevenMXZ)“.",
+      "descriptionEn": "Turnip builds by StevenMXZ, built automatically every two weeks – also with OneUI and Gen8 variants. StevenMXZ's Qualcomm drivers are in the “Adrenotools Drivers (StevenMXZ)” entry.",
       "repo": "StevenMXZ/Adreno-Tools-Drivers",
       "assetRegex": "\\.zip$"
     },
@@ -3110,6 +3433,7 @@
       "name": "Purple Turnip",
       "category": "drivers",
       "description": "Turnip-Builds von MrPurple, beliebt bei Winlator und GameNative.",
+      "descriptionEn": "Turnip builds by MrPurple, popular with Winlator and GameNative.",
       "repo": "MrPurple666/purple-turnip",
       "assetRegex": "\\.zip$"
     },
@@ -3118,6 +3442,7 @@
       "name": "Turnip CI (Weab-chan)",
       "category": "drivers",
       "description": "Ältere Turnip-25.x-Builds, auch mit Fix-Variante für das 8-Gen-2-UI-Glitch.",
+      "descriptionEn": "Older Turnip 25.x builds, also with a fix variant for the 8 Gen 2 UI glitch.",
       "repo": "Weab-chan/freedreno_turnip-CI",
       "assetRegex": "\\.zip$"
     },
@@ -3126,6 +3451,7 @@
       "name": "Adrenotools Drivers (StevenMXZ)",
       "category": "drivers",
       "description": "Öffentliche Sammlung von Qualcomm-Treibern für AdrenoTools (z. B. v849, v842, v800) von StevenMXZ.",
+      "descriptionEn": "Public collection of Qualcomm drivers for AdrenoTools (e.g. v849, v842, v800) by StevenMXZ.",
       "repo": "StevenMXZ/Adrenotools-Drivers",
       "tags": [],
       "assetRegex": "\\.zip$"

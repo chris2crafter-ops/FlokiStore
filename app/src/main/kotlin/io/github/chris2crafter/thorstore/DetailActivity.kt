@@ -92,7 +92,7 @@ class DetailActivity : Activity() {
         status = text("", 14f, C.SUB)
         col.addView(status, lp().apply { topMargin = dp(6) })
 
-        if (!split) app.note?.let { n ->
+        if (!split) app.shownNote?.let { n ->
             col.addView(text(t("Hinweis: $n", "Note: $n"), 14f, C.WARN).apply {
                 background = rounded(0x22F0883E, dp(10).toFloat())
                 setPadding(dp(14), dp(10), dp(14), dp(10))
@@ -101,7 +101,7 @@ class DetailActivity : Activity() {
 
         if (!split) {
             col.addView(text(t("Beschreibung", "Description"), 18f, bold = true), lp().apply { topMargin = dp(18) })
-            col.addView(text(app.description, 15f), lp().apply { topMargin = dp(6) })
+            col.addView(text(app.shownDescription, 15f), lp().apply { topMargin = dp(6) })
         }
 
         info = text("", 14f, C.SUB).apply { setLineSpacing(dp(3).toFloat(), 1f) }
@@ -134,7 +134,7 @@ class DetailActivity : Activity() {
         super.onResume()
         // back from "Bearbeiten": removed, or name/text/tab changed
         val now = Store.app(app.id) ?: run { finish(); return }
-        if (now.name != app.name || now.description != app.description || now.category != app.category) { recreate(); return }
+        if (now.name != app.name || now.shownDescription != app.shownDescription || now.category != app.category) { recreate(); return }
         IconLoader.load(icon, app, dp(96))
         dual.resume()
         Store.foreground = this

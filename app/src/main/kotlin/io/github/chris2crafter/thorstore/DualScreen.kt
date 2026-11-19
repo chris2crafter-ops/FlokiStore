@@ -228,9 +228,9 @@ class AppPanel(private val ctx: Context, private val full: Boolean, private val 
     fun bind() {
         val a = app?.let { Store.app(it.id) } ?: return
         app = a
-        note.text = a.note?.let { t("Hinweis: $it", "Note: $it") } ?: ""
-        note.visibility = if (a.note != null) View.VISIBLE else View.GONE
-        desc.text = a.description.ifBlank { t("Keine Beschreibung.", "No description.") }
+        note.text = a.shownNote?.let { t("Hinweis: $it", "Note: $it") } ?: ""
+        note.visibility = if (a.shownNote != null) View.VISIBLE else View.GONE
+        desc.text = a.shownDescription.ifBlank { t("Keine Beschreibung.", "No description.") }
 
         if (full) {
             name.text = a.name

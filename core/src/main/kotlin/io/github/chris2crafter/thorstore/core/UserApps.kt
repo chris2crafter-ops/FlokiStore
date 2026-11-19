@@ -226,6 +226,8 @@ class UserData(
             a.copy(
                 name = e?.name ?: a.name,
                 description = e?.description ?: a.description,
+                // the user's own text replaces both languages
+                descriptionEn = if (e?.description != null) null else a.descriptionEn,
                 category = categoryOf(e?.category ?: a.category, cats),
             )
         }
@@ -250,7 +252,8 @@ class UserData(
         }
         val e = AppEdit(
             name.takeIf { it != base.name },
-            description.takeIf { it != base.description },
+            // the editor shows the English text in English mode; keeping it is no change
+            description.takeIf { it != base.description && it != base.descriptionEn },
             category.takeIf { it != base.category },
         )
         if (e.isEmpty) edits.remove(base.id) else edits[base.id] = e

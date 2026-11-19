@@ -326,7 +326,7 @@ class MainActivity : Activity() {
         var items = Store.catalog.filter(t.filter)
         if (q.isNotEmpty()) {
             items = Store.catalog.filter { a ->
-                listOfNotNull(a.name, a.description, a.repo, Store.categoryTitle(a.category)).any { it.lowercase().contains(q) } ||
+                listOfNotNull(a.name, a.shownDescription, a.repo, Store.categoryTitle(a.category)).any { it.lowercase().contains(q) } ||
                     a.tags.any { Tags.label(it).lowercase().contains(q) }
             }
         }
@@ -519,7 +519,7 @@ class MainActivity : Activity() {
         private fun bindApp(h: Holder, app: CatalogApp) {
             IconLoader.load(h.icon, app, dp(64))
             h.name.text = app.name
-            h.desc.text = app.description
+            h.desc.text = app.shownDescription
             // the app shown on the lower screen, also visible when using touch
             h.root.background = rounded(C.CARD, dp(14).toFloat(), if (grid.isInTouchMode && panel?.app?.id == app.id) dp(2) else 0, C.ACCENT)
             h.chips.removeAllViews()
