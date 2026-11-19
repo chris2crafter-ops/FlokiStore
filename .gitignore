@@ -1,0 +1,9 @@
+# build output
+build/
+.gradle/
+.kotlin/
+*.apk
+# machine-specific: SDK path and signing key location
+local.properties
+*.keystore
+*.jks

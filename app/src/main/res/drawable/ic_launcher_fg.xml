@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Floki Store: longship with a download sail and Floki's raven on the mast -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:pathData="M34,80 Q40,77 46,80 T58,80 T70,80"
+        android:fillColor="#00000000"
+        android:strokeColor="#4EA8FF"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:strokeAlpha="0.35" />
+    <path
+        android:pathData="M28,75 Q34,72 40,75 T52,75 T64,75 T76,75"
+        android:fillColor="#00000000"
+        android:strokeColor="#4EA8FF"
+        android:strokeWidth="2.6"
+        android:strokeLineCap="round"
+        android:strokeAlpha="0.7" />
+    <path
+        android:pathData="M53,26.5 L55,26.5 L55,31 L53,31 Z M53,57 L55,57 L55,64 L53,64 Z"
+        android:fillColor="#9C7A55" />
+    <path
+        android:pathData="M38,31 Q54,28 70,31 L72,57 Q54,61 36,57 Z M51,36 L57,36 L57,45 L62.5,45 L54,54 L45.5,45 L51,45 Z"
+        android:fillColor="#4EA8FF"
+        android:fillType="evenOdd" />
+    <path
+        android:pathData="M30,57 Q31,67 39,69 L69,69 Q77,67 78,58 Q79,53 82,52.5 L81.2,50.4 Q77,51 76,56 Q75,63 68,64 L40,64 Q33,63 32,57 Z"
+        android:fillColor="#E8A045" />
+    <path
+        android:pathData="M79.6,49.6 A2.6,2.6 0 1,0 84.8,49.6 A2.6,2.6 0 1,0 79.6,49.6 Z"
+        android:fillColor="#E8A045" />
+    <path
+        android:pathData="M42.8,66.5 A2.2,2.2 0 1,0 47.2,66.5 A2.2,2.2 0 1,0 42.8,66.5 Z M51.8,66.5 A2.2,2.2 0 1,0 56.2,66.5 A2.2,2.2 0 1,0 51.8,66.5 Z M60.8,66.5 A2.2,2.2 0 1,0 65.2,66.5 A2.2,2.2 0 1,0 60.8,66.5 Z"
+        android:fillColor="#F6E3B8" />
+    <path
+        android:pathData="M49.5,26.5 Q50,22.5 54,22.2 L56.2,21 L58.6,21.6 L56.6,22.8 Q57.6,25.6 55.4,27 L52.2,27.4 L48.6,29.2 Z"
+        android:fillColor="#E6EDF3" />
+</vector>
