@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-13",
+  "generated": "2026-11-19",
   "apps": [
     {
       "id": "soh",
@@ -851,6 +851,17 @@
       "tags": ["needs-rom", "beta"],
       "packageName": "com.totkrecompandroid",
       "icon": "icons/totkdroid.png"
+    },
+    {
+      "id": "peanuts-native",
+      "name": "Peanuts Native",
+      "category": "recomps",
+      "description": "Macht aus deinem eigenen Switch-Spiel eine native Android-App – kein Emulator: Der ARM64-Code des Spiels läuft direkt auf dem Prozessor, die Grafik über Vulkan. Spieldatei wählen, „Build“ tippen, spielen. Auf dem Thor läuft das Spiel oben, unten der Begleiter aus Eden Duo. Unterstützt u. a. Zelda (Link's Awakening, Echoes of Wisdom, BotW, Skyward Sword HD), Mario Kart 8 Deluxe, Super Mario Odyssey, Metroid Dread, Pokémon und Persona 5 Royal, meist mit 60 fps.",
+      "repo": "igawa6/peanuts-native",
+      "tags": ["dual-screen", "thor", "needs-rom", "beta"],
+      "packageName": "dev.nxnative.android.peanuts",
+      "icon": "icons/peanuts-native.png",
+      "note": "Braucht einen Dump deines eigenen Switch-Spiels in der unterstützten Update-Version; die App zeigt an, welche passt. Noch in Entwicklung."
     },
     {
       "id": "mhgu",
@@ -1942,6 +1953,18 @@
       "releaseJson": "https://nightly.eden-emu.dev/latest/release.json",
       "releaseJsonTag": "https://nightly.eden-emu.dev/{tag}/release.json",
       "forgejo": "https://git.eden-emu.dev/eden-ci/nightly"
+    },
+    {
+      "id": "eden-duo",
+      "name": "Eden Duo",
+      "category": "emulators",
+      "description": "Eden-Fork für Dual-Screen-Handhelds wie den AYN Thor: Das Spiel läuft oben, unten zeigt eine Touch-Begleitansicht Karte, Party, Inventar und Status live aus dem laufenden Spiel. Begleiter gibt es für über 30 Switch-Spiele, von Zelda über Pokémon bis Persona 5 Royal; sie werden als .dsmod.zip-Pakete einzeln installiert.",
+      "repo": "igawa6/eden-duo",
+      "homepage": "https://github.com/igawa6/eden-duo-companions",
+      "tags": ["dual-screen", "thor", "needs-bios"],
+      "packageName": "dev.igawa6.edenduo",
+      "icon": "icons/eden-duo.png",
+      "note": "Braucht wie Eden deine eigenen Switch-Keys und Firmware. Die Begleiter-Pakete (.dsmod.zip) lädst du bei Eden Duo Companions."
     },
     {
       "id": "scummvm",
