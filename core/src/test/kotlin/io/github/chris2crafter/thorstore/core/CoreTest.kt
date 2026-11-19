@@ -184,6 +184,9 @@ class CoreTest {
         // an APK app in the driver tab stays an APK app after saving
         val moved = CatalogApp("u-y", "Y", Categories.DRIVERS, "", repo = "a/y", driver = false, user = true)
         assertFalse(CatalogApp.fromMap(moved.toMap()).isDriver)
+        // the catalog later adds a repository the user already added: only the own entry stays
+        val withDup = base + CatalogApp("ax", "X im Katalog", Categories.TOOLS, "", repo = "A/X")
+        assertEquals(listOf("u-x"), back.apply(withDup).filter { it.repo.equals("a/x", true) }.map { it.id })
     }
 
 }

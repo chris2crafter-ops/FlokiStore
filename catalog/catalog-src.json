@@ -1011,6 +1011,20 @@
       ]
     },
     {
+      "id": "ff7-recomp",
+      "name": "FF7 Recomp (Final Fantasy VII)",
+      "category": "recomps",
+      "description": "Final Fantasy VII (PC) statisch nach ARM64 rekompiliert, mit FFNx-Renderer, 16:9, Speicherständen und Mod-Launcher für die 7th-Heaven-Kataloge. Auf dem Thor oben das Spiel, unten Party, Ort, Spielzeit und ein Touch-Deck.",
+      "repo": "bhuiyah/ff7-recomp-android",
+      "tags": [
+        "dual-screen",
+        "thor",
+        "needs-rom",
+        "beta"
+      ],
+      "note": "Braucht deine Steam-Version von Final Fantasy VII; die App rekompiliert deine ff7_en.exe einmalig auf dem Gerät."
+    },
+    {
       "id": "bloodborne",
       "name": "Bloodborne Android",
       "category": "ports",
@@ -1606,6 +1620,46 @@
       ]
     },
     {
+      "id": "thor-conquer",
+      "name": "Thor Conquer (C&C + Red Alert)",
+      "category": "ports",
+      "description": "Command & Conquer: Tiberian Dawn und Red Alert nativ auf dem Thor (Vanilla Conquer): oben nur die Karte, pixelgenau in doppelter Auflösung, unten die Seitenleiste als Touch-Kommandodeck mit Radar, Bauleisten und Kontrollgruppen.",
+      "repo": "harmssi/thor-conquer",
+      "tags": [
+        "dual-screen",
+        "thor",
+        "needs-rom"
+      ],
+      "note": "Braucht die Original-Dateien aus deiner eigenen C&C Remastered Collection."
+    },
+    {
+      "id": "thor-aok",
+      "name": "Thor AoK (Age of Empires II)",
+      "category": "ports",
+      "description": "Age of Empires II nativ auf dem Thor (OpenAoK): Karte oben, Kommandodeck mit Bau- und Einheitenmenüs auf dem unteren Bildschirm.",
+      "repo": "harmssi/thor-aok",
+      "tags": [
+        "dual-screen",
+        "thor",
+        "needs-rom",
+        "beta"
+      ],
+      "note": "Braucht Age of Empires II HD (Steam). Die Spieldaten werden einmal am PC konvertiert, die Anleitung steht im GitHub-Repo."
+    },
+    {
+      "id": "thor-heroes3",
+      "name": "Heroes III Thor Edition (VCMI)",
+      "category": "ports",
+      "description": "Heroes of Might and Magic III auf der VCMI-Engine, für den Thor umgebaut: Abenteuerkarte bildschirmfüllend oben, unten ein Deck im Spiel-Look mit Minikarte, Helden, Städten, Zauberbuch und Kampfbefehlen.",
+      "repo": "harmssi/thor-heroes3",
+      "tags": [
+        "dual-screen",
+        "thor",
+        "needs-rom"
+      ],
+      "note": "Braucht die Spieldaten von Heroes III – eine Komplettedition (z. B. GOG) oder die Steam HD Edition."
+    },
+    {
       "id": "sonic3air",
       "name": "Sonic 3 A.I.R.",
       "category": "fangames",
@@ -2103,6 +2157,17 @@
       "note": "Nutzt denselben Paketnamen wie Hokkaido – es geht nur einer von beiden. Zum Wechseln „Ersetzen“ verwenden."
     },
     {
+      "id": "gbaduo",
+      "name": "GBA Duo",
+      "category": "emulators",
+      "description": "GBA-, GBC- und GB-Player für Dual-Screen-Handhelds. Companions für einzelne Spiele gibt es im Repo als Erweiterung.",
+      "repo": "khumam/gba-duo",
+      "tags": [
+        "dual-screen",
+        "needs-rom"
+      ]
+    },
+    {
       "id": "loki",
       "name": "Loki (Thor Launcher)",
       "category": "frontends",
@@ -2283,6 +2348,33 @@
       "tags": []
     },
     {
+      "id": "boxshelf",
+      "name": "Boxshelf (Beta)",
+      "category": "frontends",
+      "description": "TV-artiger Launcher für Emulatoren, Steam-Spiele und Medien-Apps: Die Spiele stehen auf einem 3D-Regal mit Covern. Für den AYN Thor gebaut und nutzt beide Bildschirme; die Einrichtung findet installierte Emulatoren selbst.",
+      "repo": "sassiestrhihno/boxshelf-beta",
+      "homepage": "https://github.com/sassiestrhihno/boxshelf-source",
+      "tags": [
+        "dual-screen",
+        "thor",
+        "beta"
+      ],
+      "apkRegex": "android"
+    },
+    {
+      "id": "omarchy-pocket",
+      "name": "Omarchy Pocket",
+      "category": "frontends",
+      "description": "Omarchys Linux-Oberfläche als App auf beiden Thor-Bildschirmen: Desktop mit Terminal, Themes und Applets oben, Tastatur- und Touchpad-Deck unten. Das Linux-System läuft per proot ohne Root.",
+      "repo": "pocket-nexus/omarchy-pocket",
+      "tags": [
+        "dual-screen",
+        "thor",
+        "beta"
+      ],
+      "note": "Braucht zusätzlich die Datei omarchy-pocket-root.tar.zst (802 MB) aus demselben GitHub-Release auf dem Thor – der Store lädt nur das APK."
+    },
+    {
       "id": "pokedaisy",
       "name": "PokeDaisy",
       "category": "companions",
@@ -2313,17 +2405,6 @@
       "category": "companions",
       "description": "Pokémon-Spielstand-Editor für Android auf Basis von PKHeX.",
       "repo": "DeffoNotAlex/PKSafe"
-    },
-    {
-      "id": "gbaduo",
-      "name": "GBA Duo",
-      "category": "companions",
-      "description": "GBA-, GBC- und GB-Player für Dual-Screen-Handhelds. Companions für einzelne Spiele gibt es im Repo als Erweiterung.",
-      "repo": "khumam/gba-duo",
-      "tags": [
-        "dual-screen",
-        "needs-rom"
-      ]
     },
     {
       "id": "dualscreendex",
@@ -2523,6 +2604,19 @@
       "description": "Beliebter Winlator-Fork mit zusätzlichen Optionen für Windows-Spiele.",
       "repo": "coffincolors/winlator",
       "tags": []
+    },
+    {
+      "id": "zaviya",
+      "name": "Zaviya Installer (SteamOS ARM)",
+      "category": "pc",
+      "description": "Installiert Zaviya – ein Betriebssystem auf Basis von SteamOS für ARM mit Steam-Client, Game Mode und KDE-Desktop – direkt vom Thor aus: lädt das Image für den Snapdragon 8 Gen 2 und schreibt es auf eine microSD-Karte. Android bleibt erhalten, beim Einschalten wählt ein Bootmenü.",
+      "repo": "hashtagbasit/Zaviya",
+      "homepage": "https://zaviyaos.github.io/",
+      "tags": [
+        "thor",
+        "beta"
+      ],
+      "note": "Achtung: Der Installer ersetzt den Bootloader des Thor durch OpenABL (er sichert den Original-Bootloader vorher). Daten sichern und die Anleitung auf zaviyaos.github.io lesen, bevor du ihn benutzt."
     },
     {
       "id": "wayfinder",
@@ -2890,6 +2984,20 @@
       "description": "Spiegelt einen externen Controller auf den eingebauten Controller des Handhelds – ohne Root und ohne Magisk.",
       "repo": "CardinalBird/control-switch",
       "tags": []
+    },
+    {
+      "id": "heimdall",
+      "name": "Heimdall (Thor-Assistent)",
+      "category": "tools",
+      "description": "Macht den unteren Thor-Bildschirm zur Spielkonsole: Profile pro Spiel, Makros, Touch-Steuerung und virtueller Stick, Karten, Guides, Bildschirm-Übersetzung per OCR, Temperatur- und RAM-Anzeige. Erweiterte Funktionen über Shizuku.",
+      "repo": "mastercook777/Heimdall-AYN-Thor-Assistant",
+      "tags": [
+        "dual-screen",
+        "thor",
+        "shizuku",
+        "beta"
+      ],
+      "note": "Alpha-Version. Grundfunktionen brauchen kein Root; Controller-Makros und virtuelle Maus brauchen Shizuku."
     },
     {
       "id": "turnip-a740",

@@ -219,7 +219,9 @@ class UserData(
     /** Shipped catalog plus own apps, with the user's changes applied. */
     fun apply(base: List<CatalogApp>): List<CatalogApp> {
         val cats = categories()
-        return (base.filter { b -> apps.none { it.id == b.id } } + apps).map { a ->
+        // an own app wins over a catalog entry for the same repository (the catalog may add it later)
+        val own = apps.mapNotNull { it.repo?.lowercase() }.toSet()
+        return (base.filter { b -> apps.none { it.id == b.id } && b.repo?.lowercase() !in own } + apps).map { a ->
             val e = edits[a.id]
             a.copy(
                 name = e?.name ?: a.name,
