@@ -14,8 +14,8 @@ android {
         applicationId = "io.github.chris2crafter.thorstore"
         minSdk = 30
         targetSdk = 35
-        versionCode = 12
-        versionName = "1.10"
+        versionCode = 13
+        versionName = "1.11"
     }
 
     // Every build must carry the same signature, or Android refuses to install it over the
